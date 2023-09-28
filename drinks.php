@@ -9,6 +9,8 @@
                         <div class="col-lg-10 col-12 text-center mx-auto">
                             <h2 class="mb-5">Drinks</h2>
                         </div>
+                        hello
+                        hi
 
                         <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
                             <div class="featured-block d-flex justify-content-center align-items-center">
