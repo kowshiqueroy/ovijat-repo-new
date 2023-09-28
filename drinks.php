@@ -7,7 +7,7 @@
                     <div class="row">
                     
                         <div class="col-lg-10 col-12 text-center mx-auto">
-                            <h2 class="mb-5">Top Products</h2>
+                            <h2 class="mb-5">Drinks</h2>
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
