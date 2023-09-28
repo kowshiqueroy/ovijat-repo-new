@@ -10,13 +10,13 @@
 
 
             <div class="col-lg-2 col-md-6 col-12 mx-auto">
-                <h5 class="site-footer-title mb-3">USA Office</h5>
+                <h5 class="site-footer-title mb-4">USA Office</h5>
 
                 <p class="text-white d-flex mb-2">
                     <i class="bi-telephone me-2"></i>
 
                     <a href="tel: +19173885447" class="site-footer-link">
-                    (+1) 917 388 5447
+                    (+1)9173885447
                     </a>
                 </p>
 
@@ -38,13 +38,13 @@
            
 
             <div class="col-lg-2 col-md-6 col-12 mx-auto">
-                <h5 class="site-footer-title mb-3">Dhaka Office</h5>
+                <h5 class="site-footer-title mb-4">Dhaka Office</h5>
 
                 <p class="text-white d-flex mb-2">
                     <i class="bi-telephone me-2"></i>
 
                     <a href="tel: +8801733390331" class="site-footer-link">
-                    (+88) 0173 339 0331
+                    (+88)01733390331
                     </a>
                 </p>
 
@@ -67,13 +67,13 @@
 
 
             <div class="col-lg-2 col-md-6 col-12 mx-auto">
-                <h5 class="site-footer-title mb-3">Nilphamari Factory</h5>
+                <h5 class="site-footer-title mb-4">Factory</h5>
 
                 <p class="text-white d-flex mb-2">
                     <i class="bi-telephone me-2"></i>
 
                     <a href="tel:   +8801733390331" class="site-footer-link">
-                    (+88) 0173 339 0331
+                    (+88)01733390331
                     </a>
                 </p>
 
@@ -87,7 +87,7 @@
 
                 <p class="text-white d-flex mt-3">
                     <i class="bi-geo-alt me-2"></i>
-                    Nilphamari
+                   Ramgonj, Nilphamari, Bangladesh
                 </p>
 
                
