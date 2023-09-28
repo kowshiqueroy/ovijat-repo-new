@@ -68,7 +68,7 @@ https://templatemo.com/tm-581-kind-heart-charity
   --h2-font-size:                 30px;
   --h3-font-size:                 30px;
   --h4-font-size:                 28px;
-  --h5-font-size:                 15px;
+  --h5-font-size:                 20px;
   --h6-font-size:                 12px;
   --p-font-size:                  16px;
   --btn-font-size:                18px;
@@ -361,10 +361,13 @@ strong {
 }
 
 .navbar-brand {
-  color: var(--primary-color);
-  font-size: var(--h6-font-size);
+  color: var(black);
+  font-size: var(--h5-font-size);
   font-weight: var(--font-weight-bold);
 }
+
+
+
 
 .navbar-brand span {
   display: inline-block;
