@@ -46,7 +46,7 @@ padding: 10px;
     <div class="fa-3x" id="buttonupid" style=" display: flex; ">
               <button class="buttonup"> <i class="fa fa-tag" aria-hidden="true"> </i><br>Private Labeling</button>  
               <button class="buttonup">   <i class="fa fa-ship" aria-hidden="true"></i></i><br>WorldWide Shiping</button>  
-              <button class="buttonup">   <i class="fa fa-handshake-o" aria-hidden="true"></i></i><br>Contract Manufacturing</button>  
+              <button class="buttonup">   <i class="fa fa-handshake-o" aria-hidden="true"></i></i><br>24/7 Support</button>  
 
 
 
