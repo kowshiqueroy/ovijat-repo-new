@@ -9,7 +9,7 @@
                         <div class="col-lg-10 col-12 text-center mx-auto">
                             <h2 class="mb-5">Edible Oil</h2>
                         </div>
-<p>hi</p>
+
                         
 
 
