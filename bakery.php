@@ -25,8 +25,8 @@
                         <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/oc.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Chanachur</strong><br>Details</p>
+                                    <img src="images/p/r.jpg"  class="featured-block-image img-fluid" alt="">
+                                    <p class="featured-block-text"><strong>Aromatic kalijeera Rice</strong><br>Details</p>
                                 </a>
                             </div>
                         </div>
