@@ -9,11 +9,11 @@
 <body>
 
 <div class="header">
-  <a href="#default" class="logo">CompanyLogo</a>
+  <a href="#default" class="logo">Web App</a>
   <div class="header-right">
-    <a class="active" href="#home">Home</a>
+    <a class="active" href="#home">Setup</a>
     <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="#about">Login</a>
   </div>
 </div>
 
