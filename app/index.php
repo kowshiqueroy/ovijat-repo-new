@@ -12,9 +12,7 @@
 <div class="topnav" id="myTopnav">
   <a href="#home" class="active">Home</a>
  
-  <div class="topnavmenubox">
-  <div class="topnavmenu">
-  
+
   <a href="#news">News</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
@@ -22,8 +20,7 @@
     <i class="fa fa-bars"></i>
   </a>
 
-</div>
-</div>
+
 
 
 </div>
