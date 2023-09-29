@@ -20,19 +20,17 @@
             <div class="container">
                 <div class="row">
                     
-                    <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <div class="col-lg-5 col-5 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
-                            <i class="bi-geo-alt me-2"></i>
-                            Sadharan Bima Bhavan 2, Motijheel, Dhaka, Bangladesh
+                       <!--     <i class="bi-geo-alt me-2"></i> -->
+                           Naturaly Healthy
                         </p>
 
-                        <p class="d-flex mb-0">
-                            <i class="bi-envelope me-2"></i>
-
-                            <a href="mailto:info@ovijatfood.com">
+                        <!--  
+                            <a style="color" href="mailto:info@ovijatfood.com">
                                 info@ovijatfood.com
-                            </a>
-                        </p>
+                            </a> -->
+                      
                     </div>
 
                     <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
