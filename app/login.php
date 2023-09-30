@@ -13,7 +13,59 @@ include 'index-head.php';
   
   <form class="modal-content animate" action="/action_login.php" method="post">
    
+
+  <?php
+	$dbhost = "localhost";
+	$dbuser = "root";
+	$dbpass = "";
+	$db = "app_db";
+	$con = mysqli_connect($dbhost, $dbuser, $dbpass , $db) or die($con);
+?>
+
+
     <div class="container">
+
+
+
+    <label for="f1">Company</label>
+				<select class="form-control" id="f1" required>
+					<option value=""></option>
+					<?php 
+					$query = "SELECT * FROM company";
+					$result = $con->query($query);
+					if ($result->num_rows > 0) {
+						while ($row = $result->fetch_assoc()) {
+							echo '<option value="'.$row['company_name'].'">'.$row['company_name'].'</option>';
+						}
+					}else{
+						//echo '<option value="">Country not available</option>'; 
+					}
+					?>
+				</select>
+
+
+
+
+                <label for="f1">Role</label>
+				<select class="form-control" id="f1" required>
+					<option value=""></option>
+					<?php 
+					$query = "SELECT * FROM role";
+					$result = $con->query($query);
+					if ($result->num_rows > 0) {
+						while ($row = $result->fetch_assoc()) {
+							echo '<option value="'.$row['role_name'].'">'.$row['role_name'].'</option>';
+						}
+					}else{
+						//echo '<option value="">Country not available</option>'; 
+					}
+					?>
+				</select>
+                <br>      <br>
+
+
+
+
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
 
