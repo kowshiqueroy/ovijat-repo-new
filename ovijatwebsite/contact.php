@@ -41,7 +41,7 @@ Email: info@ovijatfood.com</p>
                         </div>
 
                         <div class="col-lg-5 col-12 mx-auto">
-                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                            <form class="custom-form contact-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" role="form">
                                 <h2>Contact form</h2>
 
                                 <p class="mb-4">Or, you can just send an email:
@@ -58,10 +58,11 @@ Email: info@ovijatfood.com</p>
                                 </div>
 
                                 <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="name@mail.com" required>
+                                <input type="text" name="subject" id="subject"  class="form-control" placeholder="Subject" required>
 
                                 <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you?"></textarea>
 
-                                <button type="submit" class="form-control">Send Message</button>
+                                <button type="csubmit" class="form-control">Send Message</button>
                             </form>
                         </div>
 
@@ -69,6 +70,26 @@ Email: info@ovijatfood.com</p>
                 </div>
             </section>
 
+                           
+<?php
 
+
+if (isset($_POST['csubmit']) && ! empty($_POST['name']) && ! empty($_POST['email']) && ! empty($_POST['subject'])&& ! empty($_POST['message'])&& ! empty($_POST['phone'])){
+
+$to="it.ovijat@gmail.com";
+$subject ="Contact Request : ".$_POST['subject'];
+$msg =$_POST['name'] . " ".$_POST['email'] ." " .$_POST['phone'] . " " . $_POST['message'];
+
+$headers="\r\n" .
+'Reply-To:'.$_POST['email'];
+
+mail($to, $subject, $msg, $headers);
+
+
+}
+
+
+
+?>
 
 <?php include 'foot.php'; ?>

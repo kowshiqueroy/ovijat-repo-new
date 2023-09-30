@@ -15,49 +15,39 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 col-6">
-                                        <input type="text" name="volunteer-name" id="volunteer-name" class="form-control" placeholder="Full Name" required>
+                                        <input type="text" name="name" id="volunteer-name" class="form-control" placeholder="Full Name" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">    
-                                        <input type="email" name="volunteer-email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Phone" required>
+                                        <input type="text" name="phone" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Phone" required>
                                     </div>
 
 
 
                                     <div class="col-lg-6 col-6">
-                                        <input type="text" name="volunteer-name" id="volunteer-name" class="form-control" placeholder="Address" required>
+                                        <input type="text" name="address" id="volunteer-name" class="form-control" placeholder="Address" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">    
-                                        <input type="email" name="volunteer-email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="E-mail" required>
+                                        <input type="email" name="email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="E-mail" required>
                                     </div>
 
                                     <div class="col-lg-6 col-6">
-                                        <input type="text" name="volunteer-name" id="volunteer-name" class="form-control" placeholder="Job Sector" required>
+                                        <input type="text" name="job" id="volunteer-name" class="form-control" placeholder="Job Sector" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">    
-                                        <input type="email" name="volunteer-email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Position" required>
+                                        <input type="text" name="position" id="volunteer-email"  class="form-control" placeholder="Position" required>
                                     </div>
 
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="volunteer-subject" id="volunteer-subject" class="form-control" placeholder="Subject" required>
-                                    </div>
+                                   
 
-                                    <div class="col-lg-6 col-12">
-                                        <div class="input-group input-group-file">
-                                            <input type="file" class="form-control" id="inputGroupFile02">
-                                            
-                                            <label class="input-group-text" for="inputGroupFile02">Upload your CV</label>
-
-                                            <i class="bi-cloud-arrow-up ms-auto"></i>
-                                        </div>
-                                    </div>
+               
                                 </div>
 
-                                <textarea name="volunteer-message" rows="3" class="form-control" id="volunteer-message" placeholder="Comment (Optional)"></textarea>
+                                <textarea name="message" rows="3" class="form-control" id="volunteer-message" placeholder="Letter Message"></textarea>
 
-                                <button type="submit" class="form-control">Submit</button>
+                                <button type="csubmit" class="form-control">Submit</button>
                             </form>
                         </div>
 
@@ -72,6 +62,25 @@
                 </div>
             </section>
 
+            <?php
 
+
+if (isset($_POST['csubmit']) && ! empty($_POST['name']) && ! empty($_POST['email']) && ! empty($_POST['phone']) && ! empty($_POST['address']) && ! empty($_POST['subject']) && ! empty($_POST['job']) && ! empty($_POST['position']) && ! empty($_POST['message'])&& ! empty($_POST['phone'])){
+
+$to="it.ovijat@gmail.com";
+$subject ="Career Request : ".$_POST['subject'];
+$msg =$_POST['name'] . " ".$_POST['email'] ." " .$_POST['phone']. " " . $_POST['address'] . " " . $_POST['job']. " " . $_POST['position']. " " . $_POST['message'];
+
+$headers="\r\n" .
+'Reply-To:'.$_POST['email'];
+
+mail($to, $subject, $msg, $headers);
+
+
+}
+
+
+
+?>
 
 <?php include 'foot.php'; ?>
