@@ -36,19 +36,19 @@
                     <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
                         <ul class="social-icon">
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                <a href="https://www.facebook.com/ovijatfood/" class="social-icon-link bi-facebook" target="blank"></a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-envelope"></a>
+                                <a href="mailto:info@ovijatfood.com" class="social-icon-link bi-envelope" target="blank"></a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-phone"></a>
+                                <a href="tel:+8801733390331" class="social-icon-link bi-phone" target="blank"></a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-linkedin"></a>
+                                <a href="https://www.linkedin.com/in/ovijat-food-and-beverage-industries-ltd-05b5a9164/" class="social-icon-link bi-linkedin" target="blank"></a>
                             </li>
 
                         </ul>
