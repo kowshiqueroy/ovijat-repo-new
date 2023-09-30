@@ -62,7 +62,7 @@ Email: info@ovijatfood.com</p>
 
                                 <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you?"></textarea>
 
-                                <button type="csubmit" class="form-control">Send Message</button>
+                                <button type="submit" name="submit" class="form-control">Send Message</button>
                             </form>
                         </div>
 
@@ -74,16 +74,15 @@ Email: info@ovijatfood.com</p>
 <?php
 
 
-if (isset($_POST['csubmit']) && ! empty($_POST['name']) && ! empty($_POST['email']) && ! empty($_POST['subject'])&& ! empty($_POST['message'])&& ! empty($_POST['phone'])){
+if (isset($_POST['submit']) && ! empty($_POST['name']) && ! empty($_POST['email']) && ! empty($_POST['subject'])&& ! empty($_POST['message'])&& ! empty($_POST['phone'])){
 
 $to="it.ovijat@gmail.com";
 $subject ="Contact Request : ".$_POST['subject'];
 $msg =$_POST['name'] . " ".$_POST['email'] ." " .$_POST['phone'] . " " . $_POST['message'];
 
-$headers="\r\n" .
-'Reply-To:'.$_POST['email'];
 
-mail($to, $subject, $msg, $headers);
+
+mail($to, $subject, $msg);
 
 
 }

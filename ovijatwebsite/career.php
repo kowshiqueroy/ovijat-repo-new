@@ -10,8 +10,8 @@
 
                         <div class="col-lg-6 col-12">
 
-                            <form class="custom-form volunteer-form mb-5 mb-lg-0" action="#" method="post" role="form">
-                                <h3 class="mb-4">Drop your CV today</h3>
+                            <form class="custom-form volunteer-form mb-5 mb-lg-0" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" role="form">
+                                <h3 class="mb-4">Send this online application today</h3>
 
                                 <div class="row">
                                     <div class="col-lg-6 col-6">
@@ -19,7 +19,7 @@
                                     </div>
 
                                     <div class="col-lg-6 col-12">    
-                                        <input type="text" name="phone" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Phone" required>
+                                        <input type="text" name="phone" id="volunteer-email" class="form-control" placeholder="Phone" required>
                                     </div>
 
 
@@ -47,7 +47,7 @@
 
                                 <textarea name="message" rows="3" class="form-control" id="volunteer-message" placeholder="Letter Message"></textarea>
 
-                                <button type="csubmit" class="form-control">Submit</button>
+                                <button type="submit" name="submit" class="form-control">Submit</button>
                             </form>
                         </div>
 
@@ -65,16 +65,15 @@
             <?php
 
 
-if (isset($_POST['csubmit']) && ! empty($_POST['name']) && ! empty($_POST['email']) && ! empty($_POST['phone']) && ! empty($_POST['address']) && ! empty($_POST['subject']) && ! empty($_POST['job']) && ! empty($_POST['position']) && ! empty($_POST['message'])&& ! empty($_POST['phone'])){
+if (isset($_POST['submit']) && ! empty($_POST['name']) && ! empty($_POST['email']) && ! empty($_POST['phone']) && ! empty($_POST['address']) && ! empty($_POST['subject']) && ! empty($_POST['job']) && ! empty($_POST['position']) && ! empty($_POST['message'])&& ! empty($_POST['phone'])){
 
 $to="it.ovijat@gmail.com";
 $subject ="Career Request : ".$_POST['subject'];
 $msg =$_POST['name'] . " ".$_POST['email'] ." " .$_POST['phone']. " " . $_POST['address'] . " " . $_POST['job']. " " . $_POST['position']. " " . $_POST['message'];
 
-$headers="\r\n" .
-'Reply-To:'.$_POST['email'];
 
-mail($to, $subject, $msg, $headers);
+
+mail($to, $subject, $msg);
 
 
 }
