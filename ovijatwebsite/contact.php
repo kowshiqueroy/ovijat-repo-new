@@ -81,10 +81,15 @@ $subject ="Contact Request : ".$_POST['subject'];
 $msg =$_POST['name'] . " ".$_POST['email'] ." " .$_POST['phone'] . " " . $_POST['message'];
 
 
+if (mail($to, $subject, $msg))
+{
 
-mail($to, $subject, $msg);
+    echo '<script>alert("Successful Submission")</script>';
+}
+else{
+    echo '<script>alert("Failed Submission")</script>';
 
-
+}
 }
 
 
