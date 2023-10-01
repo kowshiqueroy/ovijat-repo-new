@@ -1,5 +1,8 @@
 <?php
 include 'index-head.php';
+session_start();
+$_SESSION["last_login_time"] = "";
+
 ?>
 
 <link rel="stylesheet" href="login.css">
