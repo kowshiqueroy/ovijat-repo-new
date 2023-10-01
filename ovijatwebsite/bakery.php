@@ -17,7 +17,7 @@
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/to.jpg" class="featured-block-image img-fluid" alt="">
 
-                                  <p class="featured-block-text"><strong>Special Toast</strong><br>Details</p>
+                                  <p class="featured-block-text"><strong>Special Toast</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/ca.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Dry Cake</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Dry Cake</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/t.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Sweet Toast</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Sweet Toast</strong><br></p>
                                 </a>
                             </div>
                         </div>

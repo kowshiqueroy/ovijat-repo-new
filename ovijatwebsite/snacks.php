@@ -15,7 +15,7 @@
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/p1.jpg" class="featured-block-image img-fluid" alt="">
 
-                                  <p class="featured-block-text"><strong>Jhal Muri</strong><br>Details</p>
+                                  <p class="featured-block-text"><strong>Jhal Muri</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/oc.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Chanachur</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Chanachur</strong><br></p>
                                 </a>
                             </div>
                         </div>

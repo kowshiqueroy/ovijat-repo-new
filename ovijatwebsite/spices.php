@@ -15,7 +15,7 @@
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/do.jpg" class="featured-block-image img-fluid" alt="">
 
-                                  <p class="featured-block-text"><strong>Coriander Powder</strong><br>Details</p>
+                                  <p class="featured-block-text"><strong>Coriander Powder</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/mi.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Whole Dry Chilli</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Whole Dry Chilli</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/h.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Termeric Powder</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Termeric Powder</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/m.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Chilli Powder</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Chilli Powder</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/bay_leaf.jpg" class="featured-block-image img-fluid" alt="">
 
-                                    <p class="featured-block-text"><strong>Bay Leafs</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Bay Leafs</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/ji.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Cumin Powder</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Cumin Powder</strong><br></p>
                                 </a>
                             </div>
                         </div>

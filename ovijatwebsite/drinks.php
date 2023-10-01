@@ -17,7 +17,7 @@
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/l.jpg" class="featured-block-image img-fluid" alt="">
 
-                                  <p class="featured-block-text"><strong>Litchi</strong><br>Details</p>
+                                  <p class="featured-block-text"><strong>Litchi</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/fo.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Hobbi Mango Drink</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Hobbi Mango Drink</strong><br></p>
                                 </a>
                             </div>
                         </div>
