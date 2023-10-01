@@ -1,7 +1,28 @@
 <?php
 include 'index-head.php';
+
+
+
+
 session_start();
-$_SESSION["last_login_time"] = "";
+if ( isset($_SESSION["last_login_time"]) AND (time()- (int)$_SESSION["last_login_time"]) <30 ){ 
+
+
+
+	header('location: admin/dashboard.php');
+
+
+
+}
+
+else {
+
+	
+
+
+}
+
+
 
 ?>
 
@@ -9,7 +30,7 @@ $_SESSION["last_login_time"] = "";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-<h2>Select</h2>
+<h2>You are loged out</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 

@@ -1,9 +1,9 @@
 <?php
+session_start();
+if ( isset($_SESSION["last_login_time"]) AND (time()- (int)$_SESSION["last_login_time"]) <30 ){ 
 
-if ($_SESSION["last_login_time"] AND time()-$_SESSION["last_login_time"] <30 ){ 
 
-
-   // header('location: admin/dashboard.php');
+    header('location: admin/dashboard.php');
 
 
 
@@ -11,16 +11,16 @@ if ($_SESSION["last_login_time"] AND time()-$_SESSION["last_login_time"] <30 ){
 }
 
 else {
-    echo 'logged out';
-}
+
+
 
 $c= $_POST['c'];
 $r= $_POST['r'];
 $u= $_POST['u'];
 $p= md5($_POST['p']);
 
-
 include 'db_config.php';
+
 
 
 
@@ -44,8 +44,8 @@ echo time();
 }else{
     echo 'No user';
 }
-
-
+header('location: admin/dashboard.php');
+}
 
 
 ?>
