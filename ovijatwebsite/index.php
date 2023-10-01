@@ -78,7 +78,7 @@ padding: 10px;
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/m.jpg" class="featured-block-image img-fluid" alt="">
 
-                                  <p class="featured-block-text"><strong>Chili Powder</strong><br>Details</p>
+                                  <p class="featured-block-text"><strong>Chili Powder</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ padding: 10px;
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/mo.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Musturd Oil</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Musturd Oil</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ padding: 10px;
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/oc.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Chanachur</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Chanachur</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -105,7 +105,7 @@ padding: 10px;
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/p1.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Jhal Muri</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Jhal Muri</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -128,7 +128,7 @@ padding: 10px;
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/r.jpg" class="featured-block-image img-fluid" alt="">
 
-                                  <p class="featured-block-text"><strong>Arometic Kalijeera Rice</strong><br>Details</p>
+                                  <p class="featured-block-text"><strong>Arometic Kalijeera Rice</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -137,7 +137,7 @@ padding: 10px;
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/l.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Litchi Drink</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Litchi Drink</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -146,7 +146,7 @@ padding: 10px;
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/bay_leaf.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Bay Leafs</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Bay Leafs</strong><br></p>
                                 </a>
                             </div>
                         </div>
@@ -155,7 +155,7 @@ padding: 10px;
                             <div class="featured-block d-flex justify-content-center align-items-center">
                                 <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
                                     <img src="images/p/t.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Sweet Toast</strong><br>Details</p>
+                                    <p class="featured-block-text"><strong>Sweet Toast</strong><br></p>
                                 </a>
                             </div>
                         </div>
