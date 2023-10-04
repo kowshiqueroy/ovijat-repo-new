@@ -63,7 +63,7 @@
                 <a class="navbar-brand" href="index.php">
                     <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
                     <span>
-                        Ovijat
+                        OVIJAT
                         <small>Food & Beverage Industries Ltd.</small>
                     </span>
                 </a>
