@@ -29,7 +29,7 @@ else {
 <link rel="stylesheet" href="login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
+<center>
 <h2>You are loged out</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
@@ -85,6 +85,14 @@ else {
     </div>
   </form>
 </div>
+
+<br>
+<br>
+
+<h2>OR<br>You Can</h2>
+
+<button onclick = "window.location.href='setupcompany.php';" style="width:auto;">Setup Your Company</button>
+<center>
 
 <script>
 // Get the modal

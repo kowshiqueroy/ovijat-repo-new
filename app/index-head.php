@@ -12,7 +12,7 @@
   <div class="header-right">
     <a class="active" href="setup.php">Setup</a>
     <a href="contact.php">Contact</a>
-    <a href="login.php">Login</a>
+    <a href="login.php">Account</a>
   </div>
 </div>
 
