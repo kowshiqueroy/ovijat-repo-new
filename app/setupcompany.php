@@ -49,7 +49,7 @@ input[type=submit]:hover {
 
 
 <div class="formsetup">
-  <form action="/action_page.php" method="post">
+  <form action="setupcompany_action.php" method="post">
     <label for="fname">Company Name</label>
     <input type="text" id="fname" name="coomapany_name" placeholder="" required>
 
@@ -63,7 +63,6 @@ input[type=submit]:hover {
     <label for="country">Setup Type</label>
     <select id="setup_type" name="steup_type" required>
     <option value="demo">Demo for 1 day</option>
-      <option value="automatic">Automatic</option>
       <option value="license_code">License Code</option>
 
     </select>

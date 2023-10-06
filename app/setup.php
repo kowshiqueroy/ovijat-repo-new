@@ -70,6 +70,8 @@ function createTable() {
     $sql = "CREATE TABLE IF NOT EXISTS company (
        
         company_name VARCHAR(100) NOT NULL PRIMARY KEY,
+        license_code VARCHAR(100) NOT NULL,
+        license_date DATE NOT NULL,
         reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         )";
         
@@ -136,8 +138,10 @@ function insertData () {
 
 //company1
   $company_name="ovijat";
-  $sql = "INSERT INTO company (company_name)
-  VALUES ('$company_name')";
+  $license_code="1234";
+  $license_date="";
+  $sql = "INSERT INTO company (company_name,license_code,license_date)
+  VALUES ('$company_name', '$license_code', '$license_date')";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
 
@@ -150,8 +154,10 @@ function insertData () {
 
 //company2
   $company_name="sharm";
-  $sql = "INSERT INTO company (company_name)
-  VALUES ('$company_name')";
+  $license_code="1234";
+  $license_date="";
+  $sql = "INSERT INTO company (company_name,license_code,license_date)
+  VALUES ('$company_name', '$license_code', '$license_date')";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
 
@@ -166,8 +172,10 @@ function insertData () {
 
   //company3
   $company_name="LAM";
-  $sql = "INSERT INTO company (company_name)
-  VALUES ('$company_name')";
+  $license_code="1234";
+  $license_date="";
+  $sql = "INSERT INTO company (company_name,license_code,license_date)
+  VALUES ('$company_name', '$license_code', '$license_date')";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
 

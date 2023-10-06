@@ -20,14 +20,18 @@ $u= $_POST['u'];
 $p= md5($_POST['p']);
 
 include 'db_config.php';
+$today="2023/1/1";
 
 
-
-
-$query = "SELECT * FROM user WHERE company_name='$c' AND role_name='$r' AND user_name='$u' AND BINARY user_password='$p'";
+$query = "SELECT * FROM company WHERE company_name='$c' AND license_code <>'' ";
 $result = $con->query($query);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+       
+$query = "SELECT * FROM user WHERE company_name='$c' AND role_name='$r' AND user_name='$u' AND BINARY user_password='$p'";
+$result = $con->query($query);
+if ($result->num_rows > 0) {
+    while ($row2 = $result->fetch_assoc()) {
        
         $_SESSION["company_name"] = $c;
         $_SESSION["role_name"] = $r;
@@ -44,6 +48,14 @@ echo time();
 }else{
     echo 'No user';
 }
+
+
+    }
+}else{
+    echo 'No user License';
+}
+
+
 header('location: admin/dashboard.php');
 }
 
