@@ -23,7 +23,7 @@ include 'db_config.php';
 $today="2023/1/1";
 
 
-$query = "SELECT * FROM company WHERE company_name='$c' AND license_code <>'' ";
+$query = "SELECT * FROM company WHERE company_name='$c' AND license_code >'0' ";
 $result = $con->query($query);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {

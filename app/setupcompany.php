@@ -51,18 +51,18 @@ input[type=submit]:hover {
 <div class="formsetup">
   <form action="setupcompany_action.php" method="post">
     <label for="fname">Company Name</label>
-    <input type="text" id="fname" name="coomapany_name" placeholder="" required>
+    <input type="text" id="fname" name="c" placeholder="" required>
 
     <label for="lname">Admin mail</label>
-    <input type="text" id="lname" name="lastname" placeholder="" required>
+    <input type="text" id="lname" name="u" placeholder="" required>
 
 
     <label for="lname">Password</label>
-    <input type="text" id="lname" name="lastname" placeholder="">
+    <input type="text" id="lname" name="p" placeholder="">
 
     <label for="country">Setup Type</label>
-    <select id="setup_type" name="steup_type" required>
-    <option value="demo">Demo for 1 day</option>
+    <select id="setup_type" name="setup_type" required>
+    <option value="demo">Demo for 1 hour</option>
       <option value="license_code">License Code</option>
 
     </select>
@@ -70,7 +70,7 @@ input[type=submit]:hover {
     <label for="license_code" class="license_code">License Code</label>
     <input type="text" class="license_code" name="license_code" placeholder="">
   
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" name="submit">
   </form>
 </div>
 

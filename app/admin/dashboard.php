@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-if ( isset($_SESSION["last_login_time"]) AND (time()- (int)$_SESSION["last_login_time"]) <30 ){ 
+if ( isset($_SESSION["last_login_time"]) AND (time()- (int)$_SESSION["last_login_time"]) <60*60 ){ 
 
 
 
