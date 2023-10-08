@@ -746,9 +746,9 @@ $retrieve = mysqli_query($db,$sqluse);
 				
 				
 	
-			<div class="charts">		
+			<div class="charts" >		
 			<div class="mid-content-top charts-grids">
-				<div class="middle-content">
+				<div class="middle-content" >
 						<h4 class="title">Users</h4>
 					<!-- start content_slider 
 				<div class="alert alert-info">
@@ -757,22 +757,54 @@ $retrieve = mysqli_query($db,$sqluse);
 					-->
 
 <style>
+@media screen and (max-width: 600px) {
 
+
+
+  #example {
+    font-size: 5px;
+    padding-top:2px;
+    padding-bottom:0px;
+    padding-left:0px;
+    padding-right:0px;
+   
+   
+  }
+td{
+
+ 
+
+}
+  
+ 
+
+ 
+}
+
+@media screen and (min-width: 601px) {
+  #example {
+    font-size: 20px;
+
+    
+  }
+
+ 
+}
 
 
   </style>
 
 
-					     <table id="example" class="display nowarp" style="width:100%;">
+					     <table id="example" class="display warp" style="width:100%;">
         <thead>
             <tr>
-     
+            <th style="text-size:0px;"></th>
                 <th>Name</th>
                 <th>ID</th>
-                <th>Rank</th>              
+                           
                 <th>Department</th>
-                <th>Phone</th>  
-                <th>Email</th>   
+                <th>Rank</th>  
+                
                  
               
                 
@@ -797,13 +829,12 @@ $retrieve = mysqli_query($db,$sqluse);
             
 
                       
-                                                           
+                      <td style='opacity:0;'>a</td>                 
                                        <td>$title $firstname $sirname</td>        	
-                                       <td>OVI-$sid</td>
+                                       <td>$sid</td>
                                        <td>$dept</td>
                                        <td>$rank</td>
-                                       <td>$phone</td>
-                                       <td>$email</td>
+                                      
                                    
                                  
                                      
@@ -811,14 +842,14 @@ $retrieve = mysqli_query($db,$sqluse);
                                    
                                
                                  <td>
-                                   <a  href='card.php?id=$sid' class='btn  btn-success' title='click to print ID Card'  target='_blank'><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
+                                   <a  href='card.php?id=$sid' id='p' class='btn  btn-success' title='click to print ID Card'  target='_blank'><span class='glyphicon glyphicon-print' style='color:white;'></span></a>
                                         </td>
                                  <td>
-                                   <a data-toggle='modal'  data-id='$id'  data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$nid' data-ik='$sid' data-iem='$email' data-im='$phone' data-in='$mstatus' data-io='$title' data-ip='$mjoin' data-iq='$mdissmissed' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
+                                   <a data-toggle='modal' id='e' data-id='$id'  data-ie='$firstname'   data-if='$sirname' data-ig='$rank' data-ih='$dept' data-ij='$nid' data-ik='$sid' data-iem='$email' data-im='$phone' data-in='$mstatus' data-io='$title' data-ip='$mjoin' data-iq='$mdissmissed' class='open-Passwords btn  btn-info' title='edit user details' href='#Passwords'><span class='glyphicon glyphicon-edit' style='color:white;'></span></a>
                          
                                  </td>				                 
                                  <td>
-                                   <a data-id='$id'  class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-remove-sign' style='color:white;'></span></a>
+                                   <a data-id='$id' id='d' class='open-Delete btn  btn-danger' title='delete user' ><span class='glyphicon glyphicon-remove-sign' style='color:white;'></span></a>
                          
                                  </td>			 
                                        </tr>"; 
@@ -831,13 +862,12 @@ $retrieve = mysqli_query($db,$sqluse);
                       echo"<tr style='color:red'>  
 
             
-                                     
+                      <td style='opacity:0;'>z</td>  
                                        <td>$title $firstname $sirname</td>        	
-                                       <td>OVI-$sid</td>
+                                       <td>$sid</td>
                                        <td>$dept</td>
                                        <td>$rank</td>
-                                       <td>$phone</td>
-                                       <td>$email</td>
+                                    
                                   
                                        
                                    
@@ -861,14 +891,13 @@ $retrieve = mysqli_query($db,$sqluse);
                       echo"<tr style='color:black'> 
 
             
-
+                      <td style='opacity:0;'>b</td> 
                                                            
                                        <td>$title $firstname $sirname</td>        	
-                                       <td>OVI-$sid</td>
+                                       <td>$sid</td>
                                        <td>$dept</td>
                                        <td>$rank</td>
-                                       <td>$phone</td>
-                                       <td>$email</td>
+                                     
                                    
                                        
                                    

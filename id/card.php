@@ -87,12 +87,14 @@ border-width: 5px; padding:10px;" type="submit">
   width:250px;
   height:450px;
   position:absolute;
-  opacity: 0.88;
+  opacity: 1;
 font-family: sans-serif;
 
 		  	transition: 0.4s;
 		  	background-color: #FFFFFF;
-		  	border-radius: 2%;
+
+			
+		  	border-radius: 0%;
 		}
 
 #id::before {
@@ -124,7 +126,7 @@ font-family: sans-serif;
 		  	float: left;
 		  	margin:auto;		  	
 		  	margin-left:270px;
-		  	border-radius:2%;
+		  	border-radius:0%;
 
 		  	
 		  }
@@ -159,7 +161,7 @@ font-family: sans-serif;
       <div id="bg">
 	  <center>
 
-<div id="p">
+<div id="p" >
 
 <?php if($numb!=0 ){
                                     if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
@@ -186,7 +188,7 @@ font-family: sans-serif;
 </div>
 </center>
             <div id="id" style=" margin-left:80px; border-style: solid;
-  border-width: 5px; padding:30px;">
+  border-width: 1px; padding:30px;"   >
             	<center>
         	<?php if($numb!=0 ){
                                     if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
@@ -216,21 +218,22 @@ font-family: sans-serif;
 
              	 	
              	 	if($profile!=""){          
-										   echo"<img src='images/$profile' ' width='150px' alt='' style='  border-radius: 50%;' >";	   
+										   echo"<img src='images/$profile' ' width='120px' alt='' style='  border-radius: 50%;' >";	   
 									    }
 								else{
-									echo"<img src='admin/images/profile.jpg'  width='150px' alt='' style='  border-radius: 50%;'>";	   
+									echo"<img src='admin/images/profile.jpg'  width='120px' alt='' style='  border-radius: 50%;'>";	   
 														     	
 									} 
              	 	 ?>   </center>              <div class="" align="center">
 
         <h3 style="">ID: <?php if(isset($id)){ echo$sid;} ?></h3>
-      	<h4 style="margin-top:-5%;"><?php if(isset($names)){ $namez=$title.' '.$names; echo $namez;} ?></h4>
+      	<h5 style="color:red;margin-top:-5%;"><?php if(isset($names)){ $namez=$title.' '.$names; echo $namez;} ?></h5>
 		  <p style="margin-top:-5%;"><?php if(isset($id)){ echo$rank;} ?></p>
 		  <p style="margin-top:-5%;"><?php if(isset($id)){ echo$dept;} ?></p>
 		  <hr align="center" style="border: 1px solid black;width:100%;margin-top:3%"></hr> 
-		<h4 align="center" style="margin-top:-2%"><?php if(isset($id)){ echo$cname;} ?></h4>
-		<p align="center" style="margin-top:-5%"><?php if(isset($id)){ echo$cweb.$cphone.$cemail;} ?></p>
+		<h4 align="center" style="color:green;margin-top:-2%"><?php if(isset($id)){ echo$cname;} ?></h4>
+		<p align="center" style="margin-top:-5%"><?php if(isset($id)){ echo $cweb;} ?></p>
+		<p align="center" style="margin-top:-5%; font-size:14px;"><?php if(isset($id)){ echo $cphone. '  '.$cemail;} ?></p>
 	
 
       	
@@ -239,19 +242,35 @@ font-family: sans-serif;
       </div>
             </div>
             <div class="id-1" style="  margin-left:500px; border-style: solid;
-  border-width: 5px; padding:30px;">
+  border-width: 1px; padding:30px;">
     	 
-                     	 <center><img src="images/qr.png" alt="Avatar" width="200px" height="175px" >        
+                     	 <img src="images/qr.png" alt="Avatar" width="200px" height="175px" >        
        <div class="container" align="center">
-      <p style="margin:auto">Please scan the QR code to verify</p>
-      	<h2 style="color:#00BFFF;margin-left:2%">Ovijat Group</h2>
+      <p style="margin:auto">Please scan the QR code to verify</p><br>
+
+
+	  <center>
+        	<?php if($numb!=0 ){
+                                    if($profile!=""){echo"<img src='media/$profile' style='  max-width:50px'  alt=''><br><br>";}
+									else{
+										 echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:50px'  ><br><br>";
+									    }	   
+                               }else{
+
+								echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:50px'  ><br><br>";
+			?>
+         <?php }?>
+							   </center>
+
+
+      	<h2 style="color:green;margin-left:2%;margin-top:-5%;">Ovijat Group</h2>
       <p style="margin:auto">ID: <?php if(isset($id)){ echo$sid;} ?></p></p>
 	  <p style="margin-top:-5%;">NID: <?php if(isset($id)){ echo$nid;} ?></p>
 	  <p style="margin-top:-5%;">Joining Date: <?php if(isset($id)){ echo$jd;} ?></p>
 	<?php
 	if ($dd!==""){
-	echo'	<p style="margin-top:-5%;">Dissmissed Date:';
-	if(isset($id) ){ echo$dd . '</p>';}
+	echo'	<h3 style="margin-top:-5%; color:red;">Expired Date: ';
+	if(isset($id) ){ echo$dd . '</h3>';}
 	} ?>
 	
 	 
