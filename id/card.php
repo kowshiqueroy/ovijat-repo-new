@@ -174,11 +174,11 @@ font-family: sans-serif;
 <?php if($numb!=0 ){
                                     if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
 									else{
-										 echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
+										 echo"<img src='images/noimage.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
 									    }	   
                                }else{
 
-								echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
+								echo"<img src='images/noimage.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
 			?>
         	<br><br> <?php }
 			
@@ -201,11 +201,11 @@ font-family: sans-serif;
         	<?php if($numb!=0 ){
                                     if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
 									else{
-										 echo"<img src='images/logo.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
+										 echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
 									    }	   
                                }else{
 
-								echo"<img src='images/logo.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
+								echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
 			?>
         	<br><br> <?php }?>
 							   </center>
@@ -229,7 +229,7 @@ font-family: sans-serif;
 										   echo"<img src='images/$profile' ' width='120px' alt='' style='  border-radius: 50%;' >";	   
 									    }
 								else{
-									echo"<img src='images/avatar.jpg'  width='120px' alt='' style='  border-radius: 50%;'>";	   
+									echo"<img src='images/noimage.png'  width='120px' alt='' style='  border-radius: 50%;'>";	   
 														     	
 									} 
              	 	 ?>   </center>              <div class="" align="center">
@@ -261,11 +261,11 @@ font-family: sans-serif;
         	<?php if($numb!=0 ){
                                     if($profile!=""){echo"<img src='media/$profile' style='  max-width:50px'  alt=''><br><br>";}
 									else{
-										 echo"<img src='images/logo.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
+										 echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
 									    }	   
                                }else{
 
-								echo"<img src='images/logo.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
+								echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
 			?>
          <?php }?>
 							   </center>

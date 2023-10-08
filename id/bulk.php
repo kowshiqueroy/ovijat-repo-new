@@ -379,13 +379,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					     <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>Bulk registration upload from Excel</th>
+                <th>Bulk entry upload via CSV</th>
                              
                 <th>&nbsp;</th>
                  
                <?php
             				                                      
-		           echo"<th><a href='bulk.php?ids=1'> <i class='fa fa-download'></i></a>&nbsp;<a href='groups_.php'> <i class='fa fa-refresh'></i></a>&nbsp;<a href='administrator.php'> <i class='fa fa-close'></i></a></th>";										             			 	
+		           echo"<th><a href='bulk.php?ids=1'>  Edit this Sample CSV File <i class='fa fa-download'></i></a>&nbsp;</th>";										             			 	
 				                        
 		         ?>  
         
@@ -403,39 +403,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			   </div>
 					<!--//sreen-gallery-cursual---->
 			</div>
-		</div>
-		<div class="charts" >
-			<div class="mid-content-top charts-grids">
-				
-				<div class="alert alert-success">
-                             <i class="fa fa-info-circle"></i>&nbsp;Ensure that the file upload is in CSV Format Otherwise it will not save
-                              </div>
-					<!--//sreen-gallery-cursual---->
-			</div>
-		</div>
-		<div class="charts" >		
-			<div class="mid-content-top charts-grids" style="background-color:#00ACED">
-				<div class="middle-content" >
-						<h4 class="title">
-                            <i class="fa fa-info-circle"></i>&nbsp;Steps to save the file!
-
-						</h4>
-					<!-- start content_slider -->
-					     <div class="container">
-					     	<ol>
-					     		<li>Download the sample file format below  on the mail icon or on top of the to the right corner of this page on a downoad icon</li>
-					     		<li>Fill the employee details in the columns of the file</li>
-					     		<li>Save the file as CSV not as xls </li>
-					     		<li>Upload the file</li>
-					        </ol>
-                        </div>
-                        SAMPLE FORMAT&nbsp;<a href='bulk.php?ids=1'><i class="fa fa-download"></i></a>&nbsp;<br>Note:The web as file type will only be noted on excel files download from this application
-
-					
-			   </div>
-					<!--//sreen-gallery-cursual---->
-			</div>
-		</div>
+		
+		
 		<div class="charts" >		
 			<div class="mid-content-top charts-grids" >
 				
@@ -444,13 +413,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					      
 
         <form method="post" action="upload.php" enctype='multipart/form-data'>        		
-           <p style="margin-bottom:10px;">
-               <input id="datepicker-starting-view" type="text" class="form-control" data-zdp_readonly_element="false" placeholder="Select Submission Date" name="sbd" style='width:255px;'>  
-           </p>  
-             				                           
-            				                           <p style="margin-bottom:10px;">
-        			
-           </p> 
+           
         	<p style="margin-bottom:10px;">
         			<input name='file' type='file' id='file' >
            </p>  

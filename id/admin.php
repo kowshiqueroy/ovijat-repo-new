@@ -15,7 +15,7 @@ $retrieved = mysqli_query($db,$sqluser);
               $firstname = $found['Firstname'];
 		      $sirname= $found['Sirname'];
 			  $emails = $found['Email'];
-			  	   $id= $found['id'];			  
+			  	   $id= $found['Email'];			  
    
   	     
 }		 
@@ -358,12 +358,27 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	 Add HR Admin
+        	 Add/Modify HR Admin
         	</center></h4>
       </div>
 
       <div class="modal-body" >       	
       	     <form action="addhr.php" method="post" target="_blank">
+
+             <p>Existing HRs: 
+
+
+
+             <?php   $sqlid ="SELECT * FROM 	administrator ";
+			       $ret = mysqli_query($db,$sqlid);				                
+                     while($found = mysqli_fetch_array($ret))
+	                 {
+                       echo $found['Firstname'].': '.$found['Email'].' | ';
+                     }?>
+
+             </p>
+
+             <br><br>
   <div class="input-group" style="margin-bottom:10px">
     <span class="input-group-addon">First Name:</span>
     <input id="text" type="text" class="form-control" name="f" required>
@@ -662,10 +677,10 @@ $retrieve = mysqli_query($db,$sqluse);
          
               </li>
               <li class="treeview">
-              	  <a  href="bulk.php" ><i class='fa fa-print'></i>Bulk registration</a>
+              	  <a  href="bulk.php" ><i class='fa fa-upload'></i>Bulk registration</a>
                </li>
               <li class="treeview">
-              	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-print'></i>Bulk printing</a>
+              	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-plus'></i>Add/Modify HR</a>
                </li>
                           
                 </ul>
@@ -691,7 +706,40 @@ $retrieve = mysqli_query($db,$sqluse);
 				
 				<!--search-box-->
 				
-				
+				<div class="profile_details" >		
+					<ul>
+						<li class="dropdown profile_details_drop">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<div class="profile_img">	
+									<span class="prfil-img">
+										<?php   
+								
+												           	echo"<img src='images/man.jpg' height='50px' width='50px' alt=''>";	   
+														     	
+										
+										?>
+										 </span> 
+									<div class="user-name" >
+										<p style="color:#1D809F;"><?php if(isset($sirname))
+                                            {echo"<strong>".$firstname." ".$sirname."! </strong>";} ?>
+				                         </p>
+										<span>Admin &nbsp;<img src='images/dot.png' height='15px' width='15px' alt=''>
+										</span>
+									</div>
+									<i class="fa fa-angle-down lnr"></i>
+									<i class="fa fa-angle-up lnr"></i>
+									<div class="clearfix"></div>	
+								</div>	
+							</a>
+							<ul class="dropdown-menu drp-mnu">
+								 <!-- <li>
+                                  <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
+                                 </li> -->
+								<li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 				<div class="clearfix"> </div>				
 			</div>
 			<div class="clearfix"> </div>	

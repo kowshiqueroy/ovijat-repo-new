@@ -254,7 +254,13 @@ if (isset($_POST['orgupdate']))
     $resultn = mysqli_query($db, $sqln);
     if ($rowcount = mysqli_num_rows($resultn) != 0)
     {
-        move_uploaded_file($orgtmpName, 'media/' . $orgName);
+      
+      if($_POST["filed"]!=""){
+        move_uploaded_file($orgtmpName, 'media/' . $orgname);
+      
+      }
+      
+      
         $enter = "UPDATE Inorg SET name='$orgname',website='$orgwebsite',year='$year',email='$orgmail',Phone='$orgphone',pname='$orgName',content='$orgName',type='$orgType',size='$orgSize' WHERE id='$idz' ";
         $db->query($enter);
 
