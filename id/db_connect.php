@@ -50,9 +50,9 @@
                          
                         
 			   
-			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (id int(11) NOT NULL auto_increment,
+			    $stable4="CREATE TABLE IF NOT EXISTS Administrator (
                                   Firstname varchar(30)NOT NULL,Sirname varchar(30)NOT NULL,
-                                 Password varchar(30)NOT NULL,Email varchar(30)NOT NULL,PRIMARY KEY(id) )";
+                                 Password varchar(30)NOT NULL,Email varchar(30)NOT NULL,PRIMARY KEY(Email) )";
                                       $db->query($stable4);
 						
 			 	 	

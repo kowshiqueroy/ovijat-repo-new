@@ -7,6 +7,14 @@ require "vendor/autoload.php";
 
 include_once("db_connect.php");
 
+$profile= "";
+$cname = '';
+$cphone = '';
+$cemail = '';
+$cweb = '';
+$cyear = '';
+
+
 $sqluse ="SELECT * FROM Inorg WHERE id=1 ";
 $retrieve = mysqli_query($db,$sqluse);
     $numb=mysqli_num_rows($retrieve); 
@@ -28,7 +36,7 @@ echo '<center> <br><br>';
 		if($numb!=0 ){
 			if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
 			else{
-				 echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
+				 echo"<img src='images/noimage.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
 				}	   
 	   }else{
 
@@ -193,11 +201,11 @@ font-family: sans-serif;
         	<?php if($numb!=0 ){
                                     if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
 									else{
-										 echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
+										 echo"<img src='images/logo.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
 									    }	   
                                }else{
 
-								echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
+								echo"<img src='images/logo.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
 			?>
         	<br><br> <?php }?>
 							   </center>
@@ -221,7 +229,7 @@ font-family: sans-serif;
 										   echo"<img src='images/$profile' ' width='120px' alt='' style='  border-radius: 50%;' >";	   
 									    }
 								else{
-									echo"<img src='admin/images/profile.jpg'  width='120px' alt='' style='  border-radius: 50%;'>";	   
+									echo"<img src='images/avatar.jpg'  width='120px' alt='' style='  border-radius: 50%;'>";	   
 														     	
 									} 
              	 	 ?>   </center>              <div class="" align="center">
@@ -244,7 +252,7 @@ font-family: sans-serif;
             <div class="id-1" style="  margin-left:500px; border-style: solid;
   border-width: 1px; padding:30px;">
     	 
-                     	 <img src="images/qr.png" alt="Avatar" width="200px" height="175px" >        
+                     	 <img src="images/qr.png" alt="card page qr" width="200px" height="175px" >        
        <div class="container" align="center">
       <p style="margin:auto">Please scan the QR code to verify</p><br>
 
@@ -253,17 +261,17 @@ font-family: sans-serif;
         	<?php if($numb!=0 ){
                                     if($profile!=""){echo"<img src='media/$profile' style='  max-width:50px'  alt=''><br><br>";}
 									else{
-										 echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:50px'  ><br><br>";
+										 echo"<img src='images/logo.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
 									    }	   
                                }else{
 
-								echo"<img src='images/ovie.png' alt='Avatar' style='  max-width:50px'  ><br><br>";
+								echo"<img src='images/logo.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
 			?>
          <?php }?>
 							   </center>
 
 
-      	<h2 style="color:green;margin-left:2%;margin-top:-5%;">Ovijat Group</h2>
+      	<h2 style="color:green;margin-left:2%;margin-top:-5%;"><?php if(isset($id)){ echo$cname;} ?></h2>
       <p style="margin:auto">ID: <?php if(isset($id)){ echo$sid;} ?></p></p>
 	  <p style="margin-top:-5%;">NID: <?php if(isset($id)){ echo$nid;} ?></p>
 	  <p style="margin-top:-5%;">Joining Date: <?php if(isset($id)){ echo$jd;} ?></p>

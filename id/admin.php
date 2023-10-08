@@ -358,24 +358,29 @@ $retrieve = mysqli_query($db,$sqluse);
       <div class="modal-header" style="background:#222d32">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" style="font-weight: bold;color: #F0F0F0"><center>
-        	 PRINT IDs IN BULK
+        	 Add HR Admin
         	</center></h4>
       </div>
 
       <div class="modal-body" >       	
-      	     <form action="printbulk.php" method="post" target="_blank">
+      	     <form action="addhr.php" method="post" target="_blank">
   <div class="input-group" style="margin-bottom:10px">
-    <span class="input-group-addon">From</span>
-    <input id="text" type="number" class="form-control" name="startpoint" >
+    <span class="input-group-addon">First Name:</span>
+    <input id="text" type="text" class="form-control" name="f" required>
   </div>
   <div class="input-group" style="margin-bottom:10px">
-    <span class="input-group-addon">To</span>
-   <input type="number" class="form-control" name="endpoint" >
+    <span class="input-group-addon">Sur Name: </span>
+   <input type="text" class="form-control" name="s" required>
   </div>
-  <div class="input-group">
-    <span class="input-group-addon">Employee id starts @</span>
-    <input id="msg" type="text" class="form-control" name="receiptrange" placeholder="" value="<?php echo$idsx; ?>" readonly="readonly">
+  <div class="input-group" style="margin-bottom:10px">
+    <span class="input-group-addon">Mail: </span>
+   <input type="text" class="form-control" name="m" required >
   </div>
+  <div class="input-group" style="margin-bottom:10px">
+    <span class="input-group-addon">Password</span>
+   <input type="password" class="form-control" name="p" >
+  </div>
+ 
   
 
       </div>
@@ -686,51 +691,7 @@ $retrieve = mysqli_query($db,$sqluse);
 				
 				<!--search-box-->
 				
-				<div class="profile_details" >		
-					<ul>
-						<li class="dropdown profile_details_drop">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-								<div class="profile_img">	
-									<span class="prfil-img">
-										<?php   
-										$sql ="SELECT * FROM Profilepictures WHERE ids='$id' && Category='User'";
-                                                $rget = mysqli_query($db,$sql);
-												$num=mysqli_num_rows($rget);
-                                                if($num!=0){
-												                   while($found = mysqli_fetch_array($rget))
-	                                                                {
-                                                                       $profile= $found['name'];
-		                                                            }
-																	echo"<img src='admin/images/$profile' height='50px' width='50px' alt=''>";	   
-												             }
-												        else{
-												           	echo"<img src='admin/images/profile.png' height='50px' width='50px' alt=''>";	   
-														     	
-												             }
-										
-										?>
-										 </span> 
-									<div class="user-name" >
-										<p style="color:#1D809F;"><?php if(isset($sirname))
-                                            {echo"<strong>".$firstname." ".$sirname."! </strong>";} ?>
-				                         </p>
-										<span>Administrator&nbsp;<img src='admin/images/dot.png' height='15px' width='15px' alt=''>
-										</span>
-									</div>
-									<i class="fa fa-angle-down lnr"></i>
-									<i class="fa fa-angle-up lnr"></i>
-									<div class="clearfix"></div>	
-								</div>	
-							</a>
-							<ul class="dropdown-menu drp-mnu">
-								 <!-- <li>
-                                  <a data-toggle='modal' data-id='<?php echo$id; ?>' href='#Updatepicture' class='open-Updatepicture'><i class="fa fa-user"></i>Change profile picture</a>
-                                 </li> -->
-								<li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
-							</ul>
-						</li>
-					</ul>
-				</div>
+				
 				<div class="clearfix"> </div>				
 			</div>
 			<div class="clearfix"> </div>	
