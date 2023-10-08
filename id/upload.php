@@ -216,9 +216,9 @@ if (isset($_POST['orginitial']))
     $resultn = mysqli_query($db, $sqln);
     if ($rowcount = mysqli_num_rows($resultn) == 0)
     { //$date= date("d.m.y");
-        move_uploaded_file($orgtmpName, 'media/' . $orgName);
+        move_uploaded_file($orgtmpName, 'media/' . $orgname);
         $enter = "INSERT INTO Inorg (name,website,year,email,Phone,pname,size,content,type) 
-                               	     VALUES('$orgname','$orgwebsite','$year','$orgmail','$orgphone','$orgName','$orgSize','$orgName','$orgType')";
+                               	     VALUES('$orgname','$orgwebsite','$year','$orgmail','$orgphone','$orgname','$orgSize','$orgName','$orgType')";
         $db->query($enter);
 
         $_SESSION['regk'] = "Pamzey";
@@ -249,19 +249,25 @@ if (isset($_POST['orgupdate']))
     $orgtmpName = $_FILES['filed']['tmp_name'];
     $orgSize = $_FILES['filed']['size'];
     $orgType = $_FILES['filed']['type'];
-
+    echo "<script>alert('".$orgName."');</script>";
     $sqln = "SELECT * FROM Inorg  WHERE id='$idz' ";
     $resultn = mysqli_query($db, $sqln);
     if ($rowcount = mysqli_num_rows($resultn) != 0)
     {
-      
-      if($_POST["filed"]!=""){
+        
+    if ($orgName!==''){
         move_uploaded_file($orgtmpName, 'media/' . $orgname);
+        $enter = "UPDATE Inorg SET name='$orgname',website='$orgwebsite',year='$year',email='$orgmail',Phone='$orgphone',pname='$orgname',content='$orgName',type='$orgType',size='$orgSize' WHERE id='$idz' ";
+
       
+    }
+      
+      else{
+        $enter = "UPDATE Inorg SET name='$orgname',website='$orgwebsite',year='$year',email='$orgmail',Phone='$orgphone',content='$orgName' WHERE id='$idz' ";
+
       }
-      
-      
-        $enter = "UPDATE Inorg SET name='$orgname',website='$orgwebsite',year='$year',email='$orgmail',Phone='$orgphone',pname='$orgName',content='$orgName',type='$orgType',size='$orgSize' WHERE id='$idz' ";
+       
+       
         $db->query($enter);
 
         $_SESSION['regX'] = "Pamzey";
@@ -279,7 +285,11 @@ if (isset($_POST['orgupdate']))
 
 if (isset($_POST["bulk"]))
 {
+
+
     $file = $_FILES['file']['tmp_name'];
+
+    if ($file!=""){
     $handle = fopen($file, "r");
     $c = 0;
     $count = 0;
@@ -315,8 +325,18 @@ if (isset($_POST["bulk"]))
     }
     else
     {
-        echo "Sorry! There is some problem.";
+        echo "<script>alert('Sorry! There is some problem.');<script>";
+        header("Location:bulk.php");
     }
+
+    }
+    else
+    {
+        echo "<script>alert('Sorry! There is some problem.');<script>";
+        header("Location:bulk.php");
+    }
+
+
 
 }
 ?>

@@ -610,7 +610,7 @@ $retrieve = mysqli_query($db,$sqluse);
   </div> 
 
 
-<body class="cbp-spmenu-push">
+  <body class="cbp-spmenu-push">
 	<div class="main-content">
 	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
 		<!--left-fixed -navigation-->
@@ -634,7 +634,7 @@ $retrieve = mysqli_query($db,$sqluse);
 	                                     {
                                               $profile= $foundl['pname'];
 		                                  }
-										echo"<center><img src='media/$profile'  width='70%' height='140px' alt=''></center>";	   
+										echo"<center><img src='media/$profile'    height='120px' alt=''></center>";	   
                                }
 							else{
 														     	
@@ -649,7 +649,7 @@ $retrieve = mysqli_query($db,$sqluse);
            </h1>
            <?php } ?> 
 
-          </div>
+           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="sidebar-menu">
               <li class="header">
@@ -678,6 +678,9 @@ $retrieve = mysqli_query($db,$sqluse);
               </li>
               <li class="treeview">
               	  <a  href="bulk.php" ><i class='fa fa-upload'></i>Bulk registration</a>
+               </li>
+               <li class="treeview">
+              	  <a  href="database.php" ><i class='fa fa-user red'></i>Database</a>
                </li>
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-plus'></i>Add/Modify HR</a>
@@ -823,7 +826,7 @@ td{
             </tr>
         </thead>
         <tbody>
-        	 <?php   $sqlmember ="SELECT * FROM Users ORDER BY MStatus";
+        	 <?php   $sqlmember ="SELECT * FROM Users WHERE MStatus!='dissmissed' ORDER BY MStatus";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
@@ -838,7 +841,7 @@ td{
             
 
                       
-                      <td style='opacity:0;'>a</td>                 
+                      <td style='opacity:0;font-size:0px;'>active all</td>                 
                                        <td>$title $firstname $sirname</td>        	
                                        <td>$sid</td>
                                        <td>$dept</td>
@@ -871,7 +874,7 @@ td{
                       echo"<tr style='color:red'>  
 
             
-                      <td style='opacity:0;'>z</td>  
+                      <td style='opacity:0;font-size:0px;'>dissmissed all</td>  
                                        <td>$title $firstname $sirname</td>        	
                                        <td>$sid</td>
                                        <td>$dept</td>
@@ -900,7 +903,7 @@ td{
                       echo"<tr style='color:black'> 
 
             
-                      <td style='opacity:0;'>b</td> 
+                      <td style='opacity:0;font-size:0px;'>$mstatus active all</td>  
                                                            
                                        <td>$title $firstname $sirname</td>        	
                                        <td>$sid</td>

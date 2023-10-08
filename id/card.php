@@ -13,6 +13,7 @@ $cphone = '';
 $cemail = '';
 $cweb = '';
 $cyear = '';
+$cp='';
 
 
 $sqluse ="SELECT * FROM Inorg WHERE id=1 ";
@@ -26,6 +27,9 @@ $retrieve = mysqli_query($db,$sqluse);
 											  $cemail = $foundk['email'];
 											  $cweb = $foundk['website'];
 											  $cyear = $foundk['year'];
+
+											  
+											  $cp=$profile;
 		                                  }
 if(!isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){ header('location:index.php');
       exit;}
@@ -34,7 +38,12 @@ if(!isset($_COOKIE['adminid'])&&$_COOKIE['adminemail']){ header('location:index.
 	  if(!isset($_GET['id'])){ 
 echo '<center> <br><br>';
 		if($numb!=0 ){
-			if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
+			
+			
+			if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";
+			
+		
+			}
 			else{
 				 echo"<img src='images/noimage.png' alt='Avatar' style='  max-width:150px'  ><br><br>";
 				}	   
@@ -199,20 +208,20 @@ font-family: sans-serif;
   border-width: 1px; padding:30px;"   >
             	<center>
         	<?php if($numb!=0 ){
-                                    if($profile!=""){echo"<img src='media/$profile' style='  max-width:150px'  alt=''><br><br>";}
+                                    if($profile!=""){echo"<img src='media/$profile' style='  max-height:100px'  alt=''><br><br>";}
 									else{
-										 echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
+										 echo"<img src='images/noimage.png' alt='LOGO' style='  max-height:100px'  ><br><br>";
 									    }	   
                                }else{
 
-								echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:150px'  ><br><br>";
+								echo"<img src='images/noimage.png' alt='LOGO' style='  max-height:100px'  ><br><br>";
 			?>
         	<br><br> <?php }?>
 							   </center>
         	<center>
         <?php  
      $idx = $_GET['id'];
-      $sqlmember ="SELECT * FROM Users WHERE Staffid='$idx' ";
+      $sqlmember ="SELECT * FROM Users WHERE Staffid LIKE '%-$idx' OR Staffid = '$idx' ";
 			       $retrieve = mysqli_query($db,$sqlmember);
 				                    $count=0;
                      while($found = mysqli_fetch_array($retrieve))
@@ -221,21 +230,21 @@ font-family: sans-serif;
                        $id=$found['id'];$sid=$found['Staffid'];$dept=$found['Department'];$mail=$found['Email'];$phone=$found['Phone'];
 			                $count=$count+1;  $get_time=$found['Time']; $time=time(); $pass=$found['Staffid'];
 			              $names=$firstname." ".$sirname;
-						  $profile= $found['Picname'];$nid= $found['NID'];$jd= $found['Joining'];$dd= $found['Dissmissed'];
+						  $profile= $found['Picname'];$nid= $found['NID'];$jd= $found['Joining'];$dd= $found['Dissmissed'];$st= $found['MStatus'];
 					 }  	 
 
              	 	
              	 	if($profile!=""){          
-										   echo"<img src='images/$profile' ' width='120px' alt='' style='  border-radius: 50%;' >";	   
+										   echo"<img src='images/$profile' ' height='120px' alt='' style='  border-radius: 50%;' >";	   
 									    }
 								else{
-									echo"<img src='images/noimage.png'  width='120px' alt='' style='  border-radius: 50%;'>";	   
+									echo"<img src='images/noimage.png'  height='120px' alt='' style='  border-radius: 50%;'>";	   
 														     	
 									} 
              	 	 ?>   </center>              <div class="" align="center">
 
         <h3 style="">ID: <?php if(isset($id)){ echo$sid;} ?></h3>
-      	<h5 style="color:red;margin-top:-5%;"><?php if(isset($names)){ $namez=$title.' '.$names; echo $namez;} ?></h5>
+      	<h3 style="color:red;margin-top:-5%;"><?php if(isset($names)){ $namez=$title.' '.$names; echo $namez;} ?></h3>
 		  <p style="margin-top:-5%;"><?php if(isset($id)){ echo$rank;} ?></p>
 		  <p style="margin-top:-5%;"><?php if(isset($id)){ echo$dept;} ?></p>
 		  <hr align="center" style="border: 1px solid black;width:100%;margin-top:3%"></hr> 
@@ -252,42 +261,56 @@ font-family: sans-serif;
             <div class="id-1" style="  margin-left:500px; border-style: solid;
   border-width: 1px; padding:30px;">
     	 
-                     	 <img src="images/qr.png" alt="card page qr" width="200px" height="175px" >        
+                     	 <img src="images/qr.png" onerror="this.src='images/noimage.png';" alt="card page qr" height="150px" style="margin-top:-5%;" >        
        <div class="container" align="center">
       <p style="margin:auto">Please scan the QR code to verify</p><br>
 
 
 	  <center>
-        	<?php if($numb!=0 ){
-                                    if($profile!=""){echo"<img src='media/$profile' style='  max-width:50px'  alt=''><br><br>";}
+		
+	  <?php 
+	  
+	  if($numb!=0 ){
+                                    if($profile!=""){echo"<img src='media/$cp' style='margin-top:-5%;  max-height:70px'  alt='sgsgs'><br><br>";}
 									else{
-										 echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
+										 echo"<img src='images/noimage.png' alt='Avatar' style='margin-top:-5%;  max-height:70px'  ><br><br>";
 									    }	   
                                }else{
 
-								echo"<img src='images/noimage.png' alt='LOGO' style='  max-width:50px'  ><br><br>";
+								echo"<img src='images/noimage.png' alt='Avatar' style='margin-top:-5%;  max-height:70px'  ><br><br>";
 			?>
-         <?php }?>
+        	<br><br> <?php }
+			
+			
+			?>
 							   </center>
 
 
-      	<h2 style="color:green;margin-left:2%;margin-top:-5%;"><?php if(isset($id)){ echo$cname;} ?></h2>
-      <p style="margin:auto">ID: <?php if(isset($id)){ echo$sid;} ?></p></p>
-	  <p style="margin-top:-5%;">NID: <?php if(isset($id)){ echo$nid;} ?></p>
-	  <p style="margin-top:-5%;">Joining Date: <?php if(isset($id)){ echo$jd;} ?></p>
+      	<h3 style="color:green;margin-top:-5%;"><?php if(isset($id)){ echo$cname;} ?></h3>
+      <p style="margin-top:-2%;">ID: <?php if(isset($id)){ echo$sid;} ?></p></p>
+	  <p style="margin-top:-3%;">NID: <?php if(isset($id)){ echo$nid;} ?></p>
+	  <p style="margin-top:-3%;">Joining Date: <?php if(isset($id)){ echo$jd;} ?></p>
 	<?php
-	if ($dd!==""){
-	echo'	<h3 style="margin-top:-5%; color:red;">Expired Date: ';
-	if(isset($id) ){ echo$dd . '</h3>';}
-	} ?>
 	
-	 
+
+	if(isset($id) && $st=='dissmissed'){ 
+		
+		
+		
+		
+		
+		echo '<h2 style="margin-top:-5%;margin-bottom:2%; color:red;">Expired Date: '.$dd . '</h2>';
 	
-	  <p style="margin-top:-5%;">Phone: <?php if(isset($id)){ echo$phone;} ?></p>
-		  <p style="margin-top:-5%;">Mail: <?php if(isset($id)){ echo$mail;} ?></p>
+	}
+	?>
 	
-        <hr align="center" style="border: 1px solid black;width:80%;margin-top:3%"></hr> 
-		<p align="center" style="margin-top:0%">IF FOUND PLEASE CONTACT/RETURN TO</p>
+	
+	
+	  <p style="margin-top:-3%;">Phone: <?php if(isset($id)){ echo$phone;} ?></p>
+		  <p style="margin-top:-3%;">Mail: <?php if(isset($id)){ echo$mail;} ?></p>
+	
+        <hr align="center" style="border: 1px solid green;width:100%;margin-top:3%"></hr> 
+		<p align="center" style="margin-top:0%; color:red;">IF FOUND PLEASE CONTACT/RETURN TO</p>
       	<p align="center" style="margin-top:-2%"><?php if(isset($id)){ echo$cyear;} ?></p>
 		 
 		  
