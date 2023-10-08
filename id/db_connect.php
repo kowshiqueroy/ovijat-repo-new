@@ -1,6 +1,7 @@
 <?php
- 
- $db = new mysqli("localhost","root","");
+//ovijattt_staff_db
+ //ovijattt_admin
+ $db = new mysqli("localhost","root",""); //staff_dbstaff_dbstaff_dbstaff_dbstaff_dbstaff_dbstaff_dbstaff_dbstaff_dbstaff_db
    if($db->connect_errno > 0){
          die('Unable to connect to database [' . $db->connect_error . ']');  } 
      
