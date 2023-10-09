@@ -408,7 +408,7 @@ if (isset($_COOKIE["wrong"])){
                         </div>
                         <div class="input-block">
                             <label for="login-password">Password</label>
-                            <input name="password" type="password" value="itovijat12" required>
+                            <input name="password" type="password" required>
                         </div>
                     </fieldset>
                     <button type="submit" class="btn btn-default" name="login_button" id="login_button">
