@@ -133,21 +133,13 @@ else{
     fclose($handle);
 
 
-/*
+
 $file_url = 'backup/'.$n;  
 header('Content-Type: application/octet-stream');  
 header("Content-Transfer-Encoding: utf-8");   
 header("Content-disposition: attachment; filename=\"" . basename($file_url) . "\"");   
 readfile($file_url);  
-*/
-echo'
 
-<script>
-
-alert("Success");
-</script>
-
-';
 
 $folderName="backup/";
 if (file_exists($folderName)) {
@@ -165,6 +157,16 @@ if (file_exists($folderName)) {
 
 //header('Location: admin.php');
 
+echo'
+
+<script>
+
+alert("Success. Saved to Local & mailed to IT");
+window.location = "admin.php";
+</script>
+
+';
+
   }
 
   else{
@@ -172,12 +174,13 @@ if (file_exists($folderName)) {
 
     echo'
 
-<script>
-
-alert("Failed");
-</script>
-
-';
+    <script>
+    
+    alert("Failed");
+    window.location = "admin.php";
+    </script>
+    
+    ';
 
 //header('Location: admin.php');
   }

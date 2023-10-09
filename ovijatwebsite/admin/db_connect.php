@@ -7,9 +7,27 @@ $sd="localhost";
 //$pd="B?b)*^XhRc6j";
 //$dbd="ovijattt_staff_db";
 
+
+if(
+
+$_SERVER['SERVER_NAME']=="localhost" &&
+
+   $_SERVER['HTTP_HOST']=="localhost"
+
+
+) {
 $ud="root";
 $pd="";
 $dbd="staff_db";
+}
+
+else{
+$ud="ovijattt_admin";
+$pd="B?b)*^XhRc6j";
+$dbd="ovijattt_staff_db";
+
+
+}
 
  $db = new mysqli("$sd","$ud","$pd");
  //$dbs = new mysqli("$sd","$ud","$pd",$dbd);
