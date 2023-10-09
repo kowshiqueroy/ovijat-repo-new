@@ -1,23 +1,94 @@
 
 <?php include 'head.php'; ?>
 
+<style>
 
+
+.column {
+    width: 100%;
+    margin-top:-80px;
+  }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-top:-50px;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+
+ 
+}
+</style>
 <section class="contact-section section-padding" id="section_6">
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <div class="col-lg-12 col-12 mb-5 mb-lg-0">
                            
-                            <div >
-                      <p>  <iframe width="650" height="600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTzIXPnOhDpz2p1iC2EcnlDKFT2oM456tx5bT0SX1UVRawykSSnv4pt9rWp2a8ljqyNnjFcuMHOnNw/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-                    
-                    
-                    
-                      </p></div>
+                       
+  <div class="column">
+  <br><br>
+  <center><h2>Recent Job Posts</h2>
+
+</center>
+
+<br><br>
+    <table>
+      <tr>
+        <th>Deadline</th>
+        <th>Job Title</th>
+        <th>Details</th>
+        <th>Apply</th>
+    
+      </tr>
+     
+
+
+<?php
+include'admin/db_connect.php';
+
+$dt=date('Y.m.d');
+$sqlmember = "SELECT * FROM Jobs WHERE job_deadline > '$dt'";;
+ 
+
+$retrieve = mysqli_query($db,$sqlmember);
+                 $count=0;
+  while($row = mysqli_fetch_array($retrieve))
+  {
+    echo "<tr> <td>" . $row["job_deadline"]. "</td><td>" . $row["job_title"]. "</td><td>" . $row["job_details"]. "</td><td><a href='#form'><i class='fa fa-paper-plane-o' style='font-size:24px'></i></a></td></tr>";
+  }
+
+?>
+    
+    </table>
+
+
+
+
+
+
+</div></div>
                            
                         </div>
 
-                        <div class="col-lg-4 col-12 mx-auto">
+
+                        <div class="col-lg-8 col-12 mx-auto" id="form" style="padding-top:50px;">
                             <form class="custom-form contact-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" role="form">
                                 <h2>Career form</h2>
 

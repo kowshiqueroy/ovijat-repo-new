@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AnimaForm</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+ 
 </head>
 <script>
 
@@ -22,7 +22,7 @@ a();
 
     body {
         margin: 0;
-        font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+       
         background: black;
     }
 
