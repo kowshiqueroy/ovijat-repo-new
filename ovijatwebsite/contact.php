@@ -81,10 +81,18 @@ $subject ="Contact Request : ".$_POST['subject'];
 $msg =$_POST['name'] . " ".$_POST['email'] ." " .$_POST['phone'] . " " . $_POST['message'];
 
 
-if (mail($to, $subject, $msg))
+$head="From: Ovijat Group< it@ovijatfood.com>\r\nReply-To: ".$_POST['email'];
+$sub=$subject;
+
+if(
+mail($to,$sub,$msg,$head))
+
+
 {
 
     echo '<script>alert("Successful Submission")</script>';
+    $head="From: Ovijat Group< it@ovijatfood.com>\r\nReply-To: ".$to;
+    mail($_POST['email'],"Received Your ".$sub,"Submission: ".$msg,$head);
 }
 else{
     echo '<script>alert("Failed Submission")</script>';

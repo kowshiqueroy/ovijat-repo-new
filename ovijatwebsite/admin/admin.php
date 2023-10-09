@@ -691,7 +691,9 @@ $retrieve = mysqli_query($db,$sqluse);
               <li class="treeview">
               	  <a data-toggle='modal' href="#Taxreceipted" class="Open-Taxreceipted"><i class='fa fa-plus'></i>Add/Modify HR</a>
                </li>
-                          
+               <li class="treeview">
+              	  <a  href="backup.php" ><i class='fa fa-database'></i>DB Backup</a>
+               </li>       
                 </ul>
           </div>
           <!-- /.navbar-collapse -->

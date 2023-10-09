@@ -258,7 +258,7 @@ input[type=submit]:hover {
 <div class="row">
   <div class="column">
    
-<h3>Post a new NOtice</h3>
+<h3>Post a new Notice</h3>
 <br>
 
 
@@ -295,10 +295,9 @@ if(isset($_POST['submit'])) {
     $t=$_POST["jobtitle"];
     $jd=$_POST["details"];
 
-    $enter="INSERT INTO Notices (notice_date,notice_title,notice_details) VALUES('$d','$t','$jd')";
-    $db->query($enter);
+  
 
-    $test="";
+    $notice_person="";
     $sqlmember ="SELECT * FROM Users WHERE MStatus!='dissmissed' ORDER BY MStatus";
     $retrieve = mysqli_query($db,$sqlmember);
                      $count=0;
@@ -310,14 +309,28 @@ echo $found['Email'];
 
 $to=$found['Email'];
 $subject="Notice: ".$t;
-$msg=$jd;
-if (mail($to, $subject, $msg))
+$msg=$jd." by: ".$_COOKIE['adminemail'];
+
+
+
+
+
+$head="From: Ovijat Group< it@ovijatfood.com>\r\nReply-To: ".$_COOKIE['adminemail'];
+$sub=$subject;
+
+if(
+mail($to,$sub,$msg,$head))
+
+
+
+
+
 {
 
-  
+	$notice_person.=$to.";";
 }
 else{
-    echo '<script>alert("Failed Mailing")</script>';
+    echo '<script>alert("Failed Mailing to: '.$to.'")</script>';
 
 }
 
@@ -325,7 +338,8 @@ else{
 
       }
 
-
+	  $enter="INSERT INTO Notices (notice_date,notice_title,notice_details,notice_person) VALUES('$d','$t','$jd','$notice_person')";
+	  $db->query($enter);
 
   echo "
   
@@ -354,6 +368,7 @@ else{
         <th>Posted</th>
         <th>Title</th>
         <th>Details</th>
+		<th>Persons</th>
     
       </tr>
      
@@ -367,7 +382,7 @@ $retrieve = mysqli_query($db,$sqlmember);
                  $count=0;
   while($row = mysqli_fetch_array($retrieve))
   {
-    echo "<tr> <td>" . $row["notice_date"]. "</td><td>" . $row["notice_title"]. "</td><td>" . $row["notice_details"]. "</td></tr>";
+    echo "<tr> <td>" . $row["notice_date"]. "</td><td>" . $row["notice_title"]. "</td><td>" . $row["notice_details"]. "</td><td style='font-size:10px;'>".$row["notice_person"]."</tr>";
   }
 
 ?>

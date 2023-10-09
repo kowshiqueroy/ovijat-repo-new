@@ -12,6 +12,7 @@ $pd="";
 $dbd="staff_db";
 
  $db = new mysqli("$sd","$ud","$pd");
+ //$dbs = new mysqli("$sd","$ud","$pd",$dbd);
  if($db->connect_errno > 0){
        die('Unable to connect to database [' . $db->connect_error . ']');  } 
    
@@ -52,6 +53,7 @@ $dbd="staff_db";
                                 notice_date varchar(200)NOT NULL,
                                 notice_title varchar(200)NOT NULL,
                                 notice_details varchar(400)NOT NULL,
+                                notice_person varchar(5000)NOT NULL,
                               
                                 PRIMARY KEY(id) )";
                                $db->query( $notice);
