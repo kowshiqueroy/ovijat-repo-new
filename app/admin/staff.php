@@ -131,11 +131,11 @@ if (isset($_GET['delete'])) {
 					<table class="data-table table stripe hover nowrap">
 						<thead>
 							<tr>
-								<th class="table-plus">FULL NAME</th>
-								<th>EMAIL</th>
-								<th>DEPARTMENT</th>
-								<th>POSITION</th>
-								<th>AVE. LEAVE</th>
+								<th class="table-plus">Name</th>
+								<th>Email</th>
+								<th>Department</th>
+								<th>Position</th>
+								<th>ID Card</th>
 								<th class="datatable-nosort">ACTION</th>
 							</tr>
 						</thead>
@@ -161,7 +161,7 @@ if (isset($_GET['delete'])) {
 								<td><?php echo $row['EmailId']; ?></td>
 	                            <td><?php echo $row['DepartmentName']; ?></td>
 								<td><?php echo $row['role']; ?></td>
-								<td><?php echo $row['Av_leave']; ?></td>
+								<td><?php echo $row['idcard']; ?></td>
 								<td>
 									<div class="dropdown">
 										<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -169,7 +169,7 @@ if (isset($_GET['delete'])) {
 										</a>
 										<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 											<a class="dropdown-item" href="edit_staff.php?edit=<?php echo $row['emp_id'];?>"><i class="dw dw-edit2"></i> Edit</a>
-											<a class="dropdown-item" href="staff.php?delete=<?php echo $row['emp_id'] ?>"><i class="dw dw-delete-3"></i> Delete</a>
+											<a class="dropdown-item" href="idcard.php?staffid=<?php echo $row['emp_id'] ?>&company=<?php echo $_SESSION['company2'] ?>"><i class="dw dw-print"></i> ID PDF</a>
 										</div>
 									</div>
 								</td>

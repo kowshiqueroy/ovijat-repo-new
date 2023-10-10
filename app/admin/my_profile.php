@@ -29,8 +29,9 @@ if (isset($_POST["update_image"])) {
 	$image = $_FILES['image']['name'];
 
 	if(!empty($image)){
-		move_uploaded_file($_FILES['image']['tmp_name'], '../uploads/'.$image);
-		$location = $image;	
+		$imagename="img-".$session_id.$_SESSION['company2'].$image;
+		move_uploaded_file($_FILES['image']['tmp_name'], '../uploads/'.$imagename);
+		$location = $imagename;	
 	}
 	else {
 		echo "<script>alert('Please Select Picture to Update');</script>";

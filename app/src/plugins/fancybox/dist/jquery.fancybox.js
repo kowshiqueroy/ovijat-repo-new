@@ -70,7 +70,7 @@
         ],
 
         // Detect "idle" time in seconds
-        idleTime : 3,
+        idleTime : 1,
 
         // Should display buttons at top right corner of the content
         // If 'auto' - they will be created for content having type 'html', 'inline' or 'ajax'
@@ -140,7 +140,7 @@
         animationEffect : "zoom",
 
         // Duration in ms for open/close animation
-        animationDuration : 500,
+        animationDuration : 100,
 
         // Should image change opacity while zooming
         // If opacity is "auto", then opacity will be changed if image and thumbnail have different aspect ratios
@@ -160,7 +160,7 @@
         transitionEffect : "fade",
 
         // Duration in ms for transition animation
-        transitionDuration : 366,
+        transitionDuration : 100,
 
         // Custom CSS class for slide element
         slideClass : '',
@@ -4222,7 +4222,7 @@
 		},
 		slideShow : {
 			autoStart : false,
-            speed     : 3000
+            speed     : 10000
 		}
 	});
 

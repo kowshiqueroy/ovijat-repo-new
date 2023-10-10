@@ -11,6 +11,59 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
+					
+				<li>
+						<div class="dropdown-divider"></div>
+					</li>
+					<li>
+						<div class="sidebar-small-cap">Admin</div>
+					</li>
+
+
+					<li class="dropdown">
+						<a href="admin_dashboard.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
+						</a>
+						
+					</li>
+					<li class="dropdown">
+						<a href="company_details.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-house-1"></span><span class="mtext">Company Details</span>
+						</a>
+						
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">HR</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="add_staff.php">New HR</a></li>
+							<li><a href="staff.php">Manage HR</a></li>
+						</ul>
+					</li>
+
+
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-apartment"></span><span class="mtext"> Leave </span>
+						</a>
+						<ul class="submenu">
+							
+							<li><a href="leaves.php">All Leave</a></li>
+							<li><a href="pending_leave.php">Pending Leave</a></li>
+							<li><a href="approved_leave.php">Approved Leave</a></li>
+							<li><a href="rejected_leave.php">Rejected Leave</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<div class="dropdown-divider"></div>
+					</li>
+					<li>
+						<div class="sidebar-small-cap">HRM</div>
+					</li>
+					<li>
 					<li class="dropdown">
 						<a href="admin_dashboard.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
@@ -56,10 +109,17 @@
 						<div class="sidebar-small-cap">Extra</div>
 					</li>
 					<li>
-						<a href="https://kpro.netlify.app/" class="dropdown-toggle no-arrow">
+						<a href="" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-edit-2"></span><span class="mtext">Visit Us</span>
 						</a>
 					</li>
+					<li>
+						<div class="dropdown-divider"></div>
+					</li>
+					<li>
+						<div class="sidebar-small-cap">Extra</div>
+					</li>
+					<li>
 				</ul>
 			</div>
 		</div>

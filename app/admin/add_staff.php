@@ -15,24 +15,39 @@
 	$leave_days=$_POST['leave_days']; 
 	$user_role=$_POST['user_role']; 
 	$phonenumber=$_POST['phonenumber']; 
+
 	$status=1;
+
+	$idcard=$_POST['idcard']; 
+	$nid=$_POST['nid']; 
+	$bg=$_POST['bg']; 
+	$joining=$_POST['joining']; 
+	$dissmiss='No';
+
 
 	 $query = mysqli_query($conn,"select * from tblemployees where EmailId = '$email'")or die(mysqli_error());
 	 $count = mysqli_num_rows($query);
      
      if ($count > 0){ ?>
-	 <script>
-	 alert('Data Already Exist');
-	</script>
-	<?php
+<script>
+	alert('Data Already Exist');
+</script>
+<?php
       }else{
-        mysqli_query($conn,"INSERT INTO tblemployees(FirstName,LastName,EmailId,Password,Gender,Dob,Department,Address,Av_leave,role,Phonenumber,Status, location) VALUES('$fname','$lname','$email','$password','$gender','$dob','$department','$address','$leave_days','$user_role','$phonenumber','$status', 'NO-IMAGE-AVAILABLE.jpg')         
-		") or die(mysqli_error()); ?>
-		<script>alert('Staff Records Successfully  Added');</script>;
-		<script>
-		window.location = "staff.php"; 
-		</script>
-		<?php   }
+        mysqli_query($conn,"INSERT INTO tblemployees(FirstName,
+		LastName,EmailId,Password,Gender,Dob,Department,Address,Av_leave,role,Phonenumber,
+		Status, location,idcard,nid,bg,joining,dissmiss) 
+		VALUES('$fname','$lname','$email','$password','$gender',
+		'$dob','$department','$address','$leave_days','$user_role',
+		'$phonenumber','$status', 'NO-IMAGE-AVAILABLE.jpg'
+		,'$idcard','$nid','$bg','$joining','$dissmiss')") or die(mysqli_error()); ?>
+<script>
+	alert('Staff Records Successfully  Added');
+</script>;
+<script>
+	window.location = "staff.php";
+</script>
+<?php   }
 }
 
 ?>
@@ -93,20 +108,23 @@
 								<div class="row">
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
-											<label >First Name :</label>
-											<input name="firstname" type="text" class="form-control wizard-required" required="true" autocomplete="off">
+											<label>First Name :</label>
+											<input name="firstname" type="text" class="form-control wizard-required"
+												required="true" autocomplete="off">
 										</div>
 									</div>
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
-											<label >Last Name :</label>
-											<input name="lastname" type="text" class="form-control" required="true" autocomplete="off">
+											<label>Last Name :</label>
+											<input name="lastname" type="text" class="form-control" required="true"
+												autocomplete="off">
 										</div>
 									</div>
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
 											<label>Email Address :</label>
-											<input name="email" type="email" class="form-control" required="true" autocomplete="off">
+											<input name="email" type="email" class="form-control" required="true"
+												autocomplete="off">
 										</div>
 									</div>
 								</div>
@@ -114,23 +132,46 @@
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
 											<label>Password :</label>
-											<input name="password" type="password" placeholder="**********" class="form-control" required="true" autocomplete="off">
+											<input name="password" type="password" placeholder="**********"
+												class="form-control" required="true" autocomplete="off">
 										</div>
 									</div>
-									<div class="col-md-4 col-sm-12">
+									<div class="col-md-2 col-sm-12">
 										<div class="form-group">
 											<label>Gender :</label>
-											<select name="gender" class="custom-select form-control" required="true" autocomplete="off">
-												<option value="">Select Gender</option>
+											<select name="gender" class="custom-select form-control" required="true"
+												autocomplete="off">
+
 												<option value="male">Male</option>
 												<option value="female">Female</option>
+												<option value="">Other</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-2 col-sm-12">
+										<div class="form-group">
+											<label>Blood :</label>
+											<select name="bg" class="custom-select form-control" required="true"
+												autocomplete="off">
+
+												<option value="O+">O+</option>
+												<option value="O-">O-</option>
+												<option value="O+">A+</option>
+												<option value="O-">A-</option>
+												<option value="O+">B+</option>
+												<option value="O-">B-</option>
+												<option value="O+">AB+</option>
+												<option value="O-">AB-</option>
+
 											</select>
 										</div>
 									</div>
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
 											<label>Phone Number :</label>
-											<input name="phonenumber" type="text" class="form-control" required="true" autocomplete="off">
+											<input name="phonenumber" type="text" class="form-control" required="true"
+												autocomplete="off">
 										</div>
 									</div>
 								</div>
@@ -138,57 +179,88 @@
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
 											<label>Date Of Birth :</label>
-											<input name="dob" type="text" class="form-control date-picker" required="true" autocomplete="off">
+											<input name="dob" type="text" class="form-control date-picker"
+												required="true" autocomplete="off">
 										</div>
 									</div>
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
 											<label>Address :</label>
-											<input name="address" type="text" class="form-control" required="true" autocomplete="off">
+											<input name="address" type="text" class="form-control" required="true"
+												autocomplete="off">
 										</div>
 									</div>
+
 									<div class="col-md-4 col-sm-12">
 										<div class="form-group">
+											<label>NID :</label>
+											<input name="nid" type="text" class="form-control" required="true"
+												autocomplete="off">
+										</div>
+									</div>
+
+								</div>
+
+								<div class="row">
+
+									<div class="col-md-2 col-sm-12">
+										<div class="form-group">
+											<label>User Role :</label>
+											<select name="user_role" class="custom-select form-control" required="true"
+												autocomplete="off">
+												<option value="Staff">Staff</option>
+												<option value="HOD">HOD</option>
+												<option value="Admin">Admin</option>
+
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-2 col-sm-12">
+										<div class="form-group">
 											<label>Department :</label>
-											<select name="department" class="custom-select form-control" required="true" autocomplete="off">
-												<option value="">Select Department</option>
-													<?php
+											<select name="department" class="custom-select form-control" required="true"
+												autocomplete="off">
+												<?php
 													$query = mysqli_query($conn,"select * from tbldepartments");
 													while($row = mysqli_fetch_array($query)){
 													
 													?>
-													<option value="<?php echo $row['DepartmentShortName']; ?>"><?php echo $row['DepartmentName']; ?></option>
-													<?php } ?>
+												<option value="<?php echo $row['DepartmentShortName']; ?>">
+													<?php echo $row['DepartmentShortName']; ?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div>
-								</div>
 
-								<div class="row">
-									<div class="col-md-4 col-sm-12">
+									<div class="col-md-2 col-sm-12">
+										<div class="form-group">
+											<label>Joining :</label>
+											<input name="joining" type="text" class="form-control date-picker"
+												required="true" autocomplete="off">
+										</div>
+									</div>
+									<div class="col-md-2 col-sm-12">
+										<div class="form-group">
+											<label>ID Card :</label>
+											<input name="idcard" type="number" value="30" class="form-control"
+												required="true" autocomplete="off">
+										</div>
+									</div>
+									<div class="col-md-2 col-sm-12">
 										<div class="form-group">
 											<label>Staff Leave Days :</label>
-											<input name="leave_days" type="number" class="form-control" required="true" autocomplete="off">
-										</div>
-									</div>
-									
-									<div class="col-md-4 col-sm-12">
-										<div class="form-group">
-											<label>User Role :</label>
-											<select name="user_role" class="custom-select form-control" required="true" autocomplete="off">
-												<option value="">Select Role</option>
-												<option value="Admin">Admin</option>
-												<option value="HOD">HOD</option>
-												<option value="Staff">Staff</option>
-											</select>
+											<input name="leave_days" type="number" value="30" class="form-control"
+												required="true" autocomplete="off">
 										</div>
 									</div>
 
-									<div class="col-md-4 col-sm-12">
+									<div class="col-md-2 col-sm-12">
 										<div class="form-group">
 											<label style="font-size:16px;"><b></b></label>
 											<div class="modal-footer justify-content-center">
-												<button class="btn btn-primary" name="add_staff" id="add_staff" data-toggle="modal">Add&nbsp;Staff</button>
+												<button class="btn btn-primary" name="add_staff" id="add_staff"
+													data-toggle="modal">Add&nbsp;Staff</button>
 											</div>
 										</div>
 									</div>
@@ -205,4 +277,5 @@
 	<!-- js -->
 	<?php include('includes/scripts.php')?>
 </body>
+
 </html>
