@@ -1,137 +1,149 @@
 <?php
-include 'index-head.php';
 
-
-
-
-session_start();
-if ( isset($_SESSION["last_login_time"]) AND (time()- (int)$_SESSION["last_login_time"]) <30 ){ 
-
-
-
-	header('location: admin/dashboard.php');
-
-
-
-}
-
-else {
-
+include('includes/config.php');
+if(isset($_POST['signin']))
+{
+	$username=$_POST['username'];
 	
+	$password=md5($_POST['password']);
 
+	$sql ="SELECT * FROM tblemployees where EmailId ='$username' AND Password ='$password'";
+	$query= mysqli_query($conn, $sql);
+	$count = mysqli_num_rows($query);
+	if($count > 0)
+	{
+		while ($row = mysqli_fetch_assoc($query)) {
+		    if ($row['role'] == 'Admin') {
+		    	$_SESSION['alogin']=$row['emp_id'];
+		    	$_SESSION['arole']=$row['Department'];
+			 	echo "<script type='text/javascript'> document.location = 'admin/admin_dashboard.php'; </script>";
+		    }
+		    elseif ($row['role'] == 'Staff') {
+		    	$_SESSION['alogin']=$row['emp_id'];
+		    	$_SESSION['arole']=$row['Department'];
+			 	echo "<script type='text/javascript'> document.location = 'staff/index.php'; </script>";
+		    }
+		    else {
+		    	$_SESSION['alogin']=$row['emp_id'];
+		    	$_SESSION['arole']=$row['Department'];
+			 	echo "<script type='text/javascript'> document.location = 'heads/index.php'; </script>";
+		    }
+		}
+
+	} 
+	else{
+	  
+	  echo "<script>alert('Invalid Details');</script>";
+
+	}
 
 }
-
-
-
+// $_SESSION['alogin']=$_POST['username'];
+// 	echo "<script type='text/javascript'> document.location = 'changepassword.php'; </script>";
 ?>
 
-<link rel="stylesheet" href="login.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html>
 
-<center>
-<h2>You are loged out</h2>
+<head>
+	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>ACI Leave Manager</title>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+	<!-- Site favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="action_login.php" method="POST">
-   
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <?php
-	$dbhost = "localhost";
-	$dbuser = "root";
-	$dbpass = "";
-	$db = "app_db";
-	$con = mysqli_connect($dbhost, $dbuser, $dbpass , $db) or die($con);
-?>
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-    <div class="container">
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-119386393-1');
+	</script>
+</head>
 
+<body class="login-page">
+	<div class="login-header box-shadow">
+		<div class="container-fluid d-flex justify-content-between align-items-center">
+			<div class="brand-logo">
+				<a href="login.html">
+					<img src="vendors/images/deskapp-logo-svg.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6 col-lg-7">
+					<img src="vendors/images/login-page-img.png" alt="">
+				</div>
+				<div class="col-md-6 col-lg-5">
+					<div class="login-box bg-white box-shadow border-radius-10">
+						<div class="login-title">
+							<h2 class="text-center text-primary">Welcome To LeavePortal</h2>
+						</div>
+						<form name="signin" method="post">
+							<div class="input-group custom">
+								
+								<div class="input-group custom">
+									<input type="text" class="form-control form-control-lg" placeholder="Email ID"
+										name="username" id="username">
+									<div class="input-group-append custom">
+										<span class="input-group-text"><i class="icon-copy fa fa-envelope-o"
+												aria-hidden="true"></i></span>
+									</div>
+								</div>
+								<div class="input-group custom">
+									<input type="password" class="form-control form-control-lg" placeholder="**********"
+										name="password" id="password">
+									<div class="input-group-append custom">
+										<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
+									</div>
+								</div>
+								<div class="row pb-30">
 
+									<div class="col-6">
+										<div class="forgot-password"><a href="forgot-password.html">Forgot Password</a>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="input-group mb-0">
+											<input class="btn btn-primary btn-lg btn-block" name="signin" id="signin"
+												type="submit" value="Sign In">
+										</div>
+									</div>
+								</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- js -->
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+</body>
 
-    <label for="f1">Company</label>
-				
-    <input type="text" placeholder="Enter company name" name="c" id="f1" required>
-
-
-
-    <label for="f2">Role</label>
-		<select class="form-control" name="r" id="f2" required>
-			<option value="">Select</option>
-				
-		</select>
-    <br>
-	<br>
-
-			
-
-
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="u" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="p" required>
-        
-      <button type="submit">Login</button>
-    
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<br>
-<br>
-
-<h2>OR<br>You Can</h2>
-
-<button onclick = "window.location.href='setupcompany.php';" style="width:auto;">Setup Your Company</button>
-<center>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-<script type="text/javascript">
-    $(document).ready(function(){
-      // f1 dependent ajax
-      $("#f1").on("change",function(){
-        var d1 = String($(this).val());
-
-        
-        $.ajax({
-          url :"action.php",
-          type:"POST",
-          cache:false,
-          data:{d1:d1},
-          success:function(data){
-            $("#f2").html(data);
-          }
-        });			
-      });
-
-     
-    });
-
-    
-  
-
-
-  </script>
-
-<?php
-include 'index-foot.php';
-?>
+</html>
