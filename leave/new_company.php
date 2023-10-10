@@ -54,7 +54,7 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-box bg-white box-shadow border-radius-10">
 						<div class="login-title">
-							<h2 class="text-center text-primary">Welcome</h2>
+							<h2 class="text-center text-primary">new</h2>
 						</div>
 						<form name="signin" method="get" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> >
 							<div class="input-group custom">
@@ -69,7 +69,7 @@
 								<div class="row">
 
 									<div class="col-6">
-										<div class=""><a href="new_company.php">New Company Setup</a>
+										<div class=""><a href="forgot-password.html">New Company Setup</a>
 										</div>
 									</div>
 								</div>

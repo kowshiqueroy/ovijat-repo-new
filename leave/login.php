@@ -1,10 +1,54 @@
+<?php
+
+include('includes/config.php');
+if(isset($_POST['signin']))
+{
+	$username=$_POST['username'];
+	
+	$password=md5($_POST['password']);
+
+	$sql ="SELECT * FROM tblemployees where EmailId ='$username' AND Password ='$password'";
+	$query= mysqli_query($conn, $sql);
+	$count = mysqli_num_rows($query);
+	if($count > 0)
+	{
+		while ($row = mysqli_fetch_assoc($query)) {
+		    if ($row['role'] == 'Admin') {
+		    	$_SESSION['alogin']=$row['emp_id'];
+		    	$_SESSION['arole']=$row['Department'];
+			 	echo "<script type='text/javascript'> document.location = 'admin/admin_dashboard.php'; </script>";
+		    }
+		    elseif ($row['role'] == 'Staff') {
+		    	$_SESSION['alogin']=$row['emp_id'];
+		    	$_SESSION['arole']=$row['Department'];
+			 	echo "<script type='text/javascript'> document.location = 'staff/index.php'; </script>";
+		    }
+		    else {
+		    	$_SESSION['alogin']=$row['emp_id'];
+		    	$_SESSION['arole']=$row['Department'];
+			 	echo "<script type='text/javascript'> document.location = 'heads/index.php'; </script>";
+		    }
+		}
+
+	} 
+	else{
+	  
+	  echo "<script>alert('Invalid Details');</script>";
+
+	}
+
+}
+// $_SESSION['alogin']=$_POST['username'];
+// 	echo "<script type='text/javascript'> document.location = 'changepassword.php'; </script>";
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>kowshiqueroy</title>
+	<title>ACI Leave Manager</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
@@ -54,22 +98,30 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-box bg-white box-shadow border-radius-10">
 						<div class="login-title">
-							<h2 class="text-center text-primary">Welcome</h2>
+							<h2 class="text-center text-primary">Welcome To LeavePortal</h2>
 						</div>
-						<form name="signin" method="get" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> >
+						<form name="signin" method="post">
 							<div class="input-group custom">
-
+								
 								<div class="input-group custom">
-									<input type="text" class="form-control form-control-lg" 
-										name="company" id="company">
+									<input type="text" class="form-control form-control-lg" placeholder="Email ID"
+										name="username" id="username">
 									<div class="input-group-append custom">
-										<span class="input-group-text"></span>
+										<span class="input-group-text"><i class="icon-copy fa fa-envelope-o"
+												aria-hidden="true"></i></span>
 									</div>
 								</div>
-								<div class="row">
+								<div class="input-group custom">
+									<input type="password" class="form-control form-control-lg" placeholder="**********"
+										name="password" id="password">
+									<div class="input-group-append custom">
+										<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
+									</div>
+								</div>
+								<div class="row pb-30">
 
 									<div class="col-6">
-										<div class=""><a href="new_company.php">New Company Setup</a>
+										<div class="forgot-password"><a href="forgot-password.html">Forgot Password</a>
 										</div>
 									</div>
 								</div>
@@ -77,7 +129,7 @@
 									<div class="col-sm-12">
 										<div class="input-group mb-0">
 											<input class="btn btn-primary btn-lg btn-block" name="signin" id="signin"
-												type="submit" value="Next">
+												type="submit" value="Sign In">
 										</div>
 									</div>
 								</div>
@@ -95,19 +147,3 @@
 </body>
 
 </html>
-
-
-<?php
-
-
-session_start();
-
-if (isset($_GET['signin']))
-{
-$_SESSION['company2']=$_GET['company'];
-
-header("Location: login.php");
-
-
-}
-?>
