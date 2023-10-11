@@ -57,7 +57,7 @@ if(
    
 
 
-if (isset($_SESSION['company2']) &&  !isset($_REQUEST['staffid']))
+if (isset($_SESSION['company2']) )
 {
 
     if(
@@ -114,6 +114,32 @@ else{
     if(!isset($_SESSION['idcardvisit'])){
 
         header("Location: index.php");
+
+    }
+
+    else{
+
+    
+    // Establish database connection.
+    try
+    {
+    $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+    }
+    catch (PDOException $e)
+    {
+        header("Location: new_company.php");
+    exit("Error: " . $e->getMessage());
+    }
+
+    try
+    {
+        $conn = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME) or die("Error");    }
+    catch (PDOException $e)
+    {
+        header("Location: new_company.php");
+    exit("Error: " . $e->getMessage());
+    }
+
 
     }
     

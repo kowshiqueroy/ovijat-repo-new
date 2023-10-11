@@ -5,8 +5,18 @@ if(!isset($_SESSION))
     session_start(); 
 } 
 $_SESSION['idcardvisit']="true";
-include('../includes/config.php'); ?>
+include('../includes/config.php'); 
 
+
+
+
+
+
+
+
+
+
+?>
 
 <?php
 
@@ -26,6 +36,14 @@ if (isset($_REQUEST['staffid']) && isset($_REQUEST['company'])){
     $company=$_REQUEST['company'];
     
    // echo "ID Card for ".$id." From ".$company;
+
+
+   $query= mysqli_query($conn,"select * from tblemployees LEFT JOIN tbldepartments ON tblemployees.Department = tbldepartments.DepartmentShortName where emp_id = '$id'")or die(mysqli_error());
+   $row = mysqli_fetch_array($query);
+
+
+
+   echo $row['FirstName']. " " .$row['LastName'];
 
 
     $file_pointer = "qr/".$company.$id.".png";
