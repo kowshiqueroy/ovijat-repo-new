@@ -1,14 +1,25 @@
 <?php include('includes/header.php')?>
 <?php include('../includes/session.php')?>
 
+
+
+<?php
+
+$pagename=$_SERVER['PHP_SELF'];
+$cl1="";
+$cl2="";
+
+echo $pagename;
+?>
+
 <?php 
 	 if (isset($_GET['delete'])) {
 		$department_id = $_GET['delete'];
-		$sql = "DELETE FROM tblcompany where id = ".$department_id;
+		$sql = "DELETE FROM tbldepartments where id = ".$department_id;
 		$result = mysqli_query($conn, $sql);
 		if ($result) {
 			echo "<script>alert('Department deleted Successfully');</script>";
-     		echo "<script type='text/javascript'> document.location = 'company_details.php'; </script>";
+     		echo "<script type='text/javascript'> document.location = 'department.php'; </script>";
 			
 		}
 	}
@@ -20,20 +31,20 @@
 	 $deptname=$_POST['departmentname'];
 	$deptshortname=$_POST['departmentshortname'];
 
-     $query = mysqli_query($conn,"select * from tblcompany where DetailsName = '$deptname'")or die(mysqli_error());
+     $query = mysqli_query($conn,"select * from tbldepartments where DepartmentName = '$deptname'")or die(mysqli_error());
 	 $count = mysqli_num_rows($query);
      
      if ($count > 0){ 
      	echo "<script>alert('Department Already exist');</script>";
       }
       else{
-        $query = mysqli_query($conn,"insert into tblcompany (DetailsName, Details)
+        $query = mysqli_query($conn,"insert into tbldepartments (DepartmentName, DepartmentShortName)
   		 values ('$deptname', '$deptshortname')      
 		") or die(mysqli_error()); 
 
 		if ($query) {
 			echo "<script>alert('Department Added Successfully');</script>";
-			echo "<script type='text/javascript'> document.location = 'company_details.php'; </script>";
+			echo "<script type='text/javascript'> document.location = 'department.php'; </script>";
 		}
     }
 
@@ -47,7 +58,7 @@
 			<div class='loader-progress' id="progress_div">
 				<div class='bar' id='bar1'></div>
 			</div>
-			<div class='percent' id='percent1'>90%</div>
+			<div class='percent' id='percent1'>0%</div>
 			<div class="loading-text">
 				Loading...
 			</div>
@@ -69,12 +80,12 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-12">
 								<div class="title">
-									<h4>Company Details / Data</h4>
+									<h4>List</h4>
 								</div>
 								<nav aria-label="breadcrumb" role="navigation">
 									<ol class="breadcrumb">
 										<li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
-										<li class="breadcrumb-item active" aria-current="page">Company Details</li>
+										<li class="breadcrumb-item active" aria-current="page">Module</li>
 									</ol>
 								</nav>
 							</div>
@@ -84,13 +95,13 @@
 					<div class="row">
 						<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
 							<div class="card-box pd-30 pt-10 height-100-p">
-								<h2 class="mb-30 h4">New Details</h2>
+								<h2 class="mb-30 h4">New</h2>
 								<section>
 									<form name="save" method="post">
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group">
-												<label >Details Name</label>
+												<label >Name</label>
 												<input name="departmentname" type="text" class="form-control" required="true" autocomplete="off">
 											</div>
 										</div>
@@ -99,7 +110,7 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>Details</label>
-												<input name="departmentshortname" type="text" class="form-control" required="true" autocomplete="off">
+												<input name="departmentshortname" type="text" class="form-control" required="true" autocomplete="off" style="text-transform:uppercase">
 											</div>
 										</div>
 									</div>
@@ -115,20 +126,20 @@
 						
 						<div class="col-lg-8 col-md-6 col-sm-12 mb-30">
 							<div class="card-box pd-30 pt-10 height-100-p">
-								<h2 class="mb-30 h4">Details List</h2>
+								<h2 class="mb-30 h4">List</h2>
 								<div class="pb-20">
 									<table class="data-table table stripe hover nowrap">
 										<thead>
 										<tr>
 											<th>SR NO.</th>
-											<th class="table-plus">Name</th>
+											<th class="table-plus">Name <?php echo $pagename;?></th>
 											<th>Details</th>
 											<th class="datatable-nosort">ACTION</th>
 										</tr>
 										</thead>
 										<tbody>
 
-											<?php $sql = "SELECT * from tblcompany";
+											<?php $sql = "SELECT * from tbldepartments";
 											$query = $dbh -> prepare($sql);
 											$query->execute();
 											$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -140,12 +151,12 @@
 
 											<tr>
 												<td> <?php echo htmlentities($cnt);?></td>
-	                                            <td><?php echo htmlentities($result->DetailsName);?></td>
-	                                            <td><?php echo htmlentities($result->Details);?></td>
+	                                            <td><?php echo htmlentities($result->DepartmentName);?></td>
+	                                            <td><?php echo htmlentities($result->DepartmentShortName);?></td>
 												<td>
 													<div class="table-actions">
-														<a href="edit_company_details.php?edit=<?php echo htmlentities($result->id);?>" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-														<a href="company_details.php?delete=<?php echo htmlentities($result->id);?>" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+														<a href="edit_department.php?edit=<?php echo htmlentities($result->id);?>" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
+														<a href="department.php?delete=<?php echo htmlentities($result->id);?>" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
 													</div>
 												</td>
 											</tr>

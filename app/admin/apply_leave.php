@@ -8,8 +8,7 @@
 	$fromdate=date('d-m-Y', strtotime($_POST['date_from']));
 	$todate=date('d-m-Y', strtotime($_POST['date_to']));
 	$description=$_POST['description'];  
-	$status=1;
-    $admin_status=1;
+	$status=0;
 	$isread=0;
 	$leave_days=$_POST['leave_days'];
 	$datePosting = date("Y-m-d");
@@ -31,7 +30,7 @@
 		$diff =  date_diff($DF , $DT );
 		$num_days = (1 + $diff->format("%a"));
 
-		$sql="INSERT INTO tblleaves(LeaveType,ToDate,FromDate,Description,Status,IsRead,empid,num_days,PostingDate,admin_status) VALUES(:leave_type,:fromdate,:todate,:description,:status,:isread,:empid,:num_days,:datePosting,:admin_status)";
+		$sql="INSERT INTO tblleaves(LeaveType,ToDate,FromDate,Description,Status,IsRead,empid,num_days,PostingDate) VALUES(:leave_type,:fromdate,:todate,:description,:status,:isread,:empid,:num_days,:datePosting)";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':leave_type',$leave_type,PDO::PARAM_STR);
 		$query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);

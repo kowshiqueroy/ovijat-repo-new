@@ -106,19 +106,30 @@
 						<div class="dropdown-divider"></div>
 					</li>
 					<li>
-						<div class="sidebar-small-cap">Extra</div>
+						<div class="sidebar-small-cap">HOD</div>
 					</li>
 					<li>
 						<a href="" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-edit-2"></span><span class="mtext">Visit Us</span>
+							<span class="micon dw dw-edit-2"></span><span class="mtext">Option</span>
 						</a>
 					</li>
 					<li>
 						<div class="dropdown-divider"></div>
 					</li>
 					<li>
-						<div class="sidebar-small-cap">Extra</div>
+						<div class="sidebar-small-cap">General Staff</div>
 					</li>
+
+					<li>
+						<a href="" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-edit-2"></span><span class="mtext">Option</span>
+						</a>
+					</li>
+
+
+
+
+
 					<li>
 				</ul>
 			</div>

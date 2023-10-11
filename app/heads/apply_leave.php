@@ -8,7 +8,7 @@
 	$fromdate=date('d-m-Y', strtotime($_POST['date_from']));
 	$todate=date('d-m-Y', strtotime($_POST['date_to']));
 	$description=$_POST['description'];  
-	$status=1;
+	$status=0;
 	$isread=0;
 	$leave_days=$_POST['leave_days'];
 	$datePosting = date("Y-m-d");
