@@ -10,11 +10,6 @@
  </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
-<!-- AdminLTE App -->
-
- <!-- jQuery -->
   
 
 <!-- jQuery -->
