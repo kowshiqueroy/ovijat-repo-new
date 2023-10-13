@@ -189,7 +189,7 @@ if(isset($_POST["btndelete"])){
 
         <div class="card card-success">
           <div class="card-header">
-            <h3 class="card-title">DATA</h3>
+            <h3 class="card-title">List</h3>
           </div>
           <div class="card-body">
 
@@ -261,25 +261,7 @@ if(isset($_POST["btndelete"])){
 </div>
 <!-- /.content-wrapper -->
 
-<script>
-  $(function() {
-    $("#example1").DataTable({
-      "responsive": true,
-      "lengthChange": false,
-      "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">

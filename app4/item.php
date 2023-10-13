@@ -18,6 +18,7 @@ if (isset($_POST["btnaddproduct"]))
     
     $productname= $_POST["txtpname"];
     $category=$_POST["txtselect_option"];
+    $unit=$_POST["txtselect_unit"];
     $purchaseprice=$_POST["txtprice"];
     $sellprice=$_POST["txtsprice"];
         $stock=$_POST["txtstock"];
@@ -27,7 +28,7 @@ if (isset($_POST["btnaddproduct"]))
     
     
     
-    $insert=$pdo->prepare("insert into tbl_item(expm,pname,pcategory,buyprice,saleprice,pstock,pdescription,plocation) values(:life,:pname,:pcategory,:buyprice,:saleprice,:pstock,:pdescription,:location)");
+    $insert=$pdo->prepare("insert into tbl_item(expm,pname,pcategory,buyprice,saleprice,pstock,pdescription,plocation,unit) values(:life,:pname,:pcategory,:buyprice,:saleprice,:pstock,:pdescription,:location,:unit)");
     $insert->bindParam(":pname",$productname );
     $insert->bindParam(":pcategory",$category );
     $insert->bindParam(":saleprice",$sellprice );
@@ -37,6 +38,7 @@ if (isset($_POST["btnaddproduct"]))
     $insert->bindParam(":pdescription",$description );
     $insert->bindParam(":life",$life );
     $insert->bindParam(":location",$location );
+    $insert->bindParam(":unit",$unit );
     
     if($insert->execute())
     
@@ -160,7 +162,7 @@ if(isset($_POST["btndelete"])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Products List</h1>
+          
         
           </div><!-- /.col -->
           <div class="col-sm-6">
@@ -227,6 +229,34 @@ if(isset($_POST["btndelete"])){
                 </select>
               </div>
 
+
+
+              <div class="form-group">
+                <label>Unit</label>
+                <select class="form-control" placeholder="Choose category to bind" name="txtselect_unit" required>
+                  <option>KG</option>
+                  <option>PCS</option>
+                  <option >G</option>
+                  <option >ML</option>
+                  <option >L</option>
+                  <option >CTN</option>
+                  <option >BAG</option>
+                  <option >RIM</option>
+                  <option  >DRUM</option>
+                  <option >GALON</option>
+                  <option  >GOJ</option>
+                  <option  >FEET</option>
+                  <option  >BOX</option>
+                  <option >KG</option>
+                  <option  >CM</option>
+                  <option >M</option>
+
+
+                
+
+                </select>
+              </div>
+
               <div class="form-group">
                 <label for="exampleInputPassword1">Buy Price</label>
                 <input type="text" class="form-control" placeholder="Enter Email to be added" name="txtprice" required>
@@ -276,7 +306,29 @@ if(isset($_POST["btndelete"])){
             
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Product Data</h3>
+              <?php
+
+$date=date("Y-m-d");
+     
+$select=$pdo->prepare("select * from tbl_company ");
+$select->execute();
+$row=$select->fetch(PDO::FETCH_ASSOC);
+$name_db=$row["name"];
+$address_db=$row["address"];
+$phone_db=$row["phone"];
+$mail_db=$row["mail"];
+$logo_db=$row["logo"];
+     
+     
+     
+     
+     ?>
+                        <center>
+                            <h2><?php echo $name_db; ?></h2>
+                            <p><?php echo $address_db." ".$phone_db." ".$mail_db; ?></p>
+                            <h4> Items Date: <?php echo $date;?></h4>
+
+                        </center>
               </div>
               <div class="card-body">
         
@@ -289,6 +341,7 @@ if(isset($_POST["btndelete"])){
                  <td>Code</td>
                  <td>Item Name</td>
                  <td>Category</td>
+                 <td>Unit</td>
                  <td>Buy Price</td>
                  <td>Sell Price</td>
                  <td>Stock</td>
@@ -327,6 +380,7 @@ if(isset($_POST["btndelete"])){
                     <td>"."ITEM-".$row->pid."</td>
                     <td>$row->pname</td>
                     <td>$row->pcategory</td>
+                    <td>$row->unit</td>
                     <td>$row->buyprice</td>
                     <td>$row->saleprice</td>
                     <td>$row->pstock</td>

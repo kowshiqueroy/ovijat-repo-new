@@ -7,12 +7,12 @@
 
 include_once "conectdb.php";
 session_start();
-if ($_SESSION["useremail"]=="" OR $_SESSION["role"]=="admin") {
+if ($_SESSION["useremail"]=="" ) {
     
     header("location:index.php");
     
 }
-include_once "headeruser.php";
+include_once "header.php";
 
 
 
@@ -27,22 +27,7 @@ include_once "headeruser.php";
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Order List</h1>
-        
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="logout.php">LOGOUT</a></li>
-              <li class="breadcrumb-item active">Admin Dashboard</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+    
 
    
    
@@ -64,9 +49,37 @@ include_once "headeruser.php";
 
        <div class="col-md-12">
             
-            <div class="card card-success">
+            <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Order Data</h3>
+              <?php
+
+$date=date("Y-m-d");
+     
+$select=$pdo->prepare("select * from tbl_company ");
+$select->execute();
+$row=$select->fetch(PDO::FETCH_ASSOC);
+$name_db=$row["name"];
+$address_db=$row["address"];
+$phone_db=$row["phone"];
+$mail_db=$row["mail"];
+$logo_db=$row["logo"];
+     
+     
+     
+     
+     ?>
+                        <center>
+                            <h2><?php echo $name_db; ?></h2>
+                            <p><?php echo $address_db." ".$phone_db." ".$mail_db; ?></p>
+                            <h4> Exipiring Data Date: <?php echo $date;?> to </h4>
+
+
+                            <form action="expiring.php" method="get">
+                              <input style="width:50px;"type="number" name="days" value="30"> <input type="submit" name="submit" value="Days">
+
+</form>
+
+                        </center>
               </div>
               <div class="card-body">
         
@@ -76,12 +89,11 @@ include_once "headeruser.php";
           <thead>
              <tr>
                  
-                 <td>Invoice ID</td>
-                 <td>Customer name</td>
-                 <td>Order Date</td>
-                 <td>Order Time</td>
-                 <td>Total</td>
-                 <td>Paid</td>
+               
+                 <td>Item Name</td>
+                 <td>Quantity</td>
+                 <td>Entry Date</td>
+                 <td>Location</td>
                  
                  
                 <!-- <td>EDIT</td> 
@@ -92,10 +104,9 @@ include_once "headeruser.php";
                   
                    
                      -->
-                 <td>Due</td>
-                 <td>Payment Type</td>
-                 <td>Print</td>
-                 
+                 <td>Life</td>
+                
+                
                  
              </tr>  
       
@@ -104,8 +115,18 @@ include_once "headeruser.php";
             <tbody>
      
            <?php
-                
-                $select=$pdo->prepare("select * from tbl_in_info order by invoice_id desc");
+                $newDate = date('Y.m.d', strtotime(' + 30 days'));
+           
+                $Date = date('Y.m.d');
+if(isset($_GET['submit'])){
+$days=$_GET['days'];
+
+$newDate = date('Y.m.d', strtotime(' + '.$days.' days'));
+
+}
+
+          
+                $select=$pdo->prepare("select * from tbl_in_data where expm <'$newDate' && expm >'$Date'");
                 $select->execute();
                 
                 while($row=$select->fetch(PDO::FETCH_OBJ)){
@@ -113,23 +134,13 @@ include_once "headeruser.php";
                   echo "
                     
                     <tr>
-                    <td>$row->invoice_id</td>
-                    <td>$row->customer_name</td>
-                    <td>$row->order_date</td>
-                    <td>$row->order_time</td>
-                    <td>$row->total</td>
-                    <td>$row->paid</td>
-                    <td>$row->due</td>
-                    <td>$row->payment_type</td>
-                    
-                   <td>
-                    <a href=\"invoice_80mm.php?id=".$row->invoice_id."\" 
-                    class= \"btn btn-info\" role=\"button\" target=\"blank\" ><span class=\"fas fa-print\" name=\"PrintBtn\"    style=\"color:#ffffff\" data-toggle=\"tooltip\" title=\"Print Invoice\"></span>
-                    </a>
-                    </td>
-                    
-                    
                    
+                    <td>$row->item_name</td>
+                    <td>$row->qty</td>
+                    <td>$row->order_date</td>
+                    <td>$row->plocation</td>
+                    <td>$row->expm</td>
+           
                     
                     
                     
@@ -185,8 +196,7 @@ include_once "headeruser.php";
     
   $(document).ready(function() {
     $("#example2").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false, "order" : [[0,"desc"]],
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      "responsive": true, "lengthChange": false, "paging":false, "autoWidth": false, "order" : [[4,"desc"]]
     }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
     $("[data-toggle='tooltip']").tooltip();
   });

@@ -3,6 +3,10 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
+<?php
+date_default_timezone_set("Asia/Dhaka");
+
+?>
 <html lang="en">
 
 <head>
@@ -179,7 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <ul style="color:black; background-color:white;font-size:10px;" class="nav nav-treeview w3-dropdown-content w3-bar-block w3-border">
                 <li class="nav-item w3-bar-item w3-button">
-                  <a href="companyifo.php" class="nav-link active">
+                  <a href="company_info.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
                     <p>Company Info</p>
                   </a>
@@ -224,6 +228,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="in_info.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
                     <p>In Info</p>
+                  </a>
+                </li>
+
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="mrr.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>MRR</p>
                   </a>
                 </li>
 
@@ -328,9 +339,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                 </li>
                 <li class="nav-item w3-bar-item w3-button">
-                  <a href="registration.php" class="nav-link active">
+                  <a href="expiring.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>User</p>
+                    <p>Expiring</p>
+                  </a>
+                </li>
+
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="expired.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>Expired</p>
                   </a>
                 </li>
 

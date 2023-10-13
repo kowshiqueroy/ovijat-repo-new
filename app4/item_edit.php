@@ -25,6 +25,8 @@ $row=$select->fetch(PDO::FETCH_ASSOC);
 $id_db=$row["pid"];
 $productname_db=$row["pname"];
 $category_db=$row["pcategory"];
+$unit_db=$row["unit"];
+$life_db=$row["expm"];
 $purchaseprice_db=$row["buyprice"];
 $sellprice_db=$row["saleprice"];
 $location=$row["plocation"];
@@ -212,6 +214,14 @@ if (isset($_POST["btnupdateproduct"]))
                  <div class="form-group">
                     <label for="exampleInputPassword1">Stock</label>
                     <input type="text" class="form-control"  value="<?php echo $stock_db; ?>" name="txtstock" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Unit</label>
+                    <input type="text" class="form-control"  value="<?php echo $unit_db; ?>" name="txtunit" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Life Month</label>
+                    <input type="text" class="form-control"  value="<?php echo $life_db; ?>" name="txtlife" readonly>
                   </div>
                  
                   <div class="form-group">

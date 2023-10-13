@@ -12,7 +12,7 @@ if ($_SESSION["useremail"]=="" ) {
     header("location:index.php");
     
 }
-include_once"header.php";
+include_once "header.php";
 
 
 
@@ -51,7 +51,29 @@ include_once"header.php";
             
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Order Data</h3>
+              <?php
+
+$date=date("Y-m-d");
+     
+$select=$pdo->prepare("select * from tbl_company ");
+$select->execute();
+$row=$select->fetch(PDO::FETCH_ASSOC);
+$name_db=$row["name"];
+$address_db=$row["address"];
+$phone_db=$row["phone"];
+$mail_db=$row["mail"];
+$logo_db=$row["logo"];
+     
+     
+     
+     
+     ?>
+                        <center>
+                            <h2><?php echo $name_db; ?></h2>
+                            <p><?php echo $address_db." ".$phone_db." ".$mail_db; ?></p>
+                            <h4> In Persons Date: <?php echo $date;?></h4>
+
+                        </center>
               </div>
               <div class="card-body">
         
@@ -63,7 +85,7 @@ include_once"header.php";
                  
                  <td>Invoice ID</td>
                  <td>Customer name</td>
-                 <td>Order Date</td>
+                 <td>Date</td>
                  <td>Total</td>
                  <td>Paid</td>
                  

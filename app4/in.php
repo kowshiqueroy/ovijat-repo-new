@@ -15,7 +15,7 @@ if ($_SESSION["useremail"]=="" OR $_SESSION["role"]=="user" ){
 
 
 
-include_once"header.php";
+include_once "header.php";
 
 
 
@@ -189,10 +189,31 @@ if(isset($_POST["btnsaveorder"])){
     <!-- left column -->
 
     <!-- general form elements -->
-    <div class="card card-warning">
+    <div class="card card-success">
       <div class="card-header">
-        <h3 class="card-title">New New In/Receive Date: <?php echo date("Y-m-d h:i:sa"); ?> By <?php echo $_SESSION["useremail"]; ?></h3>
-      </div>
+      <?php
+
+$date=date("Y-m-d");
+     
+$select=$pdo->prepare("select * from tbl_company ");
+$select->execute();
+$row=$select->fetch(PDO::FETCH_ASSOC);
+$name_db=$row["name"];
+$address_db=$row["address"];
+$phone_db=$row["phone"];
+$mail_db=$row["mail"];
+$logo_db=$row["logo"];
+     
+     
+     
+     
+     ?>
+                        <center>
+                            <h2><?php echo $name_db; ?></h2>
+                            <p><?php echo $address_db." ".$phone_db." ".$mail_db; ?></p>
+                            <h4> New In Date: <?php echo $date;?></h4>
+
+                        </center>      </div>
       <!-- /.card-header -->
       <!-- form start -->
 
@@ -287,6 +308,7 @@ if(isset($_POST["btnsaveorder"])){
                     <th></th>
                     <th>Item Name</th>
                     <th>Stock</th>
+                    <th>Unit</th>
                     <th>Location</th>
                     <th>BuyPrice</th>
                     <th>SellPrice</th>
@@ -425,7 +447,7 @@ if(isset($_POST["btnsaveorder"])){
 
           <hr>
           <div align="center">
-          <input type="submit" onclick="window.print();"  value="Print" class="btn btn-info">
+          <button  onclick="window.print();"   class="btn btn-info">Print</button>
             <input type="submit" name="btnsaveorder" value="Save" class="btn btn-info">
 
           </div>
@@ -466,6 +488,7 @@ if(isset($_POST["btnsaveorder"])){
       html +=
         '<td><select class="form-control productid" name="productid[]" style="width: 200px;" ><option  value="">Select Option</option> <?php echo fill_product($pdo);  ?> </select></td>';
       html += '<td><input type="text" class="form-control stock" name="stock[]" readonly></td>';
+      html += '<td><input type="text" class="form-control unit" name="unit[]" style="width:50px;font-size: 10px;" readonly></td>';
       html += '<td><input type="text" class="form-control location" name="location[]" style="width:100px;font-size: 12px;" required></td>';
       html += '<td><input type="text" class="form-control price" name="price[]" required></td>';
       html += '<td><input type="text" class="form-control price2" name="price2[]" required></td>';
@@ -491,6 +514,7 @@ if(isset($_POST["btnsaveorder"])){
             //  console.log(data);
             tr.find(".pname").val(data["pname"]);
             tr.find(".stock").val(data["pstock"]);
+            tr.find(".unit").val(data["unit"]);
             tr.find(".location").val(data["plocation"]);
             tr.find(".price").val(data["buyprice"]);
             tr.find(".price2").val(data["saleprice"]);

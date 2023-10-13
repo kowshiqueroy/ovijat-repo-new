@@ -154,8 +154,7 @@ if(isset($_POST["btndelete"])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Products List</h1>
-        
+           
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -183,7 +182,29 @@ if(isset($_POST["btndelete"])){
             
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Product Data</h3>
+              <?php
+
+$date=date("Y-m-d");
+     
+$select=$pdo->prepare("select * from tbl_company ");
+$select->execute();
+$row=$select->fetch(PDO::FETCH_ASSOC);
+$name_db=$row["name"];
+$address_db=$row["address"];
+$phone_db=$row["phone"];
+$mail_db=$row["mail"];
+$logo_db=$row["logo"];
+     
+     
+     
+     
+     ?>
+                        <center>
+                            <h2><?php echo $name_db; ?></h2>
+                            <p><?php echo $address_db." ".$phone_db." ".$mail_db; ?></p>
+                            <h4> Stock Summary Date: <?php echo $date;?></h4>
+
+                        </center>
               </div>
               <div class="card-body">
         
@@ -298,7 +319,7 @@ if(isset($_POST["btndelete"])){
 <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false, "order" : [[0,"asc"]],
+      "responsive": true, "lengthChange": false, "paging":false, "autoWidth": false, "order" : [[0,"asc"]],
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $("[data-toggle='tooltip']").tooltip();

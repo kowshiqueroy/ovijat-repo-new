@@ -5,7 +5,7 @@ require("fpdf182/fpdf.php");
 
 
 
-include_once "connectdb.php";
+include_once "conectdb.php";
 
 $id=$_GET['id'];
 

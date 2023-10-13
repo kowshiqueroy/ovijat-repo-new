@@ -14,7 +14,7 @@
 
 
 
-include_once("connectdb.php");
+include_once ("conectdb.php");
 session_start();
 if (isset($_POST["btn_login"])){
     
@@ -48,7 +48,7 @@ $row=$select->fetch(PDO::FETCH_ASSOC);
         $_SESSION["role"]=$row["role"];
 
 
-        header('refresh:1;dashboard.php');
+        header('refresh:1;home.php');
         echo "<script type='text/javascript'>
         
         jQuery(function vsalidation(){
