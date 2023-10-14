@@ -13,6 +13,10 @@ $select=$pdo->prepare("select * from tbl_in_info where invoice_id=$id");
 $select->execute();
 $row=$select->fetch(PDO::FETCH_OBJ);
 
+$select2=$pdo->prepare("select * from tbl_company");
+$select2->execute();
+$rowc=$select2->fetch(PDO::FETCH_OBJ);
+
 
 
 
@@ -25,18 +29,23 @@ $pdf = new FPDF ('P','mm',array(80,145));
 $pdf->AddPage();
 
 
-$pdf->SetFont('Arial','B',16);
+$pdf->SetFont('Arial','B',10);
 
-$pdf->Cell(60,8,'Kowshique POS',1,1,'C');
+$pdf->Cell(60,8,$rowc->name,1,1,'C');
 
 $pdf->SetFont('Arial','B',8);
 
-$pdf->Cell(60,5,'Nilphamari',0,1,'C');
+$pdf->Cell(60,4,$rowc->address,0,1,'C');
+$pdf->SetFont('Arial','B',5);
+$pdf->Cell(0,2,$rowc->phone,0,1,'C');
+$pdf->Cell(0,5,$rowc->mail,0,1,'C');
 
 
 
 
 
+$pdf->SetFont('Courier','B',8);
+$pdf->Cell(0,5,'Invoice for Store In/Receive',0,1,'C');
 
 
 
@@ -45,27 +54,22 @@ $pdf->Ln(1);
 
 
 $pdf->SetFont('Arial','BI',8);
-$pdf->Cell(20,4,'Name: ',0,0,'');
+$pdf->Cell(10,4,'Name: ',0,0,'');
 
 $pdf->SetFont('Arial','BI',8);
-$pdf->Cell(10,4,$row->cname,0,1,'');
-
-$pdf->SetFont('Arial','BI',8);
-$pdf->Cell(20,4,'Name: ',0,0,'');
-
-$pdf->SetFont('Arial','BI',8);
-$pdf->Cell(10,4,$row->cname,0,1,'');
-
-
-$pdf->SetFont('Arial','BI',8);
-$pdf->Cell(16,4,'Invoice no: ',0,0,'');
-
-$pdf->SetFont('Arial','BI',8);
-$pdf->Cell(8,4,$row->invoice_id,0,0,'');
+$pdf->Cell(0,4,$row->cname,0,1,'');
 
 
 
-$pdf->SetFont('Arial','BI',8);
+$pdf->SetFont('Arial','BI',7);
+$pdf->Cell(14,4,'Invoice no: ',0,0,'');
+
+$pdf->SetFont('Arial','BI',7);
+$pdf->Cell(12,4,'IN-'.$row->invoice_id,0,0,'');
+
+
+
+$pdf->SetFont('Arial','BI',7);
 //$pdf->Cell(20,4,'Date : ',0,0,'');
 $pdf->Cell(8,4,'Date: ',0,0,'');
 //$pdf->SetFont('Arial','BI',8);
@@ -75,7 +79,7 @@ $pdf->Cell(16,4,$row->order_date,0,0,'');
 //$pdf->SetFont('Arial','BI',8);
 
 
-$pdf->SetFont('Arial','BI',8);
+$pdf->SetFont('Arial','BI',7);
 $pdf->Cell(20,4,$row->order_time,0,1,'');
 
 

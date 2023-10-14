@@ -170,7 +170,7 @@ if(isset($_POST["btnsaveorder"])){
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Create New In/Receive</h1>
+    
 
         </div><!-- /.col -->
         <div class="col-sm-6">
@@ -447,7 +447,7 @@ $logo_db=$row["logo"];
 
           <hr>
           <div align="center">
-          <button  onclick="window.print();"   class="btn btn-info">Print</button>
+         
             <input type="submit" name="btnsaveorder" value="Save" class="btn btn-info">
 
           </div>

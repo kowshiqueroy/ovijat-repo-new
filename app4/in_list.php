@@ -127,7 +127,7 @@ $logo_db=$row["logo"];
                
                     
                    <td>
-                    <a href=\"invoice_80mm.php?id=".$row->invoice_id."\" 
+                    <a href=\"invoice_in.php?id=".$row->invoice_id."\" 
                     class= \"btn btn-info\" role=\"button\" target=\"blank\" ><span class=\"fas fa-print\" name=\"PrintBtn\"    style=\"color:#ffffff\" data-toggle=\"tooltip\" title=\"Print Invoice\"></span>
                     </a>
                     
@@ -196,7 +196,7 @@ $logo_db=$row["logo"];
     
   $(document).ready(function() {
     $("#example2").DataTable({
-      "responsive": true, "lengthChange": true, "paging":false, "autoWidth": false, "order" : [[3,"desc"]],
+      "responsive": true, "lengthChange": true, "paging":false, "autoWidth": false, "order" : [[0,"desc"]],
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
     $("[data-toggle='tooltip']").tooltip();
@@ -293,7 +293,7 @@ $(document).ready(function() {
   <!-- /.control-sidebar -->
 
  <?php
-include_once"footer.php";
+include_once "footer.php";
 
 
 ?>

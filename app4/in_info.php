@@ -84,7 +84,7 @@ $logo_db=$row["logo"];
              <tr>
                  
                  <td>Invoice ID</td>
-                 <td>Customer name</td>
+                 <td>Name</td>
                  <td>Date</td>
                  <td>Total</td>
                  <td>Paid</td>
@@ -99,7 +99,7 @@ $logo_db=$row["logo"];
                    
                      -->
                  <td>Due</td>
-                 <td>Payment Type</td>
+                 <td>Payment</td>
                  <td></td>
                
                  
@@ -128,7 +128,7 @@ $logo_db=$row["logo"];
                     <td>$row->payment_type</td>
                     
                    <td>
-                    <a href=\"invoice_80mm.php?id=".$row->invoice_id."\" 
+                    <a href=\"invoice_in.php?id=".$row->invoice_id."\" 
                     class= \"btn btn-info\" role=\"button\" target=\"blank\" ><span class=\"fas fa-print\" name=\"PrintBtn\"    style=\"color:#ffffff\" data-toggle=\"tooltip\" title=\"Print Invoice\"></span>
                     </a>
                   

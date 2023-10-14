@@ -72,10 +72,10 @@ $logo_db=$row["logo"];
                             <h2><?php echo $name_db; ?></h2>
                             <p><?php echo $address_db." ".$phone_db." ".$mail_db; ?></p>
                             <h4> Exipiring Data Date: <?php echo $date;?> to </h4>
-
-
+                            
+                        
                             <form action="expiring.php" method="get">
-                              <input style="width:50px;"type="number" name="days" value="30"> <input type="submit" name="submit" value="Days">
+                              <input style="width:70px;"type="number" name="day" value="<?php  if(isset($_GET['submit'])){ echo $_GET['day'];} else { echo '30';}?>"> <input type="submit" name="submit" value="Days">
 
 </form>
 
@@ -119,7 +119,7 @@ $logo_db=$row["logo"];
            
                 $Date = date('Y.m.d');
 if(isset($_GET['submit'])){
-$days=$_GET['days'];
+$days=$_GET['day'];
 
 $newDate = date('Y.m.d', strtotime(' + '.$days.' days'));
 

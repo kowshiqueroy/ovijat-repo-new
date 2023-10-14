@@ -413,19 +413,75 @@ date_default_timezone_set("Asia/Dhaka");
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="companyifo.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Company Info</p>
+                    <p>Invoice Create</p>
                   </a>
                 </li>
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="registration.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>User</p>
+                    <p>Invoice List</p>
                   </a>
                 </li>
 
               </ul>
 
             </li>
+
+
+            <li class="nav-item w3-dropdown-hover">
+              <h5 style="color:black; background-color:white;" href="" class="nav-link ">
+                <i class="fa fa-edit"></i>
+                <p>
+               Requision Order
+
+                </p>
+              </h5>
+
+              <ul style="color:black; background-color:white;font-size:10px;" class="nav nav-treeview w3-dropdown-content w3-bar-block w3-border">
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="companyifo.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>Invoice Create</p>
+                  </a>
+                </li>
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="registration.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>Invoice List</p>
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li class="nav-item w3-dropdown-hover">
+              <h5 style="color:black; background-color:white;" href="" class="nav-link ">
+                <i class="fa fa-edit"></i>
+                <p>
+               Purchase Order
+
+                </p>
+              </h5>
+
+              <ul style="color:black; background-color:white;font-size:10px;" class="nav nav-treeview w3-dropdown-content w3-bar-block w3-border">
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="companyifo.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>Invoice Create</p>
+                  </a>
+                </li>
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="registration.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>Invoice List</p>
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+
 
 
 
