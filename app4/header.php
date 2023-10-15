@@ -137,7 +137,7 @@ date_default_timezone_set("Asia/Dhaka");
       <!-- Brand Logo -->
       <a href="#" class="brand-link">
         <i class="fa fa-home"></i>
-        <span class="brand-text font-weight-light">khoriddar.com</span>
+        <span class="brand-text font-weight-light">Ovijat Distribution</span>
       </a>
 
       <!-- Sidebar -->
@@ -145,7 +145,7 @@ date_default_timezone_set("Asia/Dhaka");
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="dist/img/icebear.png" class="img-circle elevation-2" alt="User Image">
+          <!--     <img src="dist/img/icebear.png" class="img-circle elevation-2" alt="User Image">-->
           </div>
           <div class="info">
             <a href="#" class="d-block"><strong><?php echo $_SESSION['username'];?></strong></a>
@@ -361,7 +361,7 @@ date_default_timezone_set("Asia/Dhaka");
               <h5 style="color:black; background-color:white;" href="" class="nav-link ">
                 <i class="fa fa-edit"></i>
                 <p>
-                Gate Pass
+                Store Damage
 
                 </p>
               </h5>
@@ -370,20 +370,15 @@ date_default_timezone_set("Asia/Dhaka");
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="companyifo.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Create Gate Pass</p>
+                    <p>Create Store Damage</p>
                   </a>
                 </li>
-                <li class="nav-item w3-bar-item w3-button">
-                  <a href="registration.php" class="nav-link active">
-                    <i class="	fa fa-cube"></i>
-                    <p>Gate Pass List</p>
-                  </a>
-                </li>
+               
 
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="registration.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Gate Pass Approval</p>
+                    <p>Approval Store Damage</p>
                   </a>
                 </li>
 
@@ -391,7 +386,7 @@ date_default_timezone_set("Asia/Dhaka");
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="registration.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Gate Pass In/Out</p>
+                    <p>Store Damage List</p>
                   </a>
                 </li>
 
@@ -404,7 +399,7 @@ date_default_timezone_set("Asia/Dhaka");
               <h5 style="color:black; background-color:white;" href="" class="nav-link ">
                 <i class="fa fa-edit"></i>
                 <p>
-               Invoice
+                Store Return
 
                 </p>
               </h5>
@@ -413,19 +408,30 @@ date_default_timezone_set("Asia/Dhaka");
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="companyifo.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Invoice Create</p>
+                    <p>Create Store Return</p>
                   </a>
                 </li>
+                
+
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="registration.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Invoice List</p>
+                    <p>Approval Store Return</p>
+                  </a>
+                </li>
+
+                
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="registration.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>Store Return List</p>
                   </a>
                 </li>
 
               </ul>
 
             </li>
+            
 
 
             <li class="nav-item w3-dropdown-hover">
@@ -439,9 +445,9 @@ date_default_timezone_set("Asia/Dhaka");
 
               <ul style="color:black; background-color:white;font-size:10px;" class="nav nav-treeview w3-dropdown-content w3-bar-block w3-border">
                 <li class="nav-item w3-bar-item w3-button">
-                  <a href="companyifo.php" class="nav-link active">
+                  <a href="r_o_create.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Invoice Create</p>
+                    <p>R O Create</p>
                   </a>
                 </li>
                 <li class="nav-item w3-bar-item w3-button">
@@ -516,7 +522,15 @@ date_default_timezone_set("Asia/Dhaka");
 
 
            
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>Dev: kowshiqueroy@gmail.com</p>
          
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
