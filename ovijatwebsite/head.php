@@ -104,13 +104,18 @@
                                 <li><a class="dropdown-item" href="drinks.php">Drinks</a></li>
                                 <li><a class="dropdown-item" href="eoil.php">Edible Oil</a></li>
                                 <li><a class="dropdown-item" href="rices.php">Rices</a></li>
+                            
                                 <li><a class="dropdown-item" href="bakery.php">Bakery</a></li>
                                 <li><a class="dropdown-item" href="spices.php">Spices</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="rice.php">Rice</a>
+                            <a class="nav-link click-scroll" href="rice.php">Rice old</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="ricee.php">Rice</a>
                         </li>
 
 
