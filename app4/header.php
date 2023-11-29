@@ -12,7 +12,7 @@ date_default_timezone_set("Asia/Dhaka");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Store</title>
+  <title>Ovintory WebApp</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -137,7 +137,7 @@ date_default_timezone_set("Asia/Dhaka");
       <!-- Brand Logo -->
       <a href="#" class="brand-link">
         <i class="fa fa-home"></i>
-        <span class="brand-text font-weight-light">Ovijat Distribution</span>
+        <span class="brand-text font-weight-light">Ovintory</span>
       </a>
 
       <!-- Sidebar -->
@@ -451,9 +451,29 @@ date_default_timezone_set("Asia/Dhaka");
                   </a>
                 </li>
                 <li class="nav-item w3-bar-item w3-button">
+                  <a href="companyifo.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>R O View</p>
+                  </a>
+                </li>
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="companyifo.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>R O Update</p>
+                  </a>
+                </li>
+
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="r_o_create.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>R O Approval</p>
+                  </a>
+                </li>
+
+                <li class="nav-item w3-bar-item w3-button">
                   <a href="registration.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Invoice List</p>
+                    <p>R O List</p>
                   </a>
                 </li>
 
@@ -474,13 +494,34 @@ date_default_timezone_set("Asia/Dhaka");
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="companyifo.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Invoice Create</p>
+                    <p>P O Create</p>
+                  </a>
+                </li>
+
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="companyifo.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>P O View</p>
+                  </a>
+                </li>
+
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="companyifo.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>P O Update</p>
+                  </a>
+                </li>
+
+                <li class="nav-item w3-bar-item w3-button">
+                  <a href="companyifo.php" class="nav-link active">
+                    <i class="	fa fa-cube"></i>
+                    <p>P O Approval</p>
                   </a>
                 </li>
                 <li class="nav-item w3-bar-item w3-button">
                   <a href="registration.php" class="nav-link active">
                     <i class="	fa fa-cube"></i>
-                    <p>Invoice List</p>
+                    <p>P O List</p>
                   </a>
                 </li>
 
