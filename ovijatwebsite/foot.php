@@ -107,7 +107,7 @@
             <div class="row">
 
                 <div class="col-lg-6 col-md-7 col-12">
-                    <p class="copyright-text mb-0">Copyright © 2015-Present Ovijat Group <a href="admin">IT Team</a></p>
+                    <p class="copyright-text mb-0">Copyright © 2015-Present Ovijat Group <a href="">IT Team</a></p>
                 </div>
                 
                 <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">

@@ -41,49 +41,7 @@ tr:nth-child(even) {
 
                         <div class="col-lg-12 col-12 mb-5 mb-lg-0">
                            
-                       
-  <div class="column">
-  <br><br>
-  <center><h2>Recent Job Posts</h2>
-
-</center>
-
-<br><br>
-    <table>
-      <tr>
-        <th>Deadline</th>
-        <th>Job Title</th>
-        <th>Details</th>
-        <th>Apply</th>
-    
-      </tr>
-     
-
-
-<?php
-include'admin/db_connect.php';
-
-$dt=date('Y.m.d');
-$sqlmember = "SELECT * FROM Jobs WHERE job_deadline > '$dt'";;
- 
-
-$retrieve = mysqli_query($db,$sqlmember);
-                 $count=0;
-  while($row = mysqli_fetch_array($retrieve))
-  {
-    echo "<tr> <td>" . $row["job_deadline"]. "</td><td>" . $row["job_title"]. "</td><td>" . $row["job_details"]. "</td><td><a href='#form'><i class='fa fa-paper-plane-o' style='font-size:24px'></i></a></td></tr>";
-  }
-
-?>
-    
-    </table>
-
-
-
-
-
-
-</div></div>
+</div>
                            
                         </div>
 
