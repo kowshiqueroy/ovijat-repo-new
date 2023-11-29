@@ -110,12 +110,10 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="rice.php">Rice old</a>
-                        </li>
+                     
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="ricee.php">Rice</a>
+                            <a class="nav-link click-scroll" href="rice.php">Rice</a>
                         </li>
 
 
