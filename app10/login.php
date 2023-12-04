@@ -19,7 +19,7 @@ try {
     $row = $select->fetch(PDO::FETCH_ASSOC);
 
 
-    if ($row && $row['usermail'] == $usermail && $row['userpassword'] == $userpassword )
+    if ($row && $row['usermail'] == $usermail && $row['userpassword'] == $userpassword && $row['status'] == "active" )
     // if($row['useremail']==$useremail AND $row['password']==$password)
     {
 
