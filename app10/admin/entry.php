@@ -215,6 +215,9 @@ include_once("header.php");
                         $categoryname_db = $row["categoryname"];
                         $stock_db = $row["stock"];
                         $unit_db = $row["unit"];
+
+
+                        
                         $icud= $itemname_db." " .$categoryname_db.
                         " (".$unit_db.")";
 
@@ -226,11 +229,23 @@ include_once("header.php");
 
                         $icu2=$rowfind2["itemcategoryunit"];
                         $unit=$rowfind2["unit"];
+                        $type= $rowfind2["type"];
 
                         if($icud== $icu2) {
                             $insert = $pdo->prepare("update item set stock=:stock where id=:id_db");
 
-            $s=floatval($stock_db)-floatval($unit);
+          
+          
+                            if($type=="In" or $type=="Lend Return") {
+                            $s=floatval($stock_db)-floatval($unit);
+                            } else  {
+
+                                $s=floatval($stock_db)+floatval($unit);
+                            }
+
+
+
+
                             $insert->bindParam(":stock",$s);
                             $insert->bindParam(":id_db",$id_db);
                            
