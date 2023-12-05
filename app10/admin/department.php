@@ -125,7 +125,9 @@ include_once("header.php");
 
                     $del->execute();
                 
-
+                    echo '  <script>
+                    window.location.href = "department.php";
+                </script>';
                         
                   
                  
@@ -151,7 +153,7 @@ include_once("header.php");
                     <hr>
                     <input type="hidden" <?php echo "value='" . $depid_db . "'" ?> name="departmentid" id="email" required>
 
-                    <label for="email"><b>Name</b></label>
+                    <label for="email"><b>Department/Person/Shop (ID Phone Address)</b></label>
                     <input type="text" <?php echo "value='" . $dep_db . "'" ?> name="departmentnamef" id="email" required>
 
                    
@@ -167,7 +169,7 @@ include_once("header.php");
         <div class="col-sm">
 
             <h2>Database</h2>
-            <p>Department/Person List</p>
+            <p>Department/Person/Shop List</p>
 
             <table
         id="dt"
@@ -175,7 +177,7 @@ include_once("header.php");
       >
                 <tr>
                 <th> ID</th>
-                    <th>Department/Person Name</th>
+                    <th>Department/Person/Shop (ID Phone Address)</th>
                   
                     <th></th>
 

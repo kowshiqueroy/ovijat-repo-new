@@ -65,6 +65,8 @@ if ($_SESSION["role"] !== basename(dirname(__FILE__))) {
                         data-bs-parent="#sidebar"><i class="bi bi-buildings"></i> <span>Company Info</span> </a>
                     <a href="users.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-people"></i> <span>Users</span> </a>
+                        <a href="logdata.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-text-wrap"></i> <span>Log Data</span> </a>
                     <a href="profile.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-person-gear"></i> <span>Profile</span> </a>
                     <a href="logout.php" class="list-group-item border-end-0 d-inline-block text-truncate"

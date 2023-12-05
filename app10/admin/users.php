@@ -119,6 +119,9 @@ include_once("header.php");
 
 
                     $delete->execute();
+                    echo '  <script>
+                    window.location.href = "users.php";
+                </script>';
 
                 }
 
@@ -147,9 +150,28 @@ include_once("header.php");
                         <option value="typist">typist</option>
                         <option value="requisitioner">requisitioner</option>
                         <option value="purchaser">purchaser</option>
-                        <option value="manager">manager</option>
-                        <option value="approver">approver</option>
-                        <option value="admin">admin</option>
+                        <?php
+                    if ($_SESSION['role']=="manager"){
+
+                        echo "<option value='manager'>manager</option>";
+                    }
+                    
+                    if ($_SESSION['role']=="approver"){
+
+                        echo "<option value='manager'>manager</option>";
+                        echo "<option value='approver'>approver</option>";
+                    }
+                    
+                  
+                    if ($_SESSION['role']=="admin"){
+                        echo "<option value='manager'>manager</option>";
+                        echo "<option value='approver'>approver</option>";
+
+                        echo "<option value='admin'>admin</option>";
+                    }
+                    
+                    ?>
+                        
                     </select>
 
                     <label for="status"><b>Status</b></label>
@@ -178,6 +200,8 @@ include_once("header.php");
         class="table table-striped"
       >
                 <tr>
+
+                
                     <th>Mail</th>
                     <th>Role</th>
                     <th>Reg Date</th>
@@ -194,24 +218,57 @@ include_once("header.php");
                 $select->execute();
 
                 while ($row = $select->fetch(PDO::FETCH_OBJ)) {
-                    echo "
-    <tr>
-  
-    <td>$row->usermail</td>
-    <td>$row->role</td>
 
-    <td>$row->regdate</td>
-    <td>$row->regby</td>
-    <td>$row->status</td>
-   
-    <td> <p>
-    <a  href=\"users.php?email=" . $row->usermail . "&action=edit" . "\" >Edit    </a>
-    </a>
-    <a  href=\"users.php?email=" . $row->usermail . "&action=delete" . "\" >Delete    </a>
-</p>
-    </td>
-    </tr>
-    ";
+                    if($row->role!=="admin"){
+
+                        echo "
+                        <tr>
+                      
+                        <td>$row->usermail</td>
+                        <td>$row->role</td>
+                    
+                        <td>$row->regdate</td>
+                        <td>$row->regby</td>
+                        <td>$row->status</td>
+                       
+                    
+                        
+                        <td> <p>
+                        <a  href=\"users.php?email=" . $row->usermail . "&action=edit" . "\" >Edit    </a>
+                        </a>
+                        <a  href=\"users.php?email=" . $row->usermail . "&action=delete" . "\" >Delete    </a>
+                    </p>
+                        </td>
+                        </tr>
+                        ";
+
+                    }
+
+                    else{
+
+                        echo "
+                        <tr>
+                      
+                        <td>$row->usermail</td>
+                        <td>$row->role</td>
+                    
+                        <td>$row->regdate</td>
+                        <td>$row->regby</td>
+                        <td>$row->status</td>
+                       
+                    
+                        
+                        <td> </td>
+                        </tr>
+                        ";
+
+
+
+
+                    }
+
+
+                   
                 }
                 ?>
 

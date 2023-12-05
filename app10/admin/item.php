@@ -141,7 +141,9 @@ include_once("header.php");
                 
 
                         
-                  
+                    echo '  <script>
+      window.location.href = "item.php";
+  </script>';
                  
                    
 

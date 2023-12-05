@@ -125,7 +125,9 @@ include_once("header.php");
 
                     $del->execute();
                 
-
+                    echo '  <script>
+                    window.location.href = "category.php";
+                </script>';
                         
                   
                  
