@@ -2,67 +2,13 @@
 include_once("header.php");
 
 ?>
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 <div class="container ">
     <div class="row">
         <div class="col-sm">
-
+<h3>New Item Entry (IN/OUT)</h3>
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <style>
-                /* Add padding to containers */
-                .containerform {
-                    padding: 16px;
-                    background-color: white;
-                }
-
-
-                label {
-
-                    margin-top: 15px;
-                    margin-bottom: 5px;
-                }
-
-                /* Full-width input fields */
-                input[type=text],
-                input[type=float],
-                input[type=password],
-                select {
-                    width: 100%;
-
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                }
-
-                input[type=text]:focus,
-                input[type=float]:focus,
-                input[type=password]:focus,
-                select:focus {
-                    background-color: #ddd;
-                    outline: none;
-                }
-
-                /* Overwrite default styles of hr */
-                hr {
-                    border: 1px solid #f1f1f1;
-                    margin-bottom: 25px;
-                }
-
-                /* Set a style for the submit button */
-                .savebtn {
-                    background-color: #04AA6D;
-                    color: white;
-                    padding: 16px 20px;
-                    margin: 8px 0;
-                    border: none;
-                    cursor: pointer;
-                    width: 100%;
-                    opacity: 0.1;
-                }
-
-                .savebtn:hover {
-                    opacity: 1;
-                }
-            </style>
+           
 
             <?php
 
@@ -102,7 +48,7 @@ include_once("header.php");
                     $insert->execute();
                    
 
-                    if($type=="In" or $type=="Lend Return") {
+                    if($type=="In" or $type=="Lend Return" or $type=="Purchase" or $type=="Sell Return" or $type=="Gift Return") {
 
 
                         $ss = $pdo->prepare("SELECT * FROM `item`");
@@ -115,13 +61,13 @@ include_once("header.php");
                             $categoryname_db = $row["categoryname"];
                             $stock_db = $row["stock"];
                             $unit_db = $row["unit"];
-                            $icud= $itemname_db." " .$categoryname_db.
+                            $icud= $categoryname_db." " .$itemname_db.
                             " (".$unit_db.")";
 
                             if($icud== $icu) {
                                 $insert = $pdo->prepare("update item set stock=:stock where id=:id_db");
 
-                $s=floatval($stock_db)+floatval($unit);
+                                $s=floatval($stock_db)+floatval($unit);
                                 $insert->bindParam(":stock",$s);
                                 $insert->bindParam(":id_db",$id_db);
                                
@@ -149,7 +95,7 @@ include_once("header.php");
                             $categoryname_db = $row["categoryname"];
                             $stock_db = $row["stock"];
                             $unit_db = $row["unit"];
-                            $icud= $itemname_db." " .$categoryname_db.
+                            $icud= $categoryname_db." " .$itemname_db.
                             " (".$unit_db.")";
 
                             if($icud== $icu) {
@@ -182,133 +128,131 @@ include_once("header.php");
 
             $statement = $pdo->prepare("SELECT * FROM `item`");
             $statement->execute(array());
-          
-
-       
-
-         
-
-          
-           
-
-
-
-              
-                if (isset($_GET["del"])) {
-                    $eid = $_GET["del"];
-
-                    $find = $pdo->prepare("select * from entry where id='$eid'");
-
-                    $find->execute();
-
-                    $rowfind = $find->fetch(PDO::FETCH_ASSOC);
-
-
-
-                    $ss = $pdo->prepare("SELECT * FROM `item`");
-                    $ss->execute(array());
-                    while ($row = $ss->fetch(PDO::FETCH_ASSOC)) {
-                        $name = $row['categoryname'];
-                      
-                        $id_db = $row["id"];
-                        $itemname_db = $row["itemname"];
-                        $categoryname_db = $row["categoryname"];
-                        $stock_db = $row["stock"];
-                        $unit_db = $row["unit"];
-
-
-                        
-                        $icud= $itemname_db." " .$categoryname_db.
-                        " (".$unit_db.")";
-
-                        $find2 = $pdo->prepare("select * from entry where id='$eid'");
-
-                        $find2->execute();
-    
-                        $rowfind2 = $find2->fetch(PDO::FETCH_ASSOC);
-
-                        $icu2=$rowfind2["itemcategoryunit"];
-                        $unit=$rowfind2["unit"];
-                        $type= $rowfind2["type"];
-
-                        if($icud== $icu2) {
-                            $insert = $pdo->prepare("update item set stock=:stock where id=:id_db");
-
-          
-          
-                            if($type=="In" or $type=="Lend Return") {
-                            $s=floatval($stock_db)-floatval($unit);
-                            } else  {
-
-                                $s=floatval($stock_db)+floatval($unit);
-                            }
 
 
 
 
-                            $insert->bindParam(":stock",$s);
-                            $insert->bindParam(":id_db",$id_db);
-                           
-        
-                            $insert->execute();
 
+
+
+
+
+
+
+
+            if (isset($_GET["del"])) {
+                $eid = $_GET["del"];
+
+                $find = $pdo->prepare("select * from entry where id='$eid'");
+
+                $find->execute();
+
+                $rowfind = $find->fetch(PDO::FETCH_ASSOC);
+
+
+
+                $ss = $pdo->prepare("SELECT * FROM `item`");
+                $ss->execute(array());
+                while ($row = $ss->fetch(PDO::FETCH_ASSOC)) {
+                    $name = $row['categoryname'];
+
+                    $id_db = $row["id"];
+                    $itemname_db = $row["itemname"];
+                    $categoryname_db = $row["categoryname"];
+                    $stock_db = $row["stock"];
+                    $unit_db = $row["unit"];
+
+
+
+                    $icud = $categoryname_db . " " . $itemname_db .
+                        " (" . $unit_db . ")";
+
+                    $find2 = $pdo->prepare("select * from entry where id='$eid'");
+
+                    $find2->execute();
+
+                    $rowfind2 = $find2->fetch(PDO::FETCH_ASSOC);
+
+                    $icu2 = $rowfind2["itemcategoryunit"];
+                    $unit = $rowfind2["unit"];
+                    $type = $rowfind2["type"];
+
+                    if ($icud == $icu2) {
+                        $insert = $pdo->prepare("update item set stock=:stock where id=:id_db");
+
+
+
+                        if ($type == "In" or $type == "Lend Return" or $type == "Purchase" or $type == "Sell Return" or $type == "Gift Return") {
+                            $s = floatval($stock_db) - floatval($unit);
+                        } else {
+
+                            $s = floatval($stock_db) + floatval($unit);
                         }
 
-        
+
+
+
+                        $insert->bindParam(":stock", $s);
+                        $insert->bindParam(":id_db", $id_db);
+
+
+                        $insert->execute();
+
                     }
 
-
-
-
-                    $ipaddress = '';
-                    if (isset($_SERVER['HTTP_CLIENT_IP']))
-                        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-                    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-                        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-                    else if(isset($_SERVER['HTTP_X_FORWARDED']))
-                        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-                    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
-                        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-                    else if(isset($_SERVER['HTTP_FORWARDED']))
-                        $ipaddress = $_SERVER['HTTP_FORWARDED'];
-                    else if(isset($_SERVER['REMOTE_ADDR']))
-                        $ipaddress = $_SERVER['REMOTE_ADDR'];
-                    else
-                        $ipaddress = 'UNKNOWN';
-
-                $data= "DELETED Entry ".implode($rowfind)." ".date("Y-m-d")." ".$_SESSION["usermail"]." ".$ipaddress;
-
-                    $insert = $pdo->prepare("insert into logdel(data) values(:data)");
-
-                
-                    $insert->bindParam(":data", $data);
-
-
-                    $insert->execute();
-
-
-
-                    $del = $pdo->prepare("delete from entry where id='$eid'");
-
-                    $del->execute();
-
-      //  header("location: entry.php");
-
-
-      echo '  <script>
-      window.location.href = "entry.php";
-  </script>';
 
                 }
 
 
 
 
+                $ipaddress = '';
+                if (isset($_SERVER['HTTP_CLIENT_IP']))
+                    $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+                else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+                    $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+                else if (isset($_SERVER['HTTP_X_FORWARDED']))
+                    $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+                else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
+                    $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+                else if (isset($_SERVER['HTTP_FORWARDED']))
+                    $ipaddress = $_SERVER['HTTP_FORWARDED'];
+                else if (isset($_SERVER['REMOTE_ADDR']))
+                    $ipaddress = $_SERVER['REMOTE_ADDR'];
+                else
+                    $ipaddress = 'UNKNOWN';
+
+                $data = "DELETED Entry " . implode($rowfind) . " " . date("Y-m-d") . " " . $_SESSION["usermail"] . " " . $ipaddress;
+
+                $insert = $pdo->prepare("insert into logdel(data) values(:data)");
+
+
+                $insert->bindParam(":data", $data);
+
+
+                $insert->execute();
 
 
 
+                $del = $pdo->prepare("delete from entry where id='$eid'");
 
+                $del->execute();
+
+                //  header("location: entry.php");
             
+
+                echo '  <script> window.location.href = "entry.php";</script>';
+
+            }
+
+
+
+
+
+
+
+
+
             ?>
 
             <form action="entry.php" method="post">
@@ -317,7 +261,7 @@ include_once("header.php");
                     <input type="hidden" <?php #echo "value='" . $id_db . "'" ?> name="id" id="id">
 
                     <label for="type"><b>Type</b></label>
-                    <select id="type" name="type" required>
+                    <select class="js-example-basic-single" style="width:100%;" id="type" name="type" required>
 
                         <?php #echo '<option value="' . $categoryname_db . '">' . $categoryname_db . '</option>';?>
 
@@ -330,10 +274,20 @@ include_once("header.php");
                         <option value="Lending">Lending -</option>
                         <option value="Lend Return">Lend Return +</option>
 
+                        <option value="Purchase">Purchase +</option>
+                        <option value="Purchase Return">Purchase Return -</option>
+
+                        <option value="Sell">Sell -</option>
+                        <option value="Sell Return">Sell Return +</option>
+
+                       
+                        <option value="Gift">Gift -</option>
+                        <option value=" Return">Gift Return +</option>
+
                     </select>
 
                     <label for="dps"><b>Department/Person/Shop (ID Phone Address)</b></label>
-                    <select class="js-example-basic-single" id="dps" name="dps" required>
+                    <select class="js-example-basic-single" style="width:100%;" id="dps" name="dps" required>
 
                         <?php #echo '<option value="' . $categoryname_db . '">' . $categoryname_db . '</option>';
 
@@ -350,8 +304,11 @@ include_once("header.php");
 
                     </select>
 
-                    <label for="icu"><b>Item Category (Stock Unit)</b></label>
-                    <select class="js-example-basic-single" id="icu" name="icu" required>
+
+                    
+
+                    <label for="icu"><b>Category Item (Stock Unit)</b></label>
+                    <select class="js-example-basic-single" style="width:100%;" id="icu" name="icu" required>
                         <?php  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                 $name = $row['categoryname'];
               
@@ -360,8 +317,8 @@ include_once("header.php");
                 $categoryname_db = $row["categoryname"];
                 $stock_db = $row["stock"];
                 $unit_db = $row["unit"];
-                echo '<option value="' . $itemname_db." " .$categoryname_db.
-                " (".$unit_db.")". '">' . $itemname_db." " .$categoryname_db.
+                echo '<option value="' . $categoryname_db." " .$itemname_db.
+                " (".$unit_db.")". '">' . $categoryname_db." " .$itemname_db.
                 " (". $stock_db."".$unit_db.")". '</option>';
 
             }
@@ -370,7 +327,7 @@ include_once("header.php");
                     </select>
 
                     <label for="unit"><b>Unit</b></label>
-                    <input type="float" value="0" name="unit" id="unit" required>
+                    <input type="float" placeholder="0.0" name="unit" id="unit" required>
 
                     <label for="slip"><b>Slip Number</b></label>
                     <input type="float" value="0" name="slip" id="slip"
@@ -402,7 +359,7 @@ include_once("header.php");
                  
                     <th> Type</th>
                     <th> Dept/ Person/ Shop</th>
-                    <th>Item Category (Unit)</th>
+                    <th>Category Item (Unit)</th>
                     <th>Unit</th>
                     <th>Slip</th>
                     <th >Expiring</th>
@@ -415,7 +372,7 @@ include_once("header.php");
 
                 <?php
 
-                $select = $pdo->prepare("select * from entry order by id desc");
+                $select = $pdo->prepare("select * from entry order by id desc limit 5");
 
                 $select->execute();
 
@@ -444,37 +401,16 @@ include_once("header.php");
 
             </table>
 
+
+      
+                        <button onclick="window.location.href='entrydb.php';"  type="submit"  class="savebtn">Full Database</button>
+                     
+           
         </div>
 
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-</script>
 
-<script>
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2({
-            matcher: function(term, text) {
-                // If search is empty we return everything
-                if ($.trim(term.term) === '') return text;
-                // Compose the regex
-                var regex_text = '.*';
-                regex_text += (term.term).split('').join('.*');
-                regex_text += '.*'
-                // Case insensitive
-                var regex = new RegExp(regex_text, "i");
-                // If no match is found we return nothing
-                if (!regex.test(text.text)) {
-                    return null;
-                }
-                // Else we return everything that is matching
-                return text;
-            }
-        });
-    });
-</script>
 
 
 

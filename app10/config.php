@@ -6,12 +6,40 @@ if (session_id() == '') {
 $company = $_SESSION["company"];
 
 
-$db = "mysql:host=localhost;dbname=" . $company;
+if(
+
+    $_SERVER['SERVER_NAME']=="localhost" &&
+    
+       $_SERVER['HTTP_HOST']=="localhost"
+    
+    
+    ) {
+
+
+    $dbname=$company;
 $dbuser = "root";
 $dbpass = "";
+    }
+    
+    else{
+
+        $dbname="u105067261_".$company;
+        $dbuser = "u105067261_kush";
+       // $dbpass = "B?b)*^XhRc6j";
+       $dbpass = "kushwebapp1212A";
+   
+    
+    }
+
+
+
+$dbhost="localhost";
+
+
+$dbp = "mysql:host=".$dbhost.";dbname=" . $dbname;
 
 try {
-    $pdo = new PDO($db, $dbuser, $dbpass);
+    $pdo = new PDO($dbp, $dbuser, $dbpass);
 
 
 } catch (PDOException $f) {

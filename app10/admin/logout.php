@@ -28,17 +28,19 @@ $insert->bindParam(":data", $data);
 
 $insert->execute();
 
+include_once("dbbackup.php");
+
 session_destroy();
 
 
 ?>
 
-<p>Loging out....</p>
+<p>    <center>Loging out....    </center></p>
 
 
+<script>
+   
+window.location.replace("../index.php");
+ 
+</script>
 
-<?php
-
-header('refresh:1;..\\index.php');
-
-?>

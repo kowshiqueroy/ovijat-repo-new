@@ -8,7 +8,6 @@ CREATE TABLE `administrator` (
   PRIMARY KEY (`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO administrator VALUES("fsdf","dsfds","dsfds","dsfds");
 INSERT INTO administrator VALUES("IT","Ovijat","itovijat12","it.ovijat@gmail.com");
 
 
@@ -56,10 +55,8 @@ CREATE TABLE `jobs` (
   `job_title` varchar(200) NOT NULL,
   `job_details` varchar(400) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO jobs VALUES("1","2023.10.09","Urgent Job Post: ","Qualification: Experience: Others: ");
-INSERT INTO jobs VALUES("2","2023.10.11","Urgent Job Post: ","Qualification: Experience: Others: ");
 
 
 
@@ -72,11 +69,8 @@ CREATE TABLE `notices` (
   `notice_details` varchar(400) NOT NULL,
   `notice_person` varchar(5000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO notices VALUES("1","2023.10.09: it.ovijat@gmail.com","test","sdfsd","");
-INSERT INTO notices VALUES("2","2023.10.09: it.ovijat@gmail.com","ads","sad","");
-INSERT INTO notices VALUES("3","2023.10.09: it.ovijat@gmail.com","sfd","dsf","");
 
 
 
@@ -118,8 +112,8 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO users VALUES("1","a","a","a","active","09-10-2023","","a","a","a","it.ovijat@gmail.com","a","a","Offline","","0");
-INSERT INTO users VALUES("2","b","b","b","active","09-10-2023","","b","b","b","kowshiqueroy@gmail.com","b","b","Offline","","0");
+INSERT INTO users VALUES("1","a","a","a","active","10-10-2023","","a","a","a","a","a","a","Offline","a.png","0");
+INSERT INTO users VALUES("2","hello","czxc","","active","11-10-2023","","xzczx","xzczx","xzczx","zxczx","xzczx","xczx","Offline","download.jpg.jpeg","0");
 
 
 

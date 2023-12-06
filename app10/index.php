@@ -61,7 +61,9 @@
 
     <form action="login.php" method="post" style="max-width:500px;margin:auto">
         <center>
-            <h2>Inventory Web App</h2>
+            <br><br>
+            <h1 style="color:green; font-size:50px;">Inventory<br>Web App</h1>
+            <br><br>
             <center>
                 <div class="input-container">
                     <i class="fa fa-building-o icon"></i>
@@ -80,6 +82,10 @@
 
                 <button type="submit" class="btn">Enter</button>
     </form>
+
+
+  
+
 
 </body>
 

@@ -17,18 +17,18 @@ include_once("header.php");
              
 
 
-                $c = $_POST["categorynamef"];
-                $id = $_POST["categoryid"];
+                $i = $_POST["ip_f"];
+                $d = $_POST["ipd_f"];
                
              
 
              
 
-                    $insert = $pdo->prepare("insert into category(id,categoryname) values(:id,:c) ON DUPLICATE KEY UPDATE categoryname='$c'");
+                    $insert = $pdo->prepare("insert into ip(ipname,details) values(:i,:d) ON DUPLICATE KEY UPDATE details='$d'");
 
-                    $insert->bindParam(":c", $c);
+                    $insert->bindParam(":i", $i);
 
-                    $insert->bindParam(":id", $id);
+                    $insert->bindParam(":d", $d);
                     $insert->execute();
                    
     
@@ -42,24 +42,24 @@ include_once("header.php");
 
 
           
-            $cat_db = "";
+            $ip_db = "";
 
-            $catid_db = "";
+            $ipd_db = "";
 
 
 
-                if (isset($_GET["categoryid"])) {
-                    $cid = $_GET["categoryid"];
+                if (isset($_GET["ip"])) {
+                    $ipg = $_GET["ip"];
 
                 
 
-                    $select = $pdo->prepare("select * from category where id='$cid'");
+                    $select = $pdo->prepare("select * from ip where ipname='$ipg'");
 
                     $select->execute();
                     $row = $select->fetch(PDO::FETCH_ASSOC);
 
-                    $cat_db = $row["categoryname"];
-                    $catid_db = $row["id"];
+                    $ip_db = $row["ipname"];
+                    $ipd_db = $row["details"];
 
                         
                   
@@ -70,16 +70,16 @@ include_once("header.php");
                 }
 
                 if (isset($_GET["del"])) {
-                    $cid = $_GET["del"];
+                    $ip = $_GET["del"];
 
                 
 
-                    $del = $pdo->prepare("delete from category where id='$cid'");
+                    $del = $pdo->prepare("delete from ip where ipname='$ip'");
 
                     $del->execute();
                 
                     echo '  <script>
-                    window.location.href = "category.php";
+                    window.location.href = "ippermit.php";
                 </script>';
                         
                   
@@ -99,15 +99,16 @@ include_once("header.php");
             
             ?>
 
-            <form action="category.php" method="post">
+            <form action="ippermit.php" method="post">
                 <div class="containerform">
                     <h1>Add new</h1>
                     <p>Please fill in this form.</p>
                     <hr>
-                    <input type="hidden" <?php echo "value='" . $catid_db . "'" ?> name="categoryid" id="email" required>
 
-                    <label for="email"><b>Category Name</b></label>
-                    <input type="text" <?php echo "value='" . $cat_db . "'" ?> name="categorynamef" id="email" required>
+                    <label for="email"><b>IP</b></label>
+                    <input type="text" <?php echo "value='" . $ip_db . "'" ?> name="ip_f" id="email" required>
+                    <label for="email"><b>Person/Name/Place</b></label>
+                    <input type="text" <?php echo "value='" . $ipd_db . "'" ?> name="ipd_f" id="email" required>
 
                    
 
@@ -122,15 +123,15 @@ include_once("header.php");
         <div class="col-sm">
 
             <h2>Database</h2>
-            <p>Category List</p>
+            <p>IP List</p>
 
             <table
         id="dt"
         class="table table-striped"
       >
                 <tr>
-          
-                    <th>Category Name</th>
+                <th> IP</th>
+                    <th>Person/Name/Place</th>
                   
                     <th></th>
 
@@ -138,21 +139,21 @@ include_once("header.php");
 
                 <?php
 
-                $select = $pdo->prepare("select * from category order by id desc");
+                $select = $pdo->prepare("select * from ip order by ipname desc");
 
                 $select->execute();
 
                 while ($row = $select->fetch(PDO::FETCH_OBJ)) {
                     echo "
     <tr>
-   
-    <td>$row->categoryname</td>
+    <td>$row->ipname</td>
+    <td>$row->details</td>
     
    
     <td> <p>
-    <a  href=\"category.php?categoryid=" . $row->id  . "\" ><i class='bi bi-pencil'></i>    </a>
+    <a  href=\"ippermit.php?ip=" . $row->ipname  . "\" ><i class='bi bi-pencil'></i>   </a>
     </a> </p> <p>
-    <a  href=\"category.php?del=" . $row->id  . "\" ><i class='bi bi-x-circle'></i>    </a>
+    <a  href=\"ippermit.php?del=" . $row->ipname  . "\" ><i class='bi bi-x-circle'></i>    </a>
     </a>
 </p>
     </td>

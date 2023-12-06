@@ -8,56 +8,7 @@ include_once("header.php");
         <div class="col-sm">
 
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <style>
-                /* Add padding to containers */
-                .containerform {
-                    padding: 16px;
-                    background-color: white;
-                }
-
-                /* Full-width input fields */
-                input[type=text],
-                input[type=float],
-                input[type=password],
-                select {
-                    width: 100%;
-                    padding: 15px;
-                    margin: 5px 0 22px 0;
-                    display: inline-block;
-                    border: none;
-                    background: #f1f1f1;
-                }
-
-                input[type=text]:focus,
-                input[type=float]:focus,
-                input[type=password]:focus,
-                select:focus {
-                    background-color: #ddd;
-                    outline: none;
-                }
-
-                /* Overwrite default styles of hr */
-                hr {
-                    border: 1px solid #f1f1f1;
-                    margin-bottom: 25px;
-                }
-
-                /* Set a style for the submit button */
-                .savebtn {
-                    background-color: #04AA6D;
-                    color: white;
-                    padding: 16px 20px;
-                    margin: 8px 0;
-                    border: none;
-                    cursor: pointer;
-                    width: 100%;
-                    opacity: 0.1;
-                }
-
-                .savebtn:hover {
-                    opacity: 1;
-                }
-            </style>
+          
 
             <?php
 
@@ -72,9 +23,19 @@ include_once("header.php");
                 $u = $_POST["unitf"];
                 $id= $_POST["id"];
                
-             
+                $check = $pdo->prepare("SELECT `id` FROM `item` where categoryname='$c' and itemname='$i' and unit='$u'");
+                $check->execute(array());
 
-             
+                $flagcopy=0;
+                while ($result = $check->fetch(PDO::FETCH_ASSOC)) {
+
+                    $flagcopy=1;
+
+
+                }
+
+
+             if( $flagcopy == 0) {
 
                     $insert = $pdo->prepare("insert into item(id,itemname,categoryname,stock,unit) values(:id,:i,:c,:s,:u) ON DUPLICATE KEY UPDATE id='$id',itemname='$i',categoryname='$c',stock='$s',unit='$u'");
 
@@ -88,7 +49,7 @@ include_once("header.php");
     
                   
                 
-
+             }
                
 
 
@@ -167,12 +128,9 @@ include_once("header.php");
                     <hr>
                     <input type="hidden" <?php echo "value='" . $id_db . "'" ?> name="id" id="email" required>
                     
-                    <label for="email"><b>Item Name</b></label>
-                    <input type="text" <?php echo "value='" . $itemname_db . "'" ?> name="itemnamef" id="email" required>
-
-                  
-                    <label for="role"><b>Category Name</b></label>
-                    <select id="role" name="categorynamef" required>
+                 
+                    <label for="catt"><b>Category Name</b></label>
+                    <select id="catt" class="js-example-basic-single" style="width:100%;" name="categorynamef" required>
 
                         <?php echo '<option value="' . $categoryname_db . '">' . $categoryname_db . '</option>';
 
@@ -190,13 +148,17 @@ include_once("header.php");
                         
                     </select>
 
+                    <label for="email"><b>Item Name</b></label>
+                    <input type="text" <?php echo "value='" . $itemname_db . "'" ?> name="itemnamef" id="email" required>
+
+                  
                     <label for="email"><b>Opening Stock</b></label>
-                    <input type="float" <?php echo "value='" . $stock_db . "'" ?> name="stockf" id="email" required>
+                    <input type="float" <?php echo "value='" . $stock_db . "'" ; if (isset($_GET["id"])) { echo " readonly ";}?> name="stockf" id="email" required>
                    
                     <label for="email"><b>Unit</b></label>
 
-                    <select   name="unitf" required>
-                    <?php echo '<option value="' . $unit_db . '">' . $unit_db . '</option>';?>
+                    <select class="js-example-basic-single" style="width:100%;"  name="unitf"  required>
+                    <?php echo '<option value="' . $unit_db . '">' . $unit_db . '</option>'; ?>
                     <option>PCS</option>
                   <option >ML</option>
                   <option >L</option>
@@ -241,11 +203,12 @@ include_once("header.php");
         class="table table-striped"
       >
                 <tr>
-                <th> ID</th>
+              
+                <th>Category Name</th>
                 <th>Item Name</th>
-                    <th>Category Name</th>
+                <th>Unit</th>
                     <th>Stock</th>
-                    <th>Unit</th>
+                 
                   
                     <th></th>
 
@@ -259,23 +222,20 @@ include_once("header.php");
 
                 while ($row = $select->fetch(PDO::FETCH_OBJ)) {
                     echo "
-    <tr>
-    <td>$row->id</td>
-    <td>$row->itemname</td>
-    <td>$row->categoryname</td>
-    <td>$row->stock</td>
-    <td>$row->unit</td>
+                             <tr>
+                         
+                             <td>$row->categoryname</td>
+                             <td>$row->itemname</td>
+                             <td>$row->unit</td>
+                             <td>$row->stock</td>
+                         
     
    
-    <td> <p>
-    <a  href=\"item.php?id=" . $row->id  . "\" >Edit    </a>
-    </a> </p> <p>
-    <a  href=\"item.php?del=" . $row->id  . "\" >Delete    </a>
-    </a>
-</p>
-    </td>
-    </tr>
-    ";
+                             <td>";
+
+
+                    echo " <p>  <a  href=\"item.php?id=" . $row->id . "\" ><i class='bi bi-pencil'></i>    </a>  </a> </p> <p>  <a  href=\"item.php?del=" . $row->id . "\" ><i class='bi bi-x-circle'></i>    </a>  </a></p>";
+                    echo " </td> </tr> ";
                 }
                 ?>
 
