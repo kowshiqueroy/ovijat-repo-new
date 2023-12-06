@@ -196,14 +196,14 @@ include_once("header.php");
         <div class="col-sm">
 
             <h2>Database</h2>
-            <p>Item List</p>
+            <a style="text-decoration:none;" href="">Merge Duplicate two Items by ID</a>
 
-            <table
+            <table style="margin-top:20px;"
         id="dt"
         class="table table-striped"
       >
                 <tr>
-              
+                <th>ID</th>
                 <th>Category Name</th>
                 <th>Item Name</th>
                 <th>Unit</th>
@@ -223,7 +223,7 @@ include_once("header.php");
                 while ($row = $select->fetch(PDO::FETCH_OBJ)) {
                     echo "
                              <tr>
-                         
+                             <td>$row->id</td>
                              <td>$row->categoryname</td>
                              <td>$row->itemname</td>
                              <td>$row->unit</td>
