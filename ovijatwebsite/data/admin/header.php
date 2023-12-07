@@ -208,36 +208,13 @@ $company_details_db = $row["details"];
                         <a href="category.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-tags"></i> <span>Category</span> </a>
 
-                        <a href="category.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-palette2"></i> <span>Unit</span> </a>
+                  
 
                     <a href="item.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-boxes"></i> <span>Item</span> </a>
+                        data-bs-parent="#sidebar"><i class="bi bi-boxes"></i> <span>Product</span> </a>
 
                         <a href="department.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-bounding-box"></i> <span>Department/Person</span> </a>
-                   
-
-                        <a href="entry.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-arrow-down-up"></i> <span>Entry</span> </a>
-
-
-                        <a href="mrr.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-arrow-down"></i> <span>MRR</span> </a>
-
-                        <a href="drl.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-arrow-up"></i> <span>DRL</span> </a>
-
-
-                    <a href="stockbyitem.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-calendar2"></i> <span>Stock by Item</span> </a>
-                        <a href="stockbydate.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-calendar2-month"></i> <span>Stock by Date</span> </a>
-                        <a href="stockbyquantity.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-calendar2-date"></i> <span>Stock by Quantity</span> </a>
-                        <a href="stockscompare.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-calendar-week"></i> <span>Stocks Compare</span> </a>
-                    
+                        data-bs-parent="#sidebar"><i class="bi bi-bounding-box"></i> <span>Job Post</span> </a>
                        
                        
 

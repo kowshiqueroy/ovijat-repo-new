@@ -21,7 +21,7 @@ if (file_exists($folderName)) {
         if ($fileInfo->isDot()) {
             continue;
         }
-        if ($fileInfo->isFile() && time() - $fileInfo->getCTime() <= 60*60*5) {
+        if ($fileInfo->isFile() && time() - $fileInfo->getCTime() <= 60 * 60 * 5) {
             $counterb++;
         }
 
@@ -44,7 +44,7 @@ if ($counterb == 0 or isset($_GET['backup'])) {
 
 
 
- 
+
     function backupDatabaseTables($dbHost, $dbUsername, $dbPassword, $dbName, $tables = '*', $dir_name)
     {
         //connect & select the database
