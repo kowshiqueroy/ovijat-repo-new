@@ -226,10 +226,12 @@ include_once("header.php");
 
 
                     <label for="email"><b>Opening Stock</b></label>
-                    <input type="float" <?php echo "value='" . $stock_db . "'";
+                    <input type="hidden" 
+                    <?php echo "value='" . $stock_db . "'";
                     if (isset($_GET["id"])) {
                         echo " readonly ";
-                    } ?> name="stockf" id="email" required>
+                    } ?>
+                     name="stockf" id="email" required>
 
                     <label for="email"><b>Unit</b></label>
 

@@ -198,13 +198,36 @@ $company_details_db = $row["details"];
                     <a style="color:green;" href="index.php" class="list-group-item  d-inline-block text-truncate" data-bs-parent="#sidebar"> <span>
                             <?php echo $_SESSION["company"]." App"; ?>
                         </span> </a>
-                    <a style="color:green;" href="index.php"  class="list-group-item  d-inline-block text-truncate" data-bs-parent="#sidebar"> <span>
+                    <a style="color:green;" href="profile.php"  class="list-group-item  d-inline-block text-truncate" data-bs-parent="#sidebar"> <span>
                             <?php echo $_SESSION["usermail"]; ?>
                         </span> </a>
                     <a style="color:green;" href="index.php"  class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"> <span>
                             <?php echo $_SESSION["role"]; ?>
                         </span> </a>
+                        <a href="category.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-tags"></i> <span>Category</span> </a>
+
+                        <a href="category.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-palette2"></i> <span>Unit</span> </a>
+
+                    <a href="item.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-boxes"></i> <span>Item</span> </a>
+
+                        <a href="department.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-bounding-box"></i> <span>Department/Person</span> </a>
+                   
+
+                        <a href="entry.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-arrow-down-up"></i> <span>Entry</span> </a>
+
+
+                        <a href="mrr.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-arrow-down"></i> <span>MRR</span> </a>
+
+                        <a href="drl.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-arrow-up"></i> <span>DRL</span> </a>
+
 
                     <a href="stockbyitem.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-calendar2"></i> <span>Stock by Item</span> </a>
@@ -214,29 +237,25 @@ $company_details_db = $row["details"];
                         data-bs-parent="#sidebar"><i class="bi bi-calendar2-date"></i> <span>Stock by Quantity</span> </a>
                         <a href="stockscompare.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-calendar-week"></i> <span>Stocks Compare</span> </a>
-                    <a href="entry.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-arrow-down-up"></i> <span>Entry</span> </a>
-                        <a href="mrr.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-arrow-down"></i> <span>MRR</span> </a>
-                        <a href="drl.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-arrow-up"></i> <span>DRL</span> </a>
-                        <a href="department.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-bounding-box"></i> <span>Department/Person</span> </a>
-                    <a href="category.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-tags"></i> <span>Category</span> </a>
-                    <a href="item.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-boxes"></i> <span>Item</span> </a>
+                    
+                       
+                       
 
                     <a href="companyinfo.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-buildings"></i> <span>Company Info</span> </a>
+
                     <a href="users.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-people"></i> <span>Users</span> </a>
+
                         <a href="ippermit.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-router"></i> <span>IP Permit</span> </a>
+
                         <a href="logdata.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-text-wrap"></i> <span>Log Data</span> </a>
-                    <a href="profile.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-person-gear"></i> <span>Profile</span> </a>
+
+                    <!-- <a href="profile.php" class="list-group-item border-end-0 d-inline-block text-truncate"
+                        data-bs-parent="#sidebar"><i class="bi bi-person-gear"></i> <span>Profile</span> </a> -->
+
                     <a href="logout.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-box-arrow-right"></i> <span>Logout</span> </a>
 
