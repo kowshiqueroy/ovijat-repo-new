@@ -5,6 +5,4 @@
 
 
 
-
-
 <?php include 'foot.php'; ?>

@@ -3,24 +3,16 @@ include_once("header.php");
 
 ?>
 
-
 <?php
 ?>
 
-
-
-
-
-
-
 <div class="container ">
-    <div class="row">
-        <div class="col-sm">
+  <div class="row">
+    <div class="col-sm">
 
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-          
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <?php
+      <?php
 
 
             if (isset($_POST["addsavebtn"])) {
@@ -253,77 +245,75 @@ include_once("header.php");
             
             ?>
 
-            <form action="item.php" method="post" enctype="multipart/form-data">
-                <div class="containerform">
-                    <h1>Add new</h1>
-                    <p>Please fill in this form.</p>
-                    <hr>
-                    <input type="hidden"  name="itemid" id="id" required>
+      <form action="item.php" method="post" enctype="multipart/form-data">
+        <div class="containerform">
+          <h1>Add new</h1>
+          <p>Please fill in this form.</p>
+          <hr>
+          <input type="hidden" name="itemid" id="id" required>
 
-                    <label for="i"><b>Item Name (for job give here deadline YYYY.mm.dd [2023.11.01])</b></label>
-                    <input type="text"  name="itemnamef" id="i" required>
+          <label for="i"><b>Item Name<br>(for job give here deadline YYYY.mm.dd [2023.11.01]<br>
+          for Top Wish mm.ddSOMETHING [11.01] / mm [11SOMETHING /  YYYYSOMETHING [2023SOMETHING / active])</b></label>
+          <input type="text" name="itemnamef" id="i" required>
 
-                    <label for="i"><b>Details</b></label>
-                    <input type="text"  name="detailsf" id="d" required>
+          <label for="i"><b>Details</b></label>
+          <input type="text" name="detailsf" id="d" required>
 
-                    <label for="p"><b>Page Name</b></label>
-                    <select  name="pagenamef" id="p" required>
-                    <option>job</option>
-<option>snacks</option>
-<option>drinks</option>
-<option>edible oil</option>
-<option>rices</option>
-<option>bakery</option>
-<option>spices</option>
+          <label for="p"><b>Page Name</b></label>
+          <select name="pagenamef" id="p" required>
+          <option>top wish</option> 
+          <option>job</option>
 
-<option>chairman</option>
-<option>managing director</option>
-<option>deputy managing director</option>
+            <option>snacks</option>
+            <option>drinks</option>
+            <option>edible oil</option>
+            <option>rices</option>
+            <option>bakery</option>
+            <option>spices</option>
 
-<option>banner</option>
+            <option>chairman</option>
+            <option>managing director</option>
+            <option>deputy managing director</option>
 
-<option>mission</option>
-<option>vission</option>
-<option>qa</option>
-<option>company</option>
-<option>sister</option>
+            <option>banner</option>
 
-<option>trading</option>
-            </select>
-                    <label for="p"><b>Photo [jpg/jpeg/png/gif file  only smaller than 500KB]</b></label>
-                    <input type="hidden"  name="photonamef" id="ph" readonly>
-                    <input type="file" name="fileToUpload" id="fileToUpload" required>
-                   
+            <option>mission</option>
+            <option>vission</option>
+            <option>qa</option>
+            <option>company</option>
+            <option>sister</option>
 
-                    <hr>
+            <option>trading</option>
+          </select>
+          <label for="p"><b>Photo [jpg/jpeg/png/gif file only smaller than 500KB]</b></label>
+          <input type="hidden" name="photonamef" id="ph" readonly>
+          <input type="file" name="fileToUpload" id="fileToUpload" required>
 
-                    <button type="submit" name="addsavebtn" class="savebtn">Save</button>
-                </div>
+          <hr>
 
-            </form>
-
+          <button type="submit" name="addsavebtn" class="savebtn">Save</button>
         </div>
-        <div class="col-sm">
 
-            <h2>Database</h2>
-            <p>Item List</p>
+      </form>
 
-            <table
-        id="dt"
-        class="table table-striped"
-      >
-                <tr>
-                <th>ID</th>
-                    <th>Item Name</th>
-                    <th>Details</th>
-                    <th>Page Name</th>
-                    <th>Photo</th>
-                    <th>Action</th>
-               
+    </div>
+    <div class="col-sm">
 
-                </tr>
+      <h2>Database</h2>
+      <p>Item List</p>
 
-                <?php
+      <table id="dt" class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Item Name</th>
+          <th>Details</th>
+          <th>Page Name</th>
+          <th>Photo</th>
+          <th>Action</th>
+
+        </tr>
+
+        <?php
 
                 $select = $pdo->prepare("select * from item order by id desc");
 
@@ -353,14 +343,11 @@ include_once("header.php");
                 }
                 ?>
 
-            </table>
-
-           
-            
-
-        </div>
+      </table>
 
     </div>
+
+  </div>
 </div>
 
 <?php

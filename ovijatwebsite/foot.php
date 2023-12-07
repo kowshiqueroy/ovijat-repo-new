@@ -138,12 +138,7 @@
 </footer>
 
 
-<div id="loader">
 
- <center> <p id="loaderp">test</p> <p id="loaderp2">Web App<br>Developer: kowshiqueroy@gmail.com</p>  </center> 
- 
-
-</div>
 
 <!-- JAVASCRIPT FILES -->
 <script src="js/jquery.min.js"></script>
