@@ -2,10 +2,11 @@
 if(isset($_SESSION)) {
     session_destroy();
 
-    session_start();
+   
 
 
 }
+
 session_start();
 date_default_timezone_set("Asia/Dhaka");
 ?>

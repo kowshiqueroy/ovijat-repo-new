@@ -1,6 +1,7 @@
 <?php
 
-    if(!isset($_SESSION)) 
+   
+if(!isset($_SESSION)) 
     { 
         session_start(); 
     } 
@@ -11,9 +12,6 @@ $userpassword = $_POST["password"]."5877";
 $userpassword=md5($userpassword);
 
 $_SESSION["company"] = $_POST["company"];
-
-
-
 include_once("config.php");
 
 //echo"<center><br><br>Hello".$_SESSION["username"]." ".$usermail."</center>";
