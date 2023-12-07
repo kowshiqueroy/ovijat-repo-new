@@ -140,7 +140,7 @@ if ($counterb == 0 or isset($_GET['backup'])) {
                     if ($fileInfo->isDot()) {
                         continue;
                     }
-                    if ($fileInfo->isFile() && time() - $fileInfo->getCTime() >= 60 * 60 * 24 * 30 && $counter > 10) {
+                    if ($fileInfo->isFile() && time() - $fileInfo->getCTime() >= 60 * 60 * 24 * 30 or $counter > 10) {
                         unlink($fileInfo->getRealPath());
                     }
 

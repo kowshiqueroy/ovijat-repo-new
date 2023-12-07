@@ -11,7 +11,7 @@ $usermail = $_POST["email"];
 $userpassword = $_POST["password"]."5877";
 $userpassword=md5($userpassword);
 
-$_SESSION["company"] = $_POST["company"];
+
 include_once("config.php");
 
 //echo"<center><br><br>Hello".$_SESSION["username"]." ".$usermail."</center>";

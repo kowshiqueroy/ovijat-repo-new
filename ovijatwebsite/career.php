@@ -35,6 +35,67 @@ tr:nth-child(even) {
  
 }
 </style>
+
+
+<?php
+             
+
+            $d=date('Y.m.d');
+
+           // echo''.$d.'';
+
+
+
+             $select = $pdo->prepare("select * from item where pagename= 'job' and itemname > '$d' ");
+
+             $select->execute();
+          
+
+
+             while ($row = $select->fetch(PDO::FETCH_OBJ)) {
+
+
+                 echo '
+                 
+                 
+                 
+                 
+                 
+<section class="section-padding section-bg" id="section_2">
+<div class="container">
+ <div class="row">
+
+    
+
+     <div class="col-lg-10 col-12">
+         <div class="custom-text-box">
+             <h2 class="mb-2"> Deadline: '. $row->itemname.'</h2>
+             
+          
+
+             <p class="mb-0">'. $row->details.'    </div>
+
+             <center><h2 class="">Apply</h2></center>
+  
+           
+         
+     </div>
+     <div class="col-lg-2 col-12 mb-5 mb-lg-0"><a href="data/admin/uploads/'.$row->photo.'">
+     <img style="max-width:100px;" src="data/admin/uploads/'.$row->photo.'" class="custom-text-box-image img-fluid" alt="">
+     </a>
+ </div>
+
+ </div>
+</div>
+</section>
+                 
+                 
+                 ';
+             }
+
+?>
+
+
 <section class="contact-section section-padding" id="section_6">
                 <div class="container">
                     <div class="row">

@@ -86,13 +86,10 @@ date_default_timezone_set("Asia/Dhaka");
     <form action="login.php" method="post" style="max-width:500px;margin:auto">
         <center>
             <br><br>
-            <h1 style="color:green; font-size:50px;">Inventory<br>Web App</h1>
+            <h1 style="color:green; font-size:50px;">Web Data<br>Management App</h1>
             <br><br>
             <center>
-                <div class="input-container">
-                    <i class="fa fa-building-o icon"></i>
-                    <input class="input-field" type="text" placeholder="Company"  name="company" required>
-                </div>
+               
 
                 <div class="input-container">
                     <i class="fa fa-envelope icon"></i>

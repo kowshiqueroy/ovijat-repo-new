@@ -8,9 +8,9 @@
 date_default_timezone_set("Asia/Dhaka");
 
 
-$company = $_SESSION["company"];
+$company = "ovijatfoodweb";
 
-
+$_SESSION["company"]=$company;
 
 
 if(
@@ -22,7 +22,7 @@ if(
     
     ) {
 
-      $dbname=$_SESSION["company"]."";
+      $dbname=$company;
 $dbname=$company;
 $dbuser = "root";
 $dbpass = "";
@@ -32,10 +32,10 @@ $dbpass = "";
 
        // $dbname="u105067261_".$company."";
           //$dbname="u105067261_ovi";
-          $dbname="u105067261_".$_SESSION["company"]."";
-        $dbuser = "u105067261_kush";
+          $dbname="ovijattt_".$company;
+        $dbuser = "ovijattt_kowshiqueroy5877";
        // $dbpass = "B?b)*^XhRc6j";
-       $dbpass = "kushwebapp1212A";
+       $dbpass = "g*y9Bx}UP@vJ";
    
     
     }

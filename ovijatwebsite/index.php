@@ -1,7 +1,19 @@
 <?php include 'head.php'; ?>
 
-       
-            <img src="images/video.gif" style="  height: auto; width: 100%;"class="" alt="">
+<?php
+             
+
+            
+
+
+
+             $select = $pdo->prepare("select * from item where pagename= 'banner'");
+
+             $select->execute();
+             $row = $select->fetch(PDO::FETCH_ASSOC);
+
+?>  
+            <img src="<?php echo "data/admin/uploads/".$row["photo"];?>" style="  height: auto; width: 100%;"class="" alt="">
 
 
 
@@ -64,103 +76,78 @@ padding: 10px;
           
 
 
+  
+
+
+
+                    
+<section style="margin-top:30px;">
+                <div class="container">
+                <div class="row">
+
+<div class="col-lg-10 col-12 text-center mx-auto">
+    <h2 class="mb-5">New Products</h2>
+</div>
+
+<?php
+ 
+
+ $select = $pdo->prepare("select * from item where
+  pagename='snacks'
+ or pagename='drinks'
+ or pagename='edible oil'
+ or pagename='rices'
+ or pagename='bekary'
+ or pagename='spices'
+  order by id desc");
+
+ $select->execute();
+$flag=1;
+ while ($row = $select->fetch(PDO::FETCH_OBJ)) {
+
+
+        if($flag<=8){
+
+      
+
+            if($flag==5){
+
+echo '
+
+
+    <h2 class="mb-5 text-center">Top Products</h2>
+
+
+
+
+';
+
+            }
+
+            echo '
+     
+     
+            <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+            <div class="featured-block d-flex justify-content-center align-items-center">
+                <a href="product.php?id='.$row->id.'" class="d-block">
+                    <img src="data/admin/uploads/'.$row->photo.'" class="featured-block-image img-fluid" alt="">
+
+                    <p class="featured-block-text"><strong>'.$row->itemname.'</strong><br></p>
+                </a>
+            </div>
+        </div>
             
-<section style="margin-top:30px;">
-                <div class="container">
-                    <div class="row">
-                    
-                        <div class="col-lg-10 col-12 text-center mx-auto">
-                            <h2 class="mb-5">Top Products</h2>
-                        </div>
+            
+            ';
+        }
+        $flag++;
+   
+ }
+ 
 
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/m.jpg" class="featured-block-image img-fluid" alt="">
+?>
 
-                                  <p class="featured-block-text"><strong>Chili Powder</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/mo.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Musturd Oil</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/oc.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Chanachur</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/p1.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Jhal Muri</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-
-                    
-<section style="margin-top:30px;">
-                <div class="container">
-                    <div class="row">
-                    
-                        
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/r.jpg" class="featured-block-image img-fluid" alt="">
-
-                                  <p class="featured-block-text"><strong>Arometic Kalijeera Rice</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/l.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Litchi Drink</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/bay_leaf.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Bay Leafs</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                            <div class="featured-block d-flex justify-content-center align-items-center">
-                                <a href="#featured-block d-flex justify-content-center align-items-center" class="d-block">
-                                    <img src="images/p/t.jpg"  class="featured-block-image img-fluid" alt="">
-                                    <p class="featured-block-text"><strong>Sweet Toast</strong><br></p>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
+</div>
                 </div>
             </section>
 

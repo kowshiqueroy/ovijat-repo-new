@@ -1,3 +1,8 @@
+<?php
+
+include_once("data/config.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -78,7 +83,7 @@
                             <a class="nav-link click-scroll" href=""></a>
                         </li>
                     <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.php">Home</a>
+                            <a class="nav-link click-scroll" href="index.php"></a>
                         </li>
                     
                     

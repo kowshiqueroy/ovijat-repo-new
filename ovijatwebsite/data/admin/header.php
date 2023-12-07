@@ -205,18 +205,14 @@ $company_details_db = $row["details"];
                         data-bs-parent="#sidebar"> <span>
                             <?php echo $_SESSION["role"]; ?>
                         </span> </a>
-                        <a href="category.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-tags"></i> <span>Category</span> </a>
+                     
 
                   
 
                     <a href="item.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-boxes"></i> <span>Product</span> </a>
+                        data-bs-parent="#sidebar"><i class="bi bi-boxes"></i> <span>Items</span> </a>
 
-                        <a href="department.php" class="list-group-item border-end-0 d-inline-block text-truncate"
-                        data-bs-parent="#sidebar"><i class="bi bi-bounding-box"></i> <span>Job Post</span> </a>
-                       
-                       
+                     
 
                     <a href="companyinfo.php" class="list-group-item border-end-0 d-inline-block text-truncate"
                         data-bs-parent="#sidebar"><i class="bi bi-buildings"></i> <span>Company Info</span> </a>
