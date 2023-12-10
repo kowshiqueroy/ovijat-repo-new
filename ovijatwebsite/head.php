@@ -30,13 +30,12 @@ include_once("data/config.php");
                     <p style=" font-size:30px;" class="d-flex me-4 mb-0">
                         <!--     <i class="bi-geo-alt me-2"></i> -->
 
-
                         <?php
 
                         $d = date("m.d") . "";
                         $m=date("m") . "";
                         $t = "";
-                        // echo $d;
+ 
                         
 
 
@@ -50,7 +49,7 @@ include_once("data/config.php");
                 
                         <marquee behavior="scroll"  direction="left">';
 
-                        $select = $pdo->prepare("select * from item where itemname like '$d%' or itemname='$m%' or itemname like '%active%' and pagename= 'top wish'");
+                        $select = $pdo->prepare("select * from item where itemname like '$d%' or itemname like '$m%' or itemname like '%active%' and pagename= 'top wish'");
 
                         $select->execute();
 
@@ -66,7 +65,7 @@ include_once("data/config.php");
                 
                 
                            
-                            '. $row->details.' <img style="margin-right:50px; max-height:80px;" src="data/admin/uploads/'.$row->photo.'"  alt="Kind Heart Charity">
+                            '. $row->details.' <img id="mimg" style="margin-right:50px; max-height:80px;" src="data/admin/uploads/'.$row->photo.'"  alt="Kind Heart Charity">
                          
                 
                 
@@ -82,7 +81,7 @@ include_once("data/config.php");
                 
                 
                            
-                            প্রাকৃতিকভাবে স্বাস্থ্যকর Naturaly Healthy <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
+                           Naturaly Healthy <img id="mimg" src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
                         
                 
                 
@@ -106,8 +105,7 @@ include_once("data/config.php");
 
 
                         ?>
-                       
-                        
+
                     </p>
 
                     <!--  
@@ -211,6 +209,12 @@ include_once("data/config.php");
                         <a class="nav-link click-scroll" href="contact.php">Contact</a>
                     </li>
 
+                    <li class="nav-item">
+
+                        <a id="pbm" class="nav-link click-scroll" onclick="brochure()">Product Brochure</a>
+
+                    </li>
+
                     <li class="nav-item ms-3">
                         <a class="nav-link custom-btn custom-border-btn btn" href="career.php">Career</a>
                     </li>
@@ -255,15 +259,72 @@ include_once("data/config.php");
             position: fixed;
             top: 300px;
             bottom: 300px;
-            right: -60px;
+            right: -80px;
             z-index: 100;
-            opacity: 0.2;
+            opacity: 0.1;
 
         }
 
         #mybutton:hover {
 
             opacity: 1;
+
+        }
+
+
+        @media screen and (max-width: 450px) {
+
+
+            #mybutton {
+                padding: 1px 2px;
+                font-size: 8px;
+                right: -30px;
+                bottom: 0 px;
+                display: none;
+
+
+
+            }
+
+            #pbm {
+
+                display: block;
+
+            }
+
+            marquee {
+
+
+                height: 20px;
+                font-size: 10px;
+
+
+            }
+
+            #mimg {
+
+
+
+                height: 20px;
+            }
+
+
+
+        }
+
+
+
+        @media screen and (min-width: 451px) {
+
+
+            #pbm {
+
+                display: none;
+
+            }
+
+
+
 
         }
     </style>
