@@ -75,7 +75,7 @@ tr:nth-child(even) {
 
              <p class="mb-0">'. $row->details.'    </div>
 
-             <center><h2 class="">Apply</h2></center>
+             
   
            
          

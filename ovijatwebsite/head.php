@@ -160,15 +160,17 @@ include_once("data/config.php");
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="">
-                        <a class="nav-link click-scroll" href=""></a>
+
+                <li class="nav-item">
+                        <a class="nav-link " href=""></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="index.php"></a>
+                        <a class="nav-link " href="index.php"></a>
                     </li>
+                  
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link click-scroll dropdown-toggle" href="" id="navbarLightDropdownMenuLink"
+                        <a class="nav-link  dropdown-toggle" href="" id="navbarLightDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
@@ -183,7 +185,7 @@ include_once("data/config.php");
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link click-scroll dropdown-toggle" href="" id="navbarLightDropdownMenuLink"
+                        <a class="nav-link  dropdown-toggle" href="" id="navbarLightDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
@@ -198,20 +200,20 @@ include_once("data/config.php");
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="rice.php">Rice</a>
+                        <a class="nav-link " href="rice.php">Rice</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="trading.php">Trading</a>
+                        <a class="nav-link " href="trading.php">Trading</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="contact.php">Contact</a>
+                        <a class="nav-link " href="contact.php">Contact</a>
                     </li>
 
                     <li class="nav-item">
 
-                        <a id="pbm" class="nav-link click-scroll" onclick="brochure()">Product Brochure</a>
+                        <a id="pbm" class="nav-link " onclick="brochure()">Product Brochure</a>
 
                     </li>
 
