@@ -7,7 +7,7 @@
                 <img src="images/logo.png" class="logo img-fluid" alt="">
                 <h2 style="color:white;"><br>Ovijat</h2>
                 <h4 style="color:white;">Group</h4>
-                <p style="color:white;">Naturaly Healthy</p>
+                <p style="color:white;">Naturally Healthy</p>
             </div>
 
 

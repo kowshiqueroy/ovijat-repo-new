@@ -27,7 +27,7 @@ include_once("data/config.php");
             <div class="row">
 
                 <div class="col-lg-9 col-12 ms-auto d-lg-block">
-                    <p style=" font-size:30px;" class="d-flex me-4 mb-0">
+                    <p style=" font-size:20px;" class="d-flex me-4 mb-0">
                         <!--     <i class="bi-geo-alt me-2"></i> -->
 
                         <?php
@@ -65,7 +65,7 @@ include_once("data/config.php");
                 
                 
                            
-                            '. $row->details.' <img id="mimg" style="margin-right:50px; max-height:80px;" src="data/admin/uploads/'.$row->photo.'"  alt="Kind Heart Charity">
+                            '. $row->details.' <img id="mimg" style="margin-right:50px; max-height:40px;" src="data/admin/uploads/'.$row->photo.'"  alt="Kind Heart Charity">
                          
                 
                 
@@ -263,7 +263,7 @@ include_once("data/config.php");
             bottom: 300px;
             right: -80px;
             z-index: 100;
-            opacity: 0.1;
+            opacity: 0.5;
 
         }
 
