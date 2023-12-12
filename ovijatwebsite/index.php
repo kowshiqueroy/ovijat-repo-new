@@ -35,7 +35,7 @@ padding: 10px;
 }
 .buttonup:hover {
   
-  font-size: 36px;
+  font-size: 26px;
   background-color: red;
 }
 
@@ -47,7 +47,7 @@ padding: 10px;
 
   .buttonup:hover {
   
-  font-size: 26px;
+  font-size: 16px;
   background-color: red;
 }
 }

@@ -125,6 +125,7 @@ include_once("data/config.php");
                         <li class="social-icon-item">
                             <a href="mailto:info@ovijatfood.com" class="social-icon-link bi-envelope"
                                 target="blank"></a>
+                                
                         </li>
 
                         <li class="social-icon-item">
