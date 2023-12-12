@@ -22,11 +22,11 @@ include_once("data/config.php");
 
 <body id="section_1">
 
-    <header class="site-header">
-        <div class="container">
-            <div class="row">
+    <header style="max-height:70px;" class="site-header">
+       
+            <div  class="row">
 
-                <div class="col-lg-9 col-12 ms-auto d-lg-block">
+                <div  class="col-lg-9 col-12 ms-auto d-lg-block">
                     <p style=" font-size:20px;" class="d-flex me-4 mb-0">
                         <!--     <i class="bi-geo-alt me-2"></i> -->
 
@@ -115,9 +115,9 @@ include_once("data/config.php");
 
                 </div>
 
-                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
-                    <ul class="social-icon">
-                        <li class="social-icon-item">
+                <div  class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul  class="social-icon">
+                        <li  class="social-icon-item">
                             <a href="https://www.facebook.com/ovijatfood/" class="social-icon-link bi-facebook"
                                 target="blank"></a>
                         </li>
@@ -140,7 +140,7 @@ include_once("data/config.php");
                 </div>
 
             </div>
-        </div>
+        
     </header>
 
     <nav class="navbar navbar-expand-lg bg-light shadow-lg">
@@ -161,17 +161,16 @@ include_once("data/config.php");
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
 
-                <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link " href=""></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="index.php"></a>
                     </li>
-                  
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="" id="navbarLightDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                        <a class="nav-link  dropdown-toggle" href="" id="navbarLightDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                             <li><a class="dropdown-item" href="chairman.php">Chaiman's Message</a></li>
@@ -185,8 +184,8 @@ include_once("data/config.php");
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="" id="navbarLightDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                        <a class="nav-link  dropdown-toggle" href="" id="navbarLightDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Products</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                             <li><a class="dropdown-item" href="snacks.php">Snacks</a></li>
