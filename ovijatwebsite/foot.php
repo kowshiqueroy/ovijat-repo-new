@@ -4,10 +4,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-2 col-12 mb-4">
+            <center>
                 <img src="images/logo.png" class="logo img-fluid" alt="">
                 <h2 style="color:white;"><br>Ovijat</h2>
                 <h4 style="color:white;">Group</h4>
-                <p style="color:white;">Naturally Healthy</p>
+                <p style="color:white;">Naturaly Healthy</p>   </center>
             </div>
 
 

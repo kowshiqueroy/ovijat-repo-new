@@ -24,11 +24,11 @@ var counting = setInterval(function () {
 				jQuery("body").toggleClass('page-loaded');
 				setTimeout(function() {
 					jQuery('nav').css('visibility','visible')
-				}, 880);
+				}, 88);
 			}
 		}
 	} 
 	
 	loadscreen.style.transition = "0.15s";
 	loadscreen.style.width = Width + "%";
-}, 20);
+}, 1);
