@@ -104,35 +104,17 @@
 
     <div class="site-footer-bottom">
         <div class="container">
-            <div class="row">
+      <center>
 
                 <div class="col-lg-6 col-md-7 col-12">
                     <p class="copyright-text mb-0">Copyright © 2015-Present Ovijat Group <a href="data">IT Team</a></p>
                 </div>
+
+
                 
-                <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
-                    <ul class="social-icon">
-                        <li class="social-icon-item">
-                            <a href="https://www.facebook.com/ovijatfood/" class="social-icon-link bi-facebook" target="blank"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="mailto:info@ovijatfood.com" class="social-icon-link bi-envelope" target="blank"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="tel:+8801733390331" class="social-icon-link bi-phone" target="blank"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="https://www.linkedin.com/in/ovijat-food-and-beverage-industries-ltd-05b5a9164/" class="social-icon-link bi-linkedin" target="blank"></a>
-                        </li>
-
-                       
-                    </ul>
-                </div>
                 
-            </div>
+</center>
+   
         </div>
     </div>
 </footer>

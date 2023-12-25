@@ -206,4 +206,16 @@
 
 </div>
 
+
+<style>
+@media screen and (max-width: 991px) {
+  .centered {
+    font-size: 5px;
+  }
+
+}
+
+
+    </style>
+
 <?php include 'foot.php'; ?>

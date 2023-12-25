@@ -3,6 +3,7 @@
 include_once("data/config.php");
 
 ?>
+<?php include 'indexpre.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -331,4 +332,6 @@ include_once("data/config.php");
         }
     </style>
 
-    <main>
+
+
+    <main id="loader-progress">

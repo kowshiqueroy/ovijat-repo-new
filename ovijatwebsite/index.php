@@ -1,5 +1,7 @@
 <?php include 'head.php'; ?>
 
+
+
 <?php
              
 
@@ -12,10 +14,19 @@
              $select->execute();
              $row = $select->fetch(PDO::FETCH_ASSOC);
 
+             if(!$row){
+
+                echo "<center>
+                <img style='width:100%;' src='images/video.gif'></img></center>";
+             }
+             else {
+
+
+                echo "<center>
+                <img style='width:100%;' src='data/admin/uploads/".$row['photo']."'></img></center>";
+             }
+
 ?>  
-            <img src="<?php echo "data/admin/uploads/".$row["photo"];?>" style="  height: auto; width: 100%;"class="" alt="">
-
-
 
             <style>
 .buttonup {
@@ -237,37 +248,37 @@ echo '
             </section>
 
     <section class="section-padding">
-      <div class="container">
-          <div class="row">
+     <div class="container">
+         <div class="container">
+             <div class="row">
 
-              <div class="col-lg-10 col-12 text-center mx-auto">
-                  <h2 class="mb-5">Ovijat Group</h2>
-              </div>
+                 <div class="col-lg-10 col-12 text-center mx-auto">
+                     <h2 class="mb-5">Ovijat Group</h2>
+                 </div>
 
-              <div id="sc" style=" margin: auto;
+                 <div id="sc" style=" margin: auto;
                              width: 90%;
                              text-align: center;
                              border: 3px solid #73AD21;
                             padding: 10px;">
-                  <img src="" style="max-width:150px" alt="">
+                     <img src="" style="max-width:150px" alt="">
 
-                  <img src="" style="max-width:150px" alt="">
-                  <img class="col-lg-2 col-12 text-center mx-auto" src="images/1.png" style="max-width:150px" alt="">
-                  <img class="col-lg-2 col-12 text-center mx-auto" src="images/2.png" style="max-width:150px" alt="">
-                  <img class="col-lg-2 col-12 text-center mx-auto" src="images/3.png" style="max-width:150px" alt="">
-                  <img class="col-lg-2 col-12 text-center mx-auto" src="images/4.png" style="max-width:150px" alt="">
-                  <img class="col-lg-2 col-12 text-center mx-auto" src="images/5.png" style="max-width:150px" alt="">
+                     <img src="" style="max-width:150px" alt="">
+                     <img class="col-lg-2 col-12 text-center mx-auto" src="images/1.png" style="max-width:150px" alt="">
+                     <img class="col-lg-2 col-12 text-center mx-auto" src="images/2.png" style="max-width:150px" alt="">
+                     <img class="col-lg-2 col-12 text-center mx-auto" src="images/3.png" style="max-width:150px" alt="">
+                     <img class="col-lg-2 col-12 text-center mx-auto" src="images/4.png" style="max-width:150px" alt="">
+                     <img class="col-lg-2 col-12 text-center mx-auto" src="images/5.png" style="max-width:150px" alt="">
 
-                  <img class="col-lg-2 col-12 text-center mx-auto" src="images/6.png" style="max-width:150px" alt="">
+                     <img class="col-lg-2 col-12 text-center mx-auto" src="images/6.png" style="max-width:150px" alt="">
 
-              </div>
+                 </div>
 
-          </div>
-      </div>
-  </section>
-
+             </div>
+             <div class="container">
+         </div>
+ </section>
     
-
 
 
 
