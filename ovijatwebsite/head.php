@@ -16,6 +16,7 @@ include_once("data/config.php");
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link rel="icon" href="images/ovi.ico">
     <link rel="icon" type="image/x-icon" href="images/ovi.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

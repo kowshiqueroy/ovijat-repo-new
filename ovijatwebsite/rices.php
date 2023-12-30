@@ -18,7 +18,7 @@
              while ($row = $select->fetch(PDO::FETCH_OBJ)) {
 
 
-                    if($row->pagename=='rice'){
+                    if($row->pagename=='rices'){
 
                         echo '
                  

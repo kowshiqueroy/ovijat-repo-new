@@ -108,7 +108,7 @@ padding: 10px;
  or pagename='drinks'
  or pagename='edible oil'
  or pagename='rices'
- or pagename='bekary'
+ or pagename='bakery'
  or pagename='spices'
   order by id desc");
 
