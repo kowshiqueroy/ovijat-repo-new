@@ -603,7 +603,7 @@ readers do not read off random characters that represent icons */
 .fa-book-dead:before {
   content: "\f6b7"; }
 
-.fa-book-medical:before {
+.fa-book-online:before {
   content: "\f7e6"; }
 
 .fa-book-open:before {
@@ -654,7 +654,7 @@ readers do not read off random characters that represent icons */
 .fa-briefcase:before {
   content: "\f0b1"; }
 
-.fa-briefcase-medical:before {
+.fa-briefcase-online:before {
   content: "\f469"; }
 
 .fa-broadcast-tower:before {
@@ -957,7 +957,7 @@ readers do not read off random characters that represent icons */
 .fa-city:before {
   content: "\f64f"; }
 
-.fa-clinic-medical:before {
+.fa-clinic-online:before {
   content: "\f7f2"; }
 
 .fa-clipboard:before {
@@ -1059,7 +1059,7 @@ readers do not read off random characters that represent icons */
 .fa-comment-dots:before {
   content: "\f4ad"; }
 
-.fa-comment-medical:before {
+.fa-comment-online:before {
   content: "\f7f5"; }
 
 .fa-comment-slash:before {
@@ -1611,10 +1611,10 @@ readers do not read off random characters that represent icons */
 .fa-file-invoice-dollar:before {
   content: "\f571"; }
 
-.fa-file-medical:before {
+.fa-file-online:before {
   content: "\f477"; }
 
-.fa-file-medical-alt:before {
+.fa-file-online-alt:before {
   content: "\f478"; }
 
 .fa-file-pdf:before {
@@ -2034,7 +2034,7 @@ readers do not read off random characters that represent icons */
 .fa-hand-holding-heart:before {
   content: "\f4be"; }
 
-.fa-hand-holding-medical:before {
+.fa-hand-holding-online:before {
   content: "\f95c"; }
 
 .fa-hand-holding-usd:before {
@@ -2427,7 +2427,7 @@ readers do not read off random characters that represent icons */
 .fa-laptop-house:before {
   content: "\f966"; }
 
-.fa-laptop-medical:before {
+.fa-laptop-online:before {
   content: "\f812"; }
 
 .fa-laravel:before {
@@ -2811,7 +2811,7 @@ readers do not read off random characters that represent icons */
 .fa-not-equal:before {
   content: "\f53e"; }
 
-.fa-notes-medical:before {
+.fa-notes-online:before {
   content: "\f481"; }
 
 .fa-npm:before {
@@ -3135,7 +3135,7 @@ readers do not read off random characters that represent icons */
 .fa-project-diagram:before {
   content: "\f542"; }
 
-.fa-pump-medical:before {
+.fa-pump-online:before {
   content: "\f96a"; }
 
 .fa-pump-soap:before {

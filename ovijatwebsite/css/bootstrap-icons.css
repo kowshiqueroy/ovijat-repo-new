@@ -645,8 +645,8 @@ url("../fonts/bootstrap-icons.woff?30af91bf14e37666a085fb8a161ff36d") format("wo
 .bi-file-earmark-lock::before { content: "\f36f"; }
 .bi-file-earmark-lock2-fill::before { content: "\f370"; }
 .bi-file-earmark-lock2::before { content: "\f371"; }
-.bi-file-earmark-medical-fill::before { content: "\f372"; }
-.bi-file-earmark-medical::before { content: "\f373"; }
+.bi-file-earmark-online-fill::before { content: "\f372"; }
+.bi-file-earmark-online::before { content: "\f373"; }
 .bi-file-earmark-minus-fill::before { content: "\f374"; }
 .bi-file-earmark-minus::before { content: "\f375"; }
 .bi-file-earmark-music-fill::before { content: "\f376"; }
@@ -691,8 +691,8 @@ url("../fonts/bootstrap-icons.woff?30af91bf14e37666a085fb8a161ff36d") format("wo
 .bi-file-lock::before { content: "\f39d"; }
 .bi-file-lock2-fill::before { content: "\f39e"; }
 .bi-file-lock2::before { content: "\f39f"; }
-.bi-file-medical-fill::before { content: "\f3a0"; }
-.bi-file-medical::before { content: "\f3a1"; }
+.bi-file-online-fill::before { content: "\f3a0"; }
+.bi-file-online::before { content: "\f3a1"; }
 .bi-file-minus-fill::before { content: "\f3a2"; }
 .bi-file-minus::before { content: "\f3a3"; }
 .bi-file-music-fill::before { content: "\f3a4"; }
@@ -851,7 +851,7 @@ url("../fonts/bootstrap-icons.woff?30af91bf14e37666a085fb8a161ff36d") format("wo
 .bi-journal-bookmark::before { content: "\f43d"; }
 .bi-journal-check::before { content: "\f43e"; }
 .bi-journal-code::before { content: "\f43f"; }
-.bi-journal-medical::before { content: "\f440"; }
+.bi-journal-online::before { content: "\f440"; }
 .bi-journal-minus::before { content: "\f441"; }
 .bi-journal-plus::before { content: "\f442"; }
 .bi-journal-richtext::before { content: "\f443"; }

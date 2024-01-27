@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+$websiteName = "Khoriddar";
+
+?>
+
 <head>
-    <title>Shop</title>
+    <title>
+        <?php echo $websiteName; ?>
+    </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,57 +23,45 @@
 
     .bar b {
 
-font-size: 15px;
+        font-size: 15px;
 
 
     }
-
-
-    
 </style>
 
 <body>
+    
 
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div class="w3-bar w3-green w3-wide w3-padding w3-card">
             <a href="#home" class="w3-bar-item w3-button">
                 <i class="fa fa-bars"></i>
-                <b>Delight</b> Grocery</a>
+                <b>
+                    <?php echo $websiteName; ?>
+                </b></a>
             <!-- Float links to the right. Hide them on small screens -->
-            <div class="w3-right w3-hide-small bar">
-                <a href="#contact" class="w3-bar-item w3-button">Hello, Name <i class="fa fa-user"></i></a>
-                <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
-                <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-shopping-cart"></i><b>2</b></a>
+            <div class="w3-right  bar">
+                <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-comment"></i><b>0</b></a>
+                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+             
+
+
+
 
             </div>
 
-            <div class="w3-hide-large w3-hide-medium w3-right bar">
-                <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-shopping-cart"></i><b>2</b></a>
-                <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-bars"></i></a>
-            </div>
 
         </div>
-        <div class="w3-center w3-hide-small w3-blue w3-wide w3-card">
-            <a href="#about" class=" w3-button">cat1</a>
-            <a href="#about" class=" w3-button">cat1</a>
 
-            <a href="#about" class=" w3-button">cat1</a>
-            <a href="#about" class=" w3-button">cat1</a>
-            <a href="#about" class="w3-bar-item w3-button">cat1</a>
-            <a href="#about" class=" w3-button">cat1</a>
-            <a href="#about" class=" w3-button">cat1</a>
-            <a href="#about" class="w3-bar-item w3-button">cat1</a>
-            <a href="#about" class=" w3-button">cat1</a>
-            <a href="#about" class=" w3-button">cat1</a>
-            <a href="#about" class="w3-bar-item w3-button">cat1</a>
-         
 
-        </div>
+
     </div>
     <!-- Header -->
     <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-        <img class="w3-image"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq2fQMw5iJ8xdkyRP8Wc8MTRqxaqoVNY_LJOokiGJMyg&s" alt="Architecture" width="1500" height="800">
+        <img class="w3-image"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq2fQMw5iJ8xdkyRP8Wc8MTRqxaqoVNY_LJOokiGJMyg&s"
+            alt="Architecture" width="1500" height="800">
         <div class="w3-display-middle w3-margin-top w3-center">
             <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span
                     class="w3-hide-small w3-text-light-grey">Architects</span></h1>
@@ -74,6 +69,9 @@ font-size: 15px;
     </header>
 
     <!-- Page content -->
+
+
+
     <div class="w3-content w3-padding" style="max-width:1564px">
 
         <!-- Project Section -->
