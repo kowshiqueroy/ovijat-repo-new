@@ -4,41 +4,6 @@
 
 include 'head.php';
 
-if (!isset($_REQUEST['email'])){
-
-echo '<script> window.location.replace("email.php"); </script>';
-
-}
-else {
-
-    $email= $_REQUEST['email'];
-
-    if(isset($_SESSION['email'])){
-        $email=$_SESSION['email'];
-
-    }
-
-    $password=rand(100000,999999);
-   
-
-$passwordh=md5($password);
-    if (!isset($_REQUEST['msg'])){
-
-$sql = "INSERT INTO user (email, password,status)
-VALUES ('$email', '$passwordh','$password') ON DUPLICATE KEY UPDATE
-password='$passwordh',status='$password'
-";
-
-if ($conn->query($sql) === TRUE) {
-//  echo "New record created successfully";
-} else {
- // echo "Error: " . $sql . "<br>" . $conn->error;
-}
-    }
-
-}
-
-
 
 ?>   
 
@@ -48,11 +13,11 @@ if ($conn->query($sql) === TRUE) {
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Verification</h1>
+                    <h1 class="mb-3">Login</h1>
                     <p>We are happy to see you are with us</p>
                     <?php
 
-                    if (isset($_REQUEST['msg'])){
+if (isset($_REQUEST['msg'])){
 
 echo '<p style="color:red;">'.$_REQUEST['msg'].'</p>';
 
@@ -65,24 +30,40 @@ echo '<p style="color:red;">'.$_REQUEST['msg'].'</p>';
                     <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     
-                    <p>Check Your Mailbox <?php echo $_REQUEST['email'];?> for a</p>
-                    <h1 class="mb-3">One Time Password (OTP)</h1>   
+                    <p>Hey, Lost your password?</p>
+                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit"><a style="color:white;" href="email.php" >Forget Password</a></button>
+                                    </div>  
+
+
+                                    
+                    <br><p>If you are new</p>
+                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit"><a style="color:white;" href="email.php" >Registration</a></button>
+                                    </div>  
                 </div>
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
-                        <form action="password.php" name="form1" method="post" >
+                        <form action="profile.php" name="form1" method="post" >
                                 <div class="row g-3">
                                    
-                                    <div class="col-12">
+                                <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="otp" id="otp" placeholder="OTP" required>
-                                            <label for="otp">OTP</label>
-
-                                            <input type="hidden" class="form-control" name="email" id="email" value="<?php echo $_REQUEST['email'];?>">
+                                            <input type="text" class="form-control" name="email" id="email" placeholder="Email"  required>
+                                            <label for="email">Email</label>
 
                                         </div>
                                     </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="pass" id="pass" placeholder="Password"  required>
+                                            <label for="pass">Password</label>
+                                            
+
+                                        </div>
+                                    </div>
+                               
                                     
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit">Next</button>

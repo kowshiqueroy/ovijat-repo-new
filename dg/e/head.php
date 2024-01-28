@@ -3,6 +3,10 @@
 
 <?php
 include  "config.php";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  
+}
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +56,7 @@ include  "config.php";
         <!-- Navbar Start -->
         <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                <a href="index.php" class="navbar-brand d-flex align-items-center text-center">
                     <div class="icon p-2 me-2">
                         <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
                     </div>
@@ -63,12 +67,12 @@ include  "config.php";
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link ">Featured</a>
+                        <a href="item.php" class="nav-item nav-link ">Featured</a>
                         <a href="about.html" class="nav-item nav-link">Provider</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dashboard</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="property-list.html" class="dropdown-item">Add Item</a>
+                                <a href="add.php" class="dropdown-item">Add Item</a>
                                 <a href="property-type.html" class="dropdown-item">Request</a>
                                 
                                 <a href="property-agent.html" class="dropdown-item">History</a>
@@ -88,10 +92,10 @@ include  "config.php";
                        
                        <?php
 
-                       if(!isset($_SESSION))
+                       if(!isset($_SESSION['email']))
                        {
 
-                    echo '    <a href="index.html" class="nav-item nav-link active ">Log In</a>
+                    echo '    <a href="login.php" class="nav-item nav-link active ">Log In</a>
                     <a href="email.php" class="nav-item nav-link active ">Registration</a>';
 
 
@@ -100,11 +104,32 @@ include  "config.php";
                        else {
 
                         echo '  <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">User</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">
+                        
+                        <img  style=" border-radius: 50%;" src="';
+                        $email=$_SESSION['email'];
+                        
+                        $sql = "SELECT photo FROM user WHERE email='$email'";
+                        $result = $conn->query($sql);
+                    
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                $photo=$row['photo'];
+                            }
+                          } else {
+                            echo "0 results";
+                          }
+                        
+                        
+                        if (!$photo){ echo "users/logo.png";} else{echo $photo;} echo '" width="20" alt="Account">
+
+                        
+                        </a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="testimonial.html" class="dropdown-item">Settings</a>
-                            <a href="404.html" class="dropdown-item">Profile</a>
-                            <a href="404.html" class="dropdown-item">Logout</a>
+                            <a href="password.php" class="dropdown-item">Password</a>
+                            <a href="profile.php" class="dropdown-item">Profile</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>';
 

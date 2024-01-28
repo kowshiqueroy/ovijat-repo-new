@@ -4,14 +4,25 @@
 
 include 'head.php';
 
-if ( !isset($_REQUEST['email'])){
+if ( !isset($_REQUEST['email']) AND !isset($_SESSION['email'])){
 
 echo '<script> window.location.replace("email.php"); </script>';
 
 }
 else {
 
-    $email= $_REQUEST['email'];
+
+
+        if(isset($_REQUEST['email'])){
+    
+        $email= $_REQUEST['email'];
+    
+        }
+
+    if(isset($_SESSION['email'])){
+        $email=$_SESSION['email'];
+
+    }
 
     if ( isset($_REQUEST['otp'])){
     $password=$_REQUEST['otp'];
@@ -33,6 +44,12 @@ else {
       if (md5($password)!=$passworddb){
 
         echo '<script> window.location.replace("otp.php?msg=Invalid OTP&email='.$email.'"); </script>';
+      }
+
+      else {
+
+     
+        $_SESSION['email']=$email;
       }
 
 
@@ -76,13 +93,13 @@ echo '<p style="color:red;">'.$_REQUEST['msg'].'</p>';
                     <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     
-                    <p>Hey, <?php echo $_REQUEST['email'];?> Setup Your</p>
+                    <p>Hey, <?php echo $email;?> Setup Your</p>
                     <h1 class="mb-3">New Password</h1>   
                 </div>
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
-                        <form action="profile.php" name="form1" method="get" >
+                        <form action="profile.php" name="form1" method="post" >
                                 <div class="row g-3">
                                    
                                     <div class="col-12">
@@ -95,7 +112,7 @@ echo '<p style="color:red;">'.$_REQUEST['msg'].'</p>';
                                         <div class="form-floating">
                                             <input type="text" class="form-control" name="newpass" id="newpass" placeholder="New Password"  required>
                                             <label for="newpass">New Password</label>
-                                            <input type="hidden" class="form-control" name="email" id="email" value="<?php echo $_REQUEST['email'];?>">
+                                            <input type="hidden" class="form-control" name="email" id="email" value="<?php echo $email;?>">
 
                                         </div>
                                     </div>
