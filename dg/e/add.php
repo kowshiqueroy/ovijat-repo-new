@@ -153,36 +153,34 @@ if ($conn->query($sql) === TRUE) {
                 <div class="wow fadeInUp" data-wow-delay="0.5s">
                     <form action="add.php" name="form1" method="post" enctype="multipart/form-data">
                         <div class="row g-3">
-                           
 
                             <div class="col-12">
                                 <div class="form-floating">
 
-                                    <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Name" <?php //if ($name){ echo "value='".$name."'";}?> required>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Name"
+                                        <?php //if ($name){ echo "value='".$name."'";}?> required>
                                     <label for="name">Name</label>
 
                                 </div>
                             </div>
 
-                          
-
                             <div class="col-6">
                                 <div class="form-floating">
 
-                                    <input type="text" class="form-control" name="category" id="category" placeholder="Category"
-                                        <?php //if ($category){ echo "value='".$category."'";}?> required>
+                                    <input type="text" class="form-control" name="category" id="category"
+                                        placeholder="Category" <?php //if ($category){ echo "value='".$category."'";}?>
+                                        required>
                                     <label for="category">Category</label>
 
                                 </div>
                             </div>
 
-
                             <div class="col-2">
                                 <div class="form-floating">
 
-                                <img  style=" border-radius: 10%;" src="<?php if (!isset($itemphoto)){ echo "items/logo.png";} else{echo $itemphoto;} ?>" Height="80" width="80" alt="Photo">
-
+                                    <img style=" border-radius: 10%;"
+                                        src="<?php if (!isset($itemphoto)){ echo "items/logo.png";} else{echo $itemphoto;} ?>"
+                                        Height="80" width="80" alt="Photo">
 
                                 </div>
                             </div>
@@ -190,8 +188,7 @@ if ($conn->query($sql) === TRUE) {
                             <div class="col-4">
                                 <div class="form-floating">
 
-                                <input class="btn btn-primary w-100 py-3" type="file" name="image" required>
-
+                                    <input class="btn btn-primary w-100 py-3" type="file" name="image" required>
 
                                 </div>
                             </div>
@@ -229,16 +226,14 @@ if ($conn->query($sql) === TRUE) {
                                 </div>
                             </div>
 
-
-
                             <div class="col-6">
                                 <div class="form-floating">
 
-                                <select name="type" class="form-select border-1 py-3">
-                                    <option selected>Sell</option>
-                                    <option >Rent</option>
-                                
-                                </select>
+                                    <select name="type" class="form-select border-1 py-3">
+                                        <option selected>Sell</option>
+                                        <option>Rent</option>
+
+                                    </select>
 
                                 </div>
                             </div>
@@ -256,11 +251,11 @@ if ($conn->query($sql) === TRUE) {
                             <div class="col-6">
                                 <div class="form-floating">
 
-                                <select name="recuring" class="form-select border-1 py-3">
-                                    <option value="0" >One Time</option>
-                                    <option value="1" >Recuring</option>
-                                
-                                </select>
+                                    <select name="recuring" class="form-select border-1 py-3">
+                                        <option value="0">One Time</option>
+                                        <option value="1">Recuring</option>
+
+                                    </select>
 
                                 </div>
                             </div>
@@ -270,7 +265,8 @@ if ($conn->query($sql) === TRUE) {
 
                                     <input type="number" class="form-control" name="period" id="period"
                                         placeholder="Durtarion (Months)"
-                                        <?php //if ($period){ echo "value='".$period."'";} else { echo "value='"0'";}?> required>
+                                        <?php //if ($period){ echo "value='".$period."'";} else { echo "value='"0'";}?>
+                                        required>
                                     <label for="period">Durtarion (Months)</label>
 
                                 </div>
@@ -290,11 +286,9 @@ if ($conn->query($sql) === TRUE) {
 
                         <p>Table here</p>
 
-
-
                         <div class="row g-1">
 
-                        <?php
+                            <?php
                         $sql = "SELECT * FROM item WHERE user='$user' ORDER BY id DESC";
                         $result = $conn->query($sql);
 
@@ -360,59 +354,18 @@ if ($conn->query($sql) === TRUE) {
                                         <small class="flex-fill text-center py-2"><i class="fa fa-calendar text-primary me-2"></i>'.$period.'</small>
                                     </div>
                                     <div class="d-flex border-top">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i>Chat</small>
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i>Deal</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'">Deal</a></small>
                                 </div>
                                 </div>
                             </div>
                                 
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
                                 ';
-
-
-
-
-
-
-
-
-
-
-
-
                             }
                         }
                         ?>
 
-
-
-
-
-                          
-                       
-
-
-                          
-                          
-                          
-                          
-                          
-                          
-                         
-                         
-                      </div>
+                        </div>
 
                     </div>
                 </div>
