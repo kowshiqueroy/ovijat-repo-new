@@ -18,7 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -83,7 +83,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Notification</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="property-list.html" class="dropdown-item">Chat</a>
+                                <a href="chat.php?to=help@admin.com" class="dropdown-item">Chat</a>
                                 <a href="property-type.html" class="dropdown-item">Notice</a>
                                 <a href="property-agent.html" class="dropdown-item">Alert</a>
                                 <a href="property-agent.html" class="dropdown-item">Help</a>
