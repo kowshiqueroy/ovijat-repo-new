@@ -1,0 +1,66 @@
+<?php 
+session_start();
+
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "hr";
+
+
+
+$servername = "localhost";
+$username = "ovijattt_kush";
+$password = "Q8O((,aM.~5r";
+$dbname = "ovijattt_hrdb";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+//Insert
+  
+  // $sql = "INSERT INTO user (mail,pass)
+  // VALUES ('3', 'Doe')";
+  //  $conn->exec($sql);
+  // echo "New record created successfully";
+
+
+//Insert Duplicate
+ 
+  // $sql = "INSERT INTO user (mail,pass)
+  // VALUES ('3', 'Doe') ON DUPLICATE KEY UPDATE pass='c' ";
+  // $conn->exec($sql);
+  // echo "New record created successfully";
+
+//Update
+  
+  // $sql = "UPDATE user SET pass='b' WHERE mail='a'";
+  // $stmt = $conn->prepare($sql);
+  // $stmt->execute();
+  // echo $stmt->rowCount() . " records UPDATED successfully";
+
+
+//Fetch one row
+ 
+  // $stmt = $conn->prepare("SELECT mail,pass FROM user WHERE mail='a'");
+  // $stmt->execute();
+  // $v=$stmt->fetch();
+  // echo $v['pass'];
+
+
+  //Fetch many row
+  
+  // $stmt = $conn->prepare("SELECT mail,pass FROM user");
+  // $stmt->execute();
+  // while ($v=$stmt->fetch()){
+  // echo'<br>';
+  // echo $v['pass'];
+  // }
+ 
+  
+?>
