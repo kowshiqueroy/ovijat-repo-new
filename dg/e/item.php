@@ -66,7 +66,7 @@ include 'head.php';
                 <div class="row g-4">
 
                     <?php
-                        $sql = "SELECT * FROM item WHERE type='Sell' ORDER BY id DESC";
+                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0') ORDER BY id DESC";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -132,7 +132,7 @@ include 'head.php';
                                     </div>
                                     <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'">Deal</a></small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
                                 </div>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ include 'head.php';
             <div class="row g-4">
 
 <?php
-    $sql = "SELECT * FROM item WHERE type='Rent' ORDER BY id DESC";
+    $sql = "SELECT * FROM item WHERE type='Rent' AND del='0' ORDER BY id DESC";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -215,7 +215,7 @@ include 'head.php';
                 </div>
                 <div class="d-flex border-top">
                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'">Deal</a></small>
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
             </div>
             </div>
         </div>

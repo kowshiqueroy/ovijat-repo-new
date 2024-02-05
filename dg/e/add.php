@@ -13,6 +13,22 @@ echo '<script> window.location.replace("index.php"); </script>';
   
 
 $user=$_SESSION['email'];
+
+
+
+if(isset($_REQUEST['del'])){
+$id=$_REQUEST['del'];
+
+
+$sql = "UPDATE item SET del='1' WHERE id='$id'";
+
+if ($conn->query($sql) === TRUE) {
+ //echo "New record created successfully";
+} else {
+ // echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+}
   
 if(isset($_REQUEST['submit'])){
 
@@ -320,6 +336,7 @@ if ($conn->query($sql) === TRUE) {
                                 $saleprice = $row['saleprice'];
 
                                 $photo = $row['photo'];
+                                $d = $row['del'];
 
                                 if ($recuring==0){ $r= "One Time";}
                                 else { $r= "Recuring";}
@@ -355,7 +372,20 @@ if ($conn->query($sql) === TRUE) {
                                     </div>
                                     <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'">Deal</a></small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="add.php?';
+                                    
+                                    if ($d==1){
+                                        echo 'act='.$id.'">Active</a></small>';
+
+
+
+                                    }
+                                    else{
+
+                                        echo 'del='.$id.'">Delete</a></small>';
+                                    }
+                                    
+                                  echo ' 
                                 </div>
                                 </div>
                             </div>
