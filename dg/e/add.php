@@ -29,6 +29,20 @@ if ($conn->query($sql) === TRUE) {
 }
 
 }
+
+if(isset($_REQUEST['act'])){
+    $id=$_REQUEST['act'];
+    
+    
+    $sql = "UPDATE item SET del='0' WHERE id='$id'";
+    
+    if ($conn->query($sql) === TRUE) {
+     //echo "New record created successfully";
+    } else {
+     // echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    }
   
 if(isset($_REQUEST['submit'])){
 
@@ -300,7 +314,6 @@ if ($conn->query($sql) === TRUE) {
 
                     <div class="phppot-container">
 
-                        <p>Table here</p>
 
                         <div class="row g-1">
 
@@ -353,10 +366,25 @@ if ($conn->query($sql) === TRUE) {
                                 
                                 
                                 
-                                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="property-item rounded overflow-hidden">
+                                <div ';    if ($d==1){
+                                    echo'style="opacity:0.5;"';} echo 'class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+                                <div style="height:400px;" class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img height="50" class="img-fluid" src="'.$photo.'" alt=""></a>
+                                        <a href=""><img style="height:100px;" class="img-fluid" src="'.$photo.'" alt=""></a>
+                                        <small   class="bg-primary rounded text-white position-absolute end-0 top-0 m-4 py-1 px-3"> <a class="d-block h6 mb-2" href="add.php?';
+                                        
+                                        if ($d==1){
+                                            echo 'act='.$id.'">Show</a></small>';
+    
+    
+    
+                                        }
+                                        else{
+    
+                                            echo 'del='.$id.'">Hide</a></small>';
+                                        }
+
+                                        echo '
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">'.$category.'</div>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">For '.$type.' by '.$user.'</div>
                                     </div>
@@ -369,24 +397,12 @@ if ($conn->query($sql) === TRUE) {
                                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-boxes text-primary me-2"></i>'.$stock.'</small>
                                         <small class="flex-fill text-center border-end py-2">'.$r.'</small>
                                         <small class="flex-fill text-center py-2"><i class="fa fa-calendar text-primary me-2"></i>'.$period.'</small>
+                                        <div class="d-flex border-top">
+                                       
                                     </div>
-                                    <div class="d-flex border-top">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="add.php?';
                                     
-                                    if ($d==1){
-                                        echo 'act='.$id.'">Active</a></small>';
-
-
-
-                                    }
-                                    else{
-
-                                        echo 'del='.$id.'">Delete</a></small>';
-                                    }
-                                    
-                                  echo ' 
-                                </div>
+                                        </div>
+                                  
                                 </div>
                             </div>
                                 

@@ -8,29 +8,6 @@ include 'head.php';
     <div class="container">
         <div class="row g-2">
 
-
-
-
-        <div class="col-md-10">
-                <div class="row g-2">
-                    <div class="col-md-4">
-                        <p class="form-control border-0 py-3" placeholder="Search Keyword">Test</p>
-                    </div>
-                    <div class="col-md-4">
-                        <p class="form-control border-0 py-3" placeholder="Search Keyword">Test</p>
-
-                    </div>
-                    <div class="col-md-4">
-                        <p class="form-control border-0 py-3" placeholder="Search Keyword">Test</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-dark border-0 w-100 py-3">Cancel</button>
-            </div>
-
-
-            
             <div class="col-md-10">
                 <div class="row g-2">
                     <div class="col-md-4">
@@ -49,6 +26,23 @@ include 'head.php';
                 <button class="btn btn-dark border-0 w-100 py-3">Cancel</button>
             </div>
 
+            <div class="col-md-10">
+                <div class="row g-2">
+                    <div class="col-md-4">
+                        <p class="form-control border-0 py-3" placeholder="Search Keyword">Test</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="form-control border-0 py-3" placeholder="Search Keyword">Test</p>
+
+                    </div>
+                    <div class="col-md-4">
+                        <p class="form-control border-0 py-3" placeholder="Search Keyword">Test</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-dark border-0 w-100 py-3">Cancel</button>
+            </div>
 
         </div>
     </div>

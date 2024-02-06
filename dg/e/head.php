@@ -68,25 +68,25 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="item.php" class="nav-item nav-link ">Featured</a>
-                        <a href="about.html" class="nav-item nav-link">Provider</a>
+                   
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dashboard</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="add.php" class="dropdown-item">Add Item</a>
-                                <a href="property-type.html" class="dropdown-item">Request</a>
+                                <a href="request.php" class="dropdown-item">Request</a>
                                 
-                                <a href="property-agent.html" class="dropdown-item">History</a>
-                                <a href="property-agent.html" class="dropdown-item">Payment</a>
-                                <a href="property-agent.html" class="dropdown-item">Dispute</a>
+                                <a href="deal.php" class="dropdown-item">Deal</a>
+                                <a href="payment.php" class="dropdown-item">Payment</a>
+                                <a href="dispute.php" class="dropdown-item">Dispute</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Notification</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="chat.php?to=help@admin.com" class="dropdown-item">Chat</a>
-                                <a href="property-type.html" class="dropdown-item">Notice</a>
-                                <a href="property-agent.html" class="dropdown-item">Alert</a>
-                                <a href="property-agent.html" class="dropdown-item">Help</a>
+                                <a href="notice.php" class="dropdown-item">Notice</a>
+                              
+                                <a href="help.php" class="dropdown-item">Help</a>
                             </div>
                         </div>
                        
@@ -98,7 +98,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     echo '    <a href="login.php" class="nav-item nav-link active ">Log In</a>
                     <a href="email.php" class="nav-item nav-link active ">Registration</a>';
 
-
+                    $email="";
                        }
 
                        else {

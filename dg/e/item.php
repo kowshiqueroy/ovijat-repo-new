@@ -3,50 +3,62 @@
 include 'head.php';
 ?>
 
-<!-- Search Start -->
-<div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
-    <div class="container">
-        <div class="row g-2">
-            <div class="col-md-10">
-                <div class="row g-2">
-                    <div class="col-md-4">
-                        <input type="text" class="form-control border-0 py-3" placeholder="Search Keyword">
-                    </div>
-                    <div class="col-md-4">
-                        <select class="form-select border-0 py-3">
-                            <option selected>Property Type</option>
-                            <option value="1">Property Type 1</option>
-                            <option value="2">Property Type 2</option>
-                            <option value="3">Property Type 3</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <select class="form-select border-0 py-3">
-                            <option selected>Location</option>
-                            <option value="1">Location 1</option>
-                            <option value="2">Location 2</option>
-                            <option value="3">Location 3</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-dark border-0 w-100 py-3">Search</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Search End -->
 
 <!-- Property List Start -->
 <div class="container-xxl py-5">
     <div class="container">
+
+
+       <!-- Search Start -->
+       <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+            <div class="container">
+                <div class="row g-2">
+                    <div class="col-md-10">
+                        <div class="row g-2">
+                        <div class="col-md-2">
+
+                        <form action="item.php"> 
+                        <button type="submit" class="btn btn-dark border-0 w-100 py-3">Refresh</button>
+</form>
+                    </div>
+                            <div class="col-md-4">
+
+                            <form method="get" action="item.php">
+                                <input name="n" type="text" class="form-control border-0 py-3"
+                                 value="<?php if (isset($_REQUEST['n'])){ echo $_REQUEST['n']; } else { echo 'All';}?>" required>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="t" class="form-select border-0 py-3" required>
+                                <?php if (isset($_REQUEST['t'])){ echo  '<option selected >'.$_REQUEST["t"].'</option>'; }?>
+  
+                                    <option >Property Type 1</option>
+                                    <option >Property Type 2</option>
+                                    <option >Property Type 3</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="l" class="form-select border-0 py-3" required>
+                                <?php if (isset($_REQUEST['l'])){ echo  '<option selected >'.$_REQUEST["l"].'</option>'; }?>
+                                    <option >Location 1</option>
+                                    <option >Location 2</option>
+                                    <option >Location 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" name="s" class="btn btn-dark border-0 w-100 py-3">Search</button>
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search End -->
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                    <h1 class="mb-3">Property Listing</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit
-                        eirmod sit diam justo sed rebum.</p>
+                    <h1 class="mb-3">All List</h1>
+                    <p>Find Your Best Choice</p>
                 </div>
             </div>
             <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
@@ -66,7 +78,24 @@ include 'head.php';
                 <div class="row g-4">
 
                     <?php
-                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0') ORDER BY id DESC";
+                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0' AND user!='$email') ORDER BY id DESC";
+                       
+                       if (isset($_REQUEST['s'])){
+                        $n=$_REQUEST['n'];
+                        $l=$_REQUEST['l'];
+                        $t=$_REQUEST['t'];
+
+                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0' AND user!='$email' 
+                        AND (name LIKE '$n' OR category LIKE '$t' OR detail LIKE '$l')) 
+                        ORDER BY id DESC";
+
+
+                       }
+                       
+                       
+                       
+                       
+                       
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -132,7 +161,7 @@ include 'head.php';
                                     </div>
                                     <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
                                 </div>
                                 </div>
                             </div>
@@ -149,7 +178,7 @@ include 'head.php';
             <div class="row g-4">
 
 <?php
-    $sql = "SELECT * FROM item WHERE type='Rent' AND del='0' ORDER BY id DESC";
+    $sql = "SELECT * FROM item WHERE (type='Rent' AND del='0' AND user!='$email') ORDER BY id DESC";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -215,7 +244,7 @@ include 'head.php';
                 </div>
                 <div class="d-flex border-top">
                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
             </div>
             </div>
         </div>
