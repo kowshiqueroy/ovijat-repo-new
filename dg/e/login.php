@@ -45,7 +45,7 @@ echo '<p style="color:red;">'.$_REQUEST['msg'].'</p>';
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
-                        <form action="profile.php" name="form1" method="post" >
+                        <form action="profile.php" name="form1" method="get" >
                                 <div class="row g-3">
                                    
                                 <div class="col-12">
@@ -60,6 +60,7 @@ echo '<p style="color:red;">'.$_REQUEST['msg'].'</p>';
                                             <input type="text" class="form-control" name="pass" id="pass" placeholder="Password"  required>
                                             <label for="pass">Password</label>
                                             
+                                            <input type="hidden" class="form-control" name="re"  value="1"  required>
 
                                         </div>
                                     </div>

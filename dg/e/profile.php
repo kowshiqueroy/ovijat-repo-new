@@ -71,6 +71,17 @@ else {
             echo '<script> window.location.replace("login.php?msg=Invalid Password&email='.$email.'"); </script>';
           }
 
+          else {
+
+            if ( isset($_REQUEST['re']) AND $_REQUEST['re']==1){
+
+                echo '<script> window.location.replace("profile.php"); </script>';
+                
+                }
+
+
+          }
+
       }
    
 

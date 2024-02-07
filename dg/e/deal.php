@@ -12,62 +12,14 @@ include 'head.php';
 
         <?php
 
-if (isset($_REQUEST['id'])){
-
-$id=$_REQUEST['id'];
-
-
-
-$sql = "SELECT * FROM item WHERE id='$id' ORDER BY id DESC";
-$result = $conn->query($sql);
-
-$id = "";
-$byuser = "";
-$foruser =$email;
-$itemname = "";
-$category = "";
-$details ="";
-$type = "";
-$recuring = "";
-$period = "";
-$price = "";
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while ($row = $result->fetch_assoc()) {
-      
-        $byuser = $row['user'];
-    
-        $itemname = $row['name'];
-        $category = $row['category'];
-        $details = $row['detail'];
-        $type = $row['type'];
-        $recuring = $row['recuring'];
-        $period = $row['period'];
-        $price = $row['saleprice'];
-
-    }}
-
-
-    $sql = "INSERT INTO request (byuser, foruser,category, itemname,details, type, recuring,period,price)
-    VALUES ('$byuser', '$foruser','$category','$itemname', '$details','$type', 
-    '$recuring', '$period', '$price')";
-
-    if ($conn->query($sql) === TRUE) {
-     //echo "New record created successfully";
-    } else {
-     // echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-
-}
 if (isset($_REQUEST['cancel'])){
 
 
 $id=$_REQUEST['cancel'];
+$status=$_REQUEST['value'];
 
 
-$sql = "UPDATE request SET status='1' WHERE id='$id'";
+$sql = "UPDATE request SET status='$status' WHERE id='$id'";
 
 if ($conn->query($sql) === TRUE) {
  //echo "New record created successfully";
@@ -75,8 +27,14 @@ if ($conn->query($sql) === TRUE) {
  // echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+
+
+
+
+
+
 }
-                        $sql = "SELECT * FROM request WHERE foruser='$email' ORDER BY id DESC";
+                        $sql = "SELECT * FROM request WHERE byuser='$email' ORDER BY id DESC";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -94,10 +52,10 @@ if ($conn->query($sql) === TRUE) {
                                 $price = $row['price'];
                                 $ts = $row['ts'];
                                 $status = $row['status'];
-                                echo '      <div class="col-md-8">
+                                echo '      <div class="col-md-7">
                                 <div class="row g-2">
                                     <div class="col-md-4">
-                                        <p class="form-control " >'.$itemname.'<br>'.$byuser.'<br>'.$ts.
+                                        <p class="form-control " >'.$itemname.'<br>From: '.$foruser.'<br>'.$ts.
                                         '<br>'.$type.' in '.$category.'<br>'; 
                                         
                                         if ($recuring==1) {
@@ -131,10 +89,27 @@ if ($conn->query($sql) === TRUE) {
                             ';
                             
                             if ($status==0) {
-                                echo '<div class="col-md-2">
-                                <form action="request.php" method="get">
+                                echo '<div class="col-md-1">
+                                <form action="deal.php" method="get">
                                 <input type="hidden" name="cancel" value="'.$id.'">
-                    <button class="btn btn-dark border-0 w-100 py-3">Cancel</button>
+                                <input type="hidden" name="value" value="2">
+                    <button class="btn btn-dark border-0 w-100 py-3">Approve</button>
+                    </form>                            </div>';
+
+
+                    echo '<div class="col-md-1">
+                                <form action="deal.php" method="get">
+                                <input type="hidden" name="cancel" value="'.$id.'">
+                                <input type="hidden" name="value" value="4">
+                    <button class="btn btn-dark border-0 w-100 py-3">Reject</button>
+                    </form>                            </div>';
+
+                    
+                    echo '<div class="col-md-1">
+                                <form action="deal.php" method="get">
+                                <input type="hidden" name="cancel" value="'.$id.'">
+                                <input type="hidden" name="value" value="3">
+                    <button class="btn btn-dark border-0 w-100 py-3">End</button>
                     </form>                            </div>';
 
 
@@ -144,7 +119,7 @@ if ($conn->query($sql) === TRUE) {
                             if ($status==1) {
                                 echo '<div   class="col-md-2">
                               
-                    <button style="background-color:black;" class="btn btn-dark border-0 w-100 py-3">Canceled</button>
+                    <button style="background-color:black;" class="btn btn-dark border-0 w-100 py-3">Canceled by User</button>
                                   </div>';
 
 
@@ -157,6 +132,12 @@ if ($conn->query($sql) === TRUE) {
                     <button style="background-color:green;" class="btn btn-dark border-0 w-100 py-3">Approved</button>
                                   </div>';
 
+                                  echo '<div class="col-md-1">
+                                  <form action="deal.php" method="get">
+                                  <input type="hidden" name="cancel" value="'.$id.'">
+                                  <input type="hidden" name="value" value="3">
+                      <button class="btn btn-dark border-0 w-100 py-3">End</button>
+                      </form>                            </div>';
 
 
                             }

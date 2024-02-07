@@ -161,7 +161,7 @@ include 'head.php';
                                     </div>
                                     <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'"> Request a Deal</a></small>
                                 </div>
                                 </div>
                             </div>

@@ -368,7 +368,7 @@ if ($conn->query($sql) === TRUE) {
                                 
                                 <div ';    if ($d==1){
                                     echo'style="opacity:0.5;"';} echo 'class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
-                                <div style="height:400px;" class="property-item rounded overflow-hidden">
+                                <div style="height: auto;" class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
                                         <a href=""><img style="height:100px;" class="img-fluid" src="'.$photo.'" alt=""></a>
                                         <small   class="bg-primary rounded text-white position-absolute end-0 top-0 m-4 py-1 px-3"> <a class="d-block h6 mb-2" href="add.php?';
