@@ -12,14 +12,43 @@ include 'head.php';
 
         <?php
 
+
+if(isset($_REQUEST['iid']) AND isset($_REQUEST['s'])){
+    $iid=$_REQUEST['iid'];
+    $s=$_REQUEST['s'];
+    
+    
+    $sql = "UPDATE item SET stock='$s' WHERE id='$iid'";
+    
+    if ($conn->query($sql) === TRUE) {
+     //echo "New record created successfully";
+    } else {
+     // echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    }
+
 if (isset($_REQUEST['cancel'])){
 
 
 $id=$_REQUEST['cancel'];
 $status=$_REQUEST['value'];
 
+$d=date("Y-m-d");
 
-$sql = "UPDATE request SET status='$status' WHERE id='$id'";
+
+if ($status==2){
+    $sql = "UPDATE request SET status='$status', sts='$d' WHERE id='$id'";
+
+}
+
+
+if ($status==3){
+    $sql = "UPDATE request SET status='$status', ets='$d' WHERE id='$id'";
+
+}
+
+
 
 if ($conn->query($sql) === TRUE) {
  //echo "New record created successfully";
@@ -41,6 +70,11 @@ if ($conn->query($sql) === TRUE) {
                             // output data of each row
                             while ($row = $result->fetch_assoc()) {
                                 $id = $row['id'];
+                                $iid = $row['iid'];
+                                $stock = $row['stock'];
+                                $sts = $row['sts'];
+                                $ets = $row['ets'];
+
                                 $byuser = $row['byuser'];
                                 $foruser = $row['foruser'];
                                 $itemname = $row['itemname'];
@@ -76,7 +110,7 @@ if ($conn->query($sql) === TRUE) {
                 
                                     </div>
                                     <div class="col-md-3">
-                                        <p class="form-control border-0 py-3" >'.$price.'</p>
+                                    <p class="form-control border-0 py-3" >'.$price.'/=<br>'.$sts.'<br>'.$ets.'</p>
                                     </div>
                                 </div>
                             </div>
@@ -93,6 +127,8 @@ if ($conn->query($sql) === TRUE) {
                                 <form action="deal.php" method="get">
                                 <input type="hidden" name="cancel" value="'.$id.'">
                                 <input type="hidden" name="value" value="2">
+                                <input type="hidden" name="iid" value="'.$iid.'">
+                                <input type="hidden" name="s" value="'.($stock-1).'">
                     <button class="btn btn-dark border-0 w-100 py-3">Approve</button>
                     </form>                            </div>';
 
@@ -105,12 +141,7 @@ if ($conn->query($sql) === TRUE) {
                     </form>                            </div>';
 
                     
-                    echo '<div class="col-md-1">
-                                <form action="deal.php" method="get">
-                                <input type="hidden" name="cancel" value="'.$id.'">
-                                <input type="hidden" name="value" value="3">
-                    <button class="btn btn-dark border-0 w-100 py-3">End</button>
-                    </form>                            </div>';
+                  
 
 
 

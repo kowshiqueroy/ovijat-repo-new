@@ -78,15 +78,17 @@ include 'head.php';
                 <div class="row g-4">
 
                     <?php
-                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0' AND user!='$email') ORDER BY id DESC";
+                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0' AND stock>0 AND user!='$email') ORDER BY id DESC";
                        
                        if (isset($_REQUEST['s'])){
                         $n=$_REQUEST['n'];
                         $l=$_REQUEST['l'];
                         $t=$_REQUEST['t'];
 
-                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0' AND user!='$email' 
-                        AND (name LIKE '$n' OR category LIKE '$t' OR detail LIKE '$l')) 
+                        $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0'  AND stock>0  AND user!='$email' 
+                        AND (name LIKE '%$n%' OR category LIKE '%$t%' OR detail LIKE '%$l%'
+        OR category LIKE '%$n%' OR detail LIKE '%$t%' OR name LIKE '%$l%'
+        OR detail LIKE '%$n%' OR name LIKE '%$t%' OR category LIKE '%$l%')) 
                         ORDER BY id DESC";
 
 
@@ -178,7 +180,23 @@ include 'head.php';
             <div class="row g-4">
 
 <?php
-    $sql = "SELECT * FROM item WHERE (type='Rent' AND del='0' AND user!='$email') ORDER BY id DESC";
+    $sql = "SELECT * FROM item WHERE (type='Rent' AND del='0' AND stock>0 AND user!='$email' ) ORDER BY id DESC";
+
+
+    if (isset($_REQUEST['s'])){
+        $n=$_REQUEST['n'];
+        $l=$_REQUEST['l'];
+        $t=$_REQUEST['t'];
+
+        $sql = "SELECT * FROM item WHERE (type='Rent' AND del='0' AND stock>0 AND user!='$email' 
+        AND (name LIKE '%$n%' OR category LIKE '%$t%' OR detail LIKE '%$l%'
+        OR category LIKE '%$n%' OR detail LIKE '%$t%' OR name LIKE '%$l%'
+        OR detail LIKE '%$n%' OR name LIKE '%$t%' OR category LIKE '%$l%'
+        )) 
+        ORDER BY id DESC";
+
+
+       }
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -244,8 +262,8 @@ include 'head.php';
                 </div>
                 <div class="d-flex border-top">
                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="deal.php?id='.$id.'">Deal</a></small>
-            </div>
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'"> Request a Deal</a></small>
+                </div>
             </div>
         </div>
             

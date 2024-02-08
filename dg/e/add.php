@@ -30,6 +30,23 @@ if ($conn->query($sql) === TRUE) {
 
 }
 
+
+
+if(isset($_REQUEST['id']) AND isset($_REQUEST['s'])){
+    $id=$_REQUEST['id'];
+    $s=$_REQUEST['s'];
+    
+    
+    $sql = "UPDATE item SET stock='$s' WHERE id='$id'";
+    
+    if ($conn->query($sql) === TRUE) {
+     //echo "New record created successfully";
+    } else {
+     // echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    }
+
 if(isset($_REQUEST['act'])){
     $id=$_REQUEST['act'];
     
@@ -340,6 +357,11 @@ if ($conn->query($sql) === TRUE) {
 
                                 $stock = $row['stock'];
 
+                                $stockp = $stock+1;
+
+                                
+                                $stockm = $stock-1;
+
                                 $recuring = $row['recuring'];
 
                                 $period = $row['period'];
@@ -385,6 +407,8 @@ if ($conn->query($sql) === TRUE) {
                                         }
 
                                         echo '
+
+                                       
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">'.$category.'</div>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">For '.$type.' by '.$user.'</div>
                                     </div>
@@ -395,8 +419,8 @@ if ($conn->query($sql) === TRUE) {
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-boxes text-primary me-2"></i>'.$stock.'</small>
-                                        <small class="flex-fill text-center border-end py-2">'.$r.'</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-calendar text-primary me-2"></i>'.$period.'</small>
+                                        <small class="flex-fill text-center border-end py-2">'.$r.' <i class="fa fa-calendar text-primary me-2"></i>'.$period.'</small>
+                                        <small class="flex-fill text-center py-2"><a  href="add.php?id='.$id.'&s='.$stockm.'">-1</a> Stock <a  href="add.php?id='.$id.'&s='.$stockp.'">+1</a></small>
                                         <div class="d-flex border-top">
                                        
                                     </div>

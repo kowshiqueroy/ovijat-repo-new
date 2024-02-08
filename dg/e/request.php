@@ -21,7 +21,7 @@ $id=$_REQUEST['id'];
 $sql = "SELECT * FROM item WHERE id='$id' ORDER BY id DESC";
 $result = $conn->query($sql);
 
-$id = "";
+
 $byuser = "";
 $foruser =$email;
 $itemname = "";
@@ -45,12 +45,13 @@ if ($result->num_rows > 0) {
         $recuring = $row['recuring'];
         $period = $row['period'];
         $price = $row['saleprice'];
+        $stock=$row['stock'];
 
     }}
 
 
-    $sql = "INSERT INTO request (byuser, foruser,category, itemname,details, type, recuring,period,price)
-    VALUES ('$byuser', '$foruser','$category','$itemname', '$details','$type', 
+    $sql = "INSERT INTO request (stock,iid,byuser, foruser,category, itemname,details, type, recuring,period,price)
+    VALUES ('$stock','$id','$byuser', '$foruser','$category','$itemname', '$details','$type', 
     '$recuring', '$period', '$price')";
 
     if ($conn->query($sql) === TRUE) {
@@ -93,6 +94,8 @@ if ($conn->query($sql) === TRUE) {
                                 $period = $row['period'];
                                 $price = $row['price'];
                                 $ts = $row['ts'];
+                                $sts = $row['sts'];
+                                $ets = $row['ets'];
                                 $status = $row['status'];
                                 echo '      <div class="col-md-8">
                                 <div class="row g-2">
@@ -118,7 +121,7 @@ if ($conn->query($sql) === TRUE) {
                 
                                     </div>
                                     <div class="col-md-3">
-                                        <p class="form-control border-0 py-3" >'.$price.'</p>
+                                        <p class="form-control border-0 py-3" >'.$price.'/=<br>'.$sts.'<br>'.$ets.'</p>
                                     </div>
                                 </div>
                             </div>
