@@ -24,8 +24,8 @@ include 'head.php';
                             <div class="col-md-4">
 
                             <form method="get" action="item.php">
-                                <input name="n" type="text" class="form-control border-0 py-3"
-                                 value="<?php if (isset($_REQUEST['n'])){ echo $_REQUEST['n']; } else { echo 'All';}?>" required>
+                                <input name="n" type="text" class="form-control border-0 py-3"placeholder="Type Here"
+                                 value="<?php if (isset($_REQUEST['n'])){ echo $_REQUEST['n']; } else { echo '';}?>" required>
                             </div>
                             <div class="col-md-3">
                                 <select name="t" class="form-select border-0 py-3" required>
@@ -161,14 +161,22 @@ include 'head.php';
                                         <small class="flex-fill text-center border-end py-2">'.$r.'</small>
                                         <small class="flex-fill text-center py-2"><i class="fa fa-calendar text-primary me-2"></i>'.$period.'</small>
                                     </div>
-                                    <div class="d-flex border-top">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
+                                    <div class="d-flex border-top">';
+
+                                    if(!isset($_SESSION['email']))
+                                    {
+
+                                        echo ' <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="logoin.php">Login</a></small>';
+                                    }
+
+                                    else{
+                                   echo ' <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'"> Request a Deal</a></small>
                                 </div>
                                 </div>
                             </div>
                                 
-                                ';
+                                ';}
                             }
                         }
                         ?>
@@ -260,14 +268,21 @@ include 'head.php';
                     <small class="flex-fill text-center border-end py-2">'.$r.'</small>
                     <small class="flex-fill text-center py-2"><i class="fa fa-calendar text-primary me-2"></i>'.$period.'</small>
                 </div>
-                <div class="d-flex border-top">
-                <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
+                <div class="d-flex border-top">';
+                if(!isset($_SESSION['email']))
+                {
+
+                    echo ' <small class="flex-fill text-center border-end py-2"> <a class="d-block h6 mb-2" href="email.php">Login For Deal</a></small>';
+                }
+
+                else{
+               echo ' <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'"> Request a Deal</a></small>
-                </div>
+            </div>
             </div>
         </div>
             
-            ';
+            ';}
         }
     }
     ?>

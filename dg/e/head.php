@@ -69,26 +69,9 @@ if (session_status() === PHP_SESSION_NONE) {
                     <div class="navbar-nav ms-auto">
                         <a href="item.php" class="nav-item nav-link ">Featured</a>
                    
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dashboard</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="add.php" class="dropdown-item">Add Item</a>
-                                <a href="request.php" class="dropdown-item">Request</a>
-                                
-                                <a href="deal.php" class="dropdown-item">Deal</a>
-                                <a href="payment.php" class="dropdown-item">Payment</a>
-                                <a href="dispute.php" class="dropdown-item">Dispute</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Notification</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="chat.php?to=help@admin.com" class="dropdown-item">Chat</a>
-                                <a href="notice.php" class="dropdown-item">Notice</a>
-                              
-                                <a href="help.php" class="dropdown-item">Help</a>
-                            </div>
-                        </div>
+                    
+
+                      
                        
                        <?php
 
@@ -103,7 +86,18 @@ if (session_status() === PHP_SESSION_NONE) {
 
                        else {
 
-                        echo '  <div class="nav-item dropdown">
+                        echo '     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dashboard</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="add.php" class="dropdown-item">Add Item</a>
+                            <a href="request.php" class="dropdown-item">Request</a>
+                            
+                            <a href="deal.php" class="dropdown-item">Deal</a>
+                            <a href="payment.php" class="dropdown-item">Payment</a>
+                        </div>
+                    </div>
+
+                    <a href="chat.php?to=help@admin.com" class="nav-item nav-link ">Chat</a> <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">
                         
                         <img  style=" border-radius: 50%;" src="';
