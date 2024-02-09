@@ -110,7 +110,7 @@ echo '<button style="background-color:green; font-size:15px;"class="btn btn-dark
 
                 else{
 
-                    echo ' <form action="confirmpay.php" method="get">
+                    echo ' <form action="confirmpay.php" method="post">
                     <input type="hidden" name="confirm" value="'.$id.'">
           <button class="btn btn-dark border-0 w-100 py-3">Confirm</button>
           </form>';
@@ -118,7 +118,7 @@ echo '<button style="background-color:green; font-size:15px;"class="btn btn-dark
                 echo '
             </div>
                             <div class="col-md-1">
-                                        <form action="chat.php" method="get">
+                                        <form action="chat.php" method="post">
                                         <input type="hidden" name="to" value="'.$fromuser.'">
                             <button class="btn btn-dark border-0 w-100 py-3">Chat</button>
                             </form>

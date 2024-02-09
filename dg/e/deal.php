@@ -143,7 +143,7 @@ if ($conn->query($sql) === TRUE) {
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                        <form action="chat.php" method="get">
+                                        <form action="chat.php" method="post">
                                         <input type="hidden" name="to" value="'.$byuser.'">
                             <button class="btn btn-dark border-0 w-100 py-3">Chat</button>
                             </form>
@@ -152,7 +152,7 @@ if ($conn->query($sql) === TRUE) {
                             
                             if ($status==0) {
                                 echo '<div class="col-md-1">
-                                <form action="deal.php" method="get">
+                                <form action="deal.php" method="post">
                                 <input type="hidden" name="cancel" value="'.$id.'">
                                 <input type="hidden" name="value" value="2">
                                 <input type="hidden" name="iid" value="'.$iid.'">
@@ -162,7 +162,7 @@ if ($conn->query($sql) === TRUE) {
 
 
                     echo '<div class="col-md-1">
-                                <form action="deal.php" method="get">
+                                <form action="deal.php" method="post">
                                 <input type="hidden" name="cancel" value="'.$id.'">
                                 <input type="hidden" name="value" value="4">
                     <button class="btn btn-dark border-0 w-100 py-3">Reject</button>
@@ -192,7 +192,7 @@ if ($conn->query($sql) === TRUE) {
                                   </div>';
 
                                   echo '<div class="col-md-1">
-                                  <form action="deal.php" method="get">
+                                  <form action="deal.php" method="post">
                                   <input type="hidden" name="pay" value="'.$id.'">
                                   <input type="hidden" name="from" value="'.$foruser.'">
                                   <input type="hidden" name="item" value="'.$itemname.'">
@@ -200,7 +200,7 @@ if ($conn->query($sql) === TRUE) {
                       <button class="btn btn-dark border-0 w-100 py-3">Ask Pay</button>
                       </form>                            </div>';
                         echo '<div class="col-md-1">
-                                  <form action="deal.php" method="get">
+                                  <form action="deal.php" method="post">
                                   <input type="hidden" name="cancel" value="'.$id.'">
                                   <input type="hidden" name="value" value="3">
                       <button class="btn btn-dark border-0 w-100 py-3">End</button>

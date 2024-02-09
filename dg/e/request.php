@@ -154,7 +154,7 @@ if ($conn->query($sql) === TRUE) {
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                        <form action="chat.php" method="get">
+                                        <form action="chat.php" method="post">
                                         <input type="hidden" name="to" value="'.$byuser.'">
                             <button class="btn btn-dark border-0 w-100 py-3">Chat</button>
                             </form>
@@ -163,7 +163,7 @@ if ($conn->query($sql) === TRUE) {
                             
                             if ($status==0) {
                                 echo '<div class="col-md-2">
-                                <form action="request.php" method="get">
+                                <form action="request.php" method="post">
                                 <input type="hidden" name="cancel" value="'.$id.'">
                     <button class="btn btn-dark border-0 w-100 py-3">Cancel</button>
                     </form>                            </div>';
@@ -189,7 +189,7 @@ if ($conn->query($sql) === TRUE) {
                                   </div>';
 
                                   echo '<div class="col-md-1">
-                                  <form action="request.php" method="get">
+                                  <form action="request.php" method="post">
                                   <input type="hidden" name="pay" value="'.$id.'">
                                   <input type="hidden" name="from" value="'.$byuser.'">
                                   <input type="hidden" name="for" value="'.$email.'">

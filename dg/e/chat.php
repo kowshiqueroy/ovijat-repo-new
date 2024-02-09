@@ -20,7 +20,7 @@ else {
     <div class="container">
 
         <div class="row g-4">
-            <form action="chat.php" method="get">
+            <form action="chat.php" method="post">
                 <input type="text" placeholder="mail id" name="to" required
                     style=" position: absolute; left: 25%; width:40%">
                 <input name="new" style=" position: absolute; left: 10%; width:15%" type="submit" value="New">
@@ -106,7 +106,7 @@ else {
 
                 </div>
 
-                <form action="chat.php" method="get">
+                <form action="chat.php" method="post">
 
                     <input type="hidden" name="to" value="<?php echo $_REQUEST['to']?>">
                     <input type="text" placeholder="Type Here" name="msg" required

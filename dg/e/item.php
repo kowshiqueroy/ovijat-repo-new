@@ -21,7 +21,7 @@ include 'head.php';
                             </div>
                             <div class="col-md-4">
 
-                                <form method="get" action="item.php">
+                                <form method="post" action="item.php">
                                     <input name="n" type="text" class="form-control border-0 py-3"
                                         placeholder="Type Here"
                                         value="<?php if (isset($_REQUEST['n'])){ echo $_REQUEST['n']; } else { echo '';}?>"

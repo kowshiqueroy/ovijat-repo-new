@@ -36,7 +36,7 @@ include 'head.php';
                         <div class="row g-2">
                             <div class="col-md-4">
 
-                            <form method="get" action="item.php">
+                            <form method="post" action="item.php">
                                 <input name="n" type="text" class="form-control border-0 py-3" value="All" required>
                             </div>
                             <div class="col-md-4">

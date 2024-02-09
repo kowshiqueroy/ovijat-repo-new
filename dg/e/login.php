@@ -45,7 +45,7 @@ echo '<p style="color:red;">'.$_REQUEST['msg'].'</p>';
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
-                        <form action="profile.php" name="form1" method="get" >
+                        <form action="profile.php" name="form1" method="post" >
                                 <div class="row g-3">
                                    
                                 <div class="col-12">

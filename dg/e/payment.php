@@ -74,7 +74,7 @@ if(isset($_REQUEST['id']) AND isset($_REQUEST['txid'])){
                 
                                     </div>
                                     <div class="col-md-5">
-                                    <form action="payment.php" method="get">
+                                    <form action="payment.php" method="post">
                                     <input type="hidden" name="id" value="'.$id.'">
                                     <input  class="form-control border-0 py-3" type="text" class="" name="txid" placeholder="Cash/Banking Transaction ID"';
                                     if($txid!=""){
@@ -97,7 +97,7 @@ if(isset($_REQUEST['id']) AND isset($_REQUEST['txid'])){
                 </form>
             </div>
                             <div class="col-md-1">
-                                        <form action="chat.php" method="get">
+                                        <form action="chat.php" method="post">
                                         <input type="hidden" name="to" value="'.$fromuser.'">
                             <button class="btn btn-dark border-0 w-100 py-3">Chat</button>
                             </form>
