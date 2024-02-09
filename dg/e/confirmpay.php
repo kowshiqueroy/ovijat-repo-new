@@ -70,7 +70,7 @@ if(isset($_REQUEST['id']) AND isset($_REQUEST['txid'])){
                                 echo '      <div class="col-md-10">
                                 <div class="row g-2">
                                     <div class="col-md-4">
-                                        <p class="form-control " >'.$item.'<br>From: '.$fromuser.'<br>'.$ts.
+                                        <p class="form-control " >'.$item.'<br>For: '.$foruser.'<br>'.$ts.
                                         '<br>Paid: '.$pts; 
                                         
                                        
@@ -119,7 +119,7 @@ echo '<button style="background-color:green; font-size:15px;"class="btn btn-dark
             </div>
                             <div class="col-md-1">
                                         <form action="chat.php" method="post">
-                                        <input type="hidden" name="to" value="'.$fromuser.'">
+                                        <input type="hidden" name="to" value="'.$foruser.'">
                             <button class="btn btn-dark border-0 w-100 py-3">Chat</button>
                             </form>
                         </div>

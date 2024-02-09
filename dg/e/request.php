@@ -84,6 +84,8 @@ if ($result->num_rows > 0) {
 
     if ($conn->query($sql) === TRUE) {
      //echo "New record created successfully";
+   
+     echo '<script>   window.location.replace("request.php"); </script>';
     } else {
      // echo "Error: " . $sql . "<br>" . $conn->error;
     }

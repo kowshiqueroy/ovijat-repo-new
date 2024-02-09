@@ -3,10 +3,9 @@
 
 <?php
 include  "config.php";
-if (session_status() === PHP_SESSION_NONE) {
+
     session_start();
-  
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +42,11 @@ if (session_status() === PHP_SESSION_NONE) {
 </head>
 
 <body>
+
+
+
+
+   
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -102,6 +106,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">
                         
                         <img  style=" border-radius: 50%;" src="';
+                       
                         $email=$_SESSION['email'];
                         
                         $sql = "SELECT photo FROM user WHERE email='$email'";

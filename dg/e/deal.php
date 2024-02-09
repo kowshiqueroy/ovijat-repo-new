@@ -144,7 +144,7 @@ if ($conn->query($sql) === TRUE) {
                             </div>
                             <div class="col-md-2">
                                         <form action="chat.php" method="post">
-                                        <input type="hidden" name="to" value="'.$byuser.'">
+                                        <input type="hidden" name="to" value="'.$foruser.'">
                             <button class="btn btn-dark border-0 w-100 py-3">Chat</button>
                             </form>
                         </div>

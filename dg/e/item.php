@@ -78,6 +78,8 @@ include 'head.php';
                 <div class="row g-4">
 
                     <?php
+
+                
                         $sql = "SELECT * FROM item WHERE (type='Sell' AND del='0' AND stock>0 AND user!='$email') ORDER BY id DESC";
                        
                        if (isset($_REQUEST['s'])){
@@ -98,11 +100,11 @@ include 'head.php';
                        
                        
                        
-                        $result = $conn->query($sql);
+                        $result1 = $conn->query($sql);
 
-                        if ($result->num_rows > 0) {
+                        if ($result1->num_rows > 0) {
                             // output data of each row
-                            while ($row = $result->fetch_assoc()) {
+                            while ($row = $result1->fetch_assoc()) {
                                 $id = $row['id'];
 
                                 $user = $row['user'];
@@ -166,7 +168,11 @@ include 'head.php';
                                     if(!isset($_SESSION['email']))
                                     {
 
-                                        echo ' <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="logoin.php">Login</a></small>';
+                                        echo ' <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="login.php">Login</a></small>
+                                        
+                                        </div>
+                                        </div>
+                                    </div>';
                                     }
 
                                     else{
@@ -272,12 +278,16 @@ include 'head.php';
                 if(!isset($_SESSION['email']))
                 {
 
-                    echo ' <small class="flex-fill text-center border-end py-2"> <a class="d-block h6 mb-2" href="email.php">Login For Deal</a></small>';
+                    echo ' <small class="flex-fill text-center border-end py-2"> <a class="d-block h6 mb-2" href="login.php">Login For Deal</a></small>    </div>
+                    </div>
+                </div>';
                 }
 
                 else{
                echo ' <small class="flex-fill text-center border-end py-2"><i class="fa fa-comments text-primary me-2"></i> <a class="d-block h6 mb-2" href="chat.php?to='.$user.'">Chat</a></small>
-                <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'"> Request a Deal</a></small>
+              
+              <form action="request.php" method="post">
+               <small class="flex-fill text-center border-end py-2"><i class="fa fa-handshake text-primary me-2"></i> <a class="d-block h6 mb-2" href="request.php?id='.$id.'"> Request a Deal</a></small>
             </div>
             </div>
         </div>
