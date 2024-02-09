@@ -8,9 +8,37 @@ include 'head.php';
     <div class="container">
         <div class="row g-2">
 
-
+        <center><h1>Requests</h1></center>
 
         <?php
+
+if(isset($_REQUEST['pay'])){
+    $rid=$_REQUEST['pay'];
+    $for=$_REQUEST['for'];
+    $from=$_REQUEST['from'];
+    $item=$_REQUEST['item'];
+    $price=$_REQUEST['price'];
+    $banking= "";
+    
+$sql = "SELECT * FROM user WHERE email='$from'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $banking = $row['banking'];}}
+
+    
+    $sql = "INSERT INTO pay  (pay,fromuser,item,price,foruser,banking) VALUES ('$rid','$from','$item','$price','$for','$banking') ";
+    
+    if ($conn->query($sql) === TRUE) {
+    // echo "New record created successfully";
+    } else {
+   //  echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    }
+
 
 if (isset($_REQUEST['id'])){
 
@@ -155,10 +183,20 @@ if ($conn->query($sql) === TRUE) {
                             }
 
                             if ($status==2) {
-                                echo '<div   class="col-md-2">
+                                echo '<div   class="col-md-1">
                               
                     <button style="background-color:green;" class="btn btn-dark border-0 w-100 py-3">Approved</button>
                                   </div>';
+
+                                  echo '<div class="col-md-1">
+                                  <form action="request.php" method="get">
+                                  <input type="hidden" name="pay" value="'.$id.'">
+                                  <input type="hidden" name="from" value="'.$byuser.'">
+                                  <input type="hidden" name="for" value="'.$email.'">
+                                  <input type="hidden" name="item" value="'.$itemname.'">
+                                  <input type="hidden" name="price" value="'.$price.'">
+                      <button class="btn btn-dark border-0 w-100 py-3">Pay</button>
+                      </form>                            </div>';
 
 
 

@@ -3,52 +3,52 @@
 include 'head.php';
 ?>
 
-
 <!-- Property List Start -->
 <div class="container-xxl py-5">
     <div class="container">
 
-
-       <!-- Search Start -->
-       <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+        <!-- Search Start -->
+        <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
             <div class="container">
                 <div class="row g-2">
                     <div class="col-md-10">
                         <div class="row g-2">
-                        <div class="col-md-2">
+                            <div class="col-md-2">
 
-                        <form action="item.php"> 
-                        <button type="submit" class="btn btn-dark border-0 w-100 py-3">Refresh</button>
-</form>
-                    </div>
+                                <form action="item.php">
+                                    <button type="submit" class="btn btn-dark border-0 w-100 py-3">Refresh</button>
+                                </form>
+                            </div>
                             <div class="col-md-4">
 
-                            <form method="get" action="item.php">
-                                <input name="n" type="text" class="form-control border-0 py-3"placeholder="Type Here"
-                                 value="<?php if (isset($_REQUEST['n'])){ echo $_REQUEST['n']; } else { echo '';}?>" required>
+                                <form method="get" action="item.php">
+                                    <input name="n" type="text" class="form-control border-0 py-3"
+                                        placeholder="Type Here"
+                                        value="<?php if (isset($_REQUEST['n'])){ echo $_REQUEST['n']; } else { echo '';}?>"
+                                        required>
                             </div>
                             <div class="col-md-3">
                                 <select name="t" class="form-select border-0 py-3" required>
-                                <?php if (isset($_REQUEST['t'])){ echo  '<option selected >'.$_REQUEST["t"].'</option>'; }?>
-  
-                                    <option >Property Type 1</option>
-                                    <option >Property Type 2</option>
-                                    <option >Property Type 3</option>
+                                    <?php if (isset($_REQUEST['t'])){ echo  '<option selected >'.$_REQUEST["t"].'</option>'; }?>
+
+                                    <option>Property Type 1</option>
+                                    <option>Property Type 2</option>
+                                    <option>Property Type 3</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <select name="l" class="form-select border-0 py-3" required>
-                                <?php if (isset($_REQUEST['l'])){ echo  '<option selected >'.$_REQUEST["l"].'</option>'; }?>
-                                    <option >Location 1</option>
-                                    <option >Location 2</option>
-                                    <option >Location 3</option>
+                                    <?php if (isset($_REQUEST['l'])){ echo  '<option selected >'.$_REQUEST["l"].'</option>'; }?>
+                                    <option>Location 1</option>
+                                    <option>Location 2</option>
+                                    <option>Location 3</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <button type="submit" name="s" class="btn btn-dark border-0 w-100 py-3">Search</button>
-</form>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -185,9 +185,9 @@ include 'head.php';
             </div>
 
             <div id="tab-2" class="tab-pane fade show p-0">
-            <div class="row g-4">
+                <div class="row g-4">
 
-<?php
+                    <?php
     $sql = "SELECT * FROM item WHERE (type='Rent' AND del='0' AND stock>0 AND user!='$email' ) ORDER BY id DESC";
 
 
@@ -287,7 +287,7 @@ include 'head.php';
     }
     ?>
 
-</div>
+                </div>
             </div>
 
         </div>

@@ -75,6 +75,8 @@ else {
 
             if ( isset($_REQUEST['re']) AND $_REQUEST['re']==1){
 
+                $_SESSION['banking']=$banking;
+
                 echo '<script> window.location.replace("profile.php"); </script>';
                 
                 }

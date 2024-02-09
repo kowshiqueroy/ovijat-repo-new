@@ -8,9 +8,29 @@ include 'head.php';
     <div class="container">
         <div class="row g-2">
 
-
+<center><h1>Deals</h1></center>
 
         <?php
+
+
+if(isset($_REQUEST['pay'])){
+    $rid=$_REQUEST['pay'];
+    $for=$_REQUEST['from'];
+    $from=$email;
+    $item=$_REQUEST['item'];
+    $price=$_REQUEST['price'];
+    $banking= $_SESSION['banking'];
+    
+    
+    $sql = "INSERT INTO pay  (pay,fromuser,item,price,foruser,banking) VALUES ('$rid','$from','$item','$price','$for','$banking') ";
+    
+    if ($conn->query($sql) === TRUE) {
+    // echo "New record created successfully";
+    } else {
+   //  echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    }
 
 
 if(isset($_REQUEST['iid']) AND isset($_REQUEST['s'])){
@@ -158,12 +178,20 @@ if ($conn->query($sql) === TRUE) {
                             }
 
                             if ($status==2) {
-                                echo '<div   class="col-md-2">
+                                echo '<div   class="col-md-1">
                               
                     <button style="background-color:green;" class="btn btn-dark border-0 w-100 py-3">Approved</button>
                                   </div>';
 
                                   echo '<div class="col-md-1">
+                                  <form action="deal.php" method="get">
+                                  <input type="hidden" name="pay" value="'.$id.'">
+                                  <input type="hidden" name="from" value="'.$foruser.'">
+                                  <input type="hidden" name="item" value="'.$itemname.'">
+                                  <input type="hidden" name="price" value="'.$price.'">
+                      <button class="btn btn-dark border-0 w-100 py-3">Ask Pay</button>
+                      </form>                            </div>';
+                        echo '<div class="col-md-1">
                                   <form action="deal.php" method="get">
                                   <input type="hidden" name="cancel" value="'.$id.'">
                                   <input type="hidden" name="value" value="3">

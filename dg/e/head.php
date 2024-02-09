@@ -94,6 +94,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             
                             <a href="deal.php" class="dropdown-item">Deal</a>
                             <a href="payment.php" class="dropdown-item">Payment</a>
+                            <a href="confirmpay.php" class="dropdown-item">Confirm Pay</a>
                         </div>
                     </div>
 
