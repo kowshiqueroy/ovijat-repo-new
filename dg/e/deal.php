@@ -19,7 +19,15 @@ if(isset($_REQUEST['pay'])){
     $from=$email;
     $item=$_REQUEST['item'];
     $price=$_REQUEST['price'];
-    $banking= $_SESSION['banking'];
+    $banking= "";
+
+    $sql = "SELECT * FROM user WHERE email='$email'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $banking = $row['banking'];}}
     
     
     $sql = "INSERT INTO pay  (pay,fromuser,item,price,foruser,banking) VALUES ('$rid','$from','$item','$price','$for','$banking') ";
